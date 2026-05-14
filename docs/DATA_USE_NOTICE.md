@@ -4,7 +4,7 @@ This replication package contains code, constructed measures, and derived analys
 
 ## Constructed measures
 
-The files in `data_intermediate/`, `data_analysis/`, and `outputs/source_data/` include constructed exposure measures and compact analysis panels used in the paper. Some columns are derived from public source datasets listed in `data_raw_public_metadata/source_inventory.csv`. Users who reuse those files should cite the paper, this replication package, and the underlying public data sources as appropriate.
+The files in `data_intermediate/`, `data_analysis/`, and `outputs/source_data/` include constructed exposure measures and compact analysis panels used in the paper. Some columns are derived from public source datasets listed in `data_raw_public_metadata/source_inventory.csv`. Users who reuse those files should cite the paper and the underlying public data sources as appropriate. The current paper version is available at <https://automationatlas.org/paper/>.
 
 ## Third-party source data
 
@@ -20,9 +20,8 @@ Current source notes at the time of package preparation:
 
 ## Suggested attribution
 
-If you use this package, cite the paper and the replication package. If you use variables derived from third-party sources, also cite or acknowledge those sources according to their instructions. For example, analyses using O*NET tasks should acknowledge O*NET; analyses using ILOSTAT employment shares should acknowledge ILOSTAT; analyses using BACI trade data should acknowledge CEPII BACI.
+If you use this package, cite the paper. If you use variables derived from third-party sources, also cite or acknowledge those sources according to their instructions. For example, analyses using O*NET tasks should acknowledge O*NET; analyses using ILOSTAT employment shares should acknowledge ILOSTAT; analyses using BACI trade data should acknowledge CEPII BACI.
 
 ## No warranty
 
 The data and code are provided for research transparency and reproducibility. They are provided without warranty. Users are responsible for checking source-specific terms before reuse.
-

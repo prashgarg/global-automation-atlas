@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this replication package, please cite the paper and this repository."
-title: "Global Automation Atlas replication package"
+message: "If you use this replication package, please cite the paper."
+title: "Global Automation Atlas"
 authors:
   - family-names: "Garg"
     given-names: "Prashant"
@@ -8,6 +8,17 @@ authors:
     given-names: "Tommaso"
   - family-names: "Baier"
     given-names: "Jasmin"
-date-released: "2026-05-14"
-version: "0.1.0"
-url: "https://github.com/prashgarg/global-automation-atlas"
+url: "https://automationatlas.org/paper/"
+preferred-citation:
+  type: article
+  title: "Global Automation Atlas"
+  authors:
+    - family-names: "Garg"
+      given-names: "Prashant"
+    - family-names: "Crosta"
+      given-names: "Tommaso"
+    - family-names: "Baier"
+      given-names: "Jasmin"
+  year: 2026
+  month: 5
+  url: "https://automationatlas.org/paper/"
