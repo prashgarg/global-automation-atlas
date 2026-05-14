@@ -1,6 +1,12 @@
-# Automation and Skill Gaps Survey replication package
+# Global Automation Atlas replication package
+
+This repository contains the public replication package for **Global Automation Atlas** by Prashant Garg, Tommaso Crosta, and Jasmin Baier.
+
+The accompanying online atlas is available at [automationatlas.org](https://automationatlas.org/). It provides country-, occupation-, industry-, and task-level exposure measures, with documentation and downloadable data.
 
 This package contains the data and code needed to check the results reported in the paper. It starts from the retained task-country labels used in the analysis and rebuilds the downstream checks, tables, and selected figures from those fixed labels.
+
+If you use this package, please cite the paper and this repository. Citation metadata are provided in `CITATION.cff`.
 
 The package does not include exploratory drafts, old figure variants, raw API logs, or language-model rationales. Those files are not needed to reproduce the paper results and would make the release harder to use.
 
@@ -82,4 +88,3 @@ The package is designed to reproduce the paper results from retained labels, not
 ## Licence and third-party data terms
 
 The code in this package is released under the MIT License; see `LICENSE`. The data files combine original constructed measures with cleaned extracts or derived variables from public third-party sources. Those source datasets remain governed by their own terms. See `docs/DATA_USE_NOTICE.md` for source-specific notes and attribution guidance.
-
