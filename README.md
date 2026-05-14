@@ -8,7 +8,7 @@ Public replication package for **Global Automation Atlas** by Prashant Garg, Tom
   <a href="https://automationatlas.org/data/">Data downloads</a>
 </p>
 
-![Global Automation Atlas banner](docs/readme-banner.svg)
+![Cross-country exposure map from the Global Automation Atlas](docs/readme-map-dark.png)
 
 This repository contains the retained labels, analysis panels, prompt protocols, source-data files, and R scripts used to check the paper results. The measurement object is a task-country dataset: 18,797 O*NET tasks evaluated across 124 country contexts, producing 2,330,776 retained task-country observations.
 
