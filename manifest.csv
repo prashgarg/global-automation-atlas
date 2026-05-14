@@ -39,6 +39,7 @@ docs/data_dictionary/data_dictionary.csv,8474
 docs/data_dictionary/schema_with_descriptions.csv,16009
 docs/DATA_USE_NOTICE.md,2437
 docs/FILE_GUIDE.md,2312
+docs/readme-banner.svg,2766
 LICENSE,1104
 manifest.csv,13131
 outputs/figures/fig_ai_function_mix_income_taskid.pdf,35939
@@ -195,4 +196,4 @@ prompts/country_conditioned_prompt.md,18650
 prompts/income_group_prompt.md,19015
 prompts/model_config.json,350
 prompts/prompt_version_notes.md,293
-README.md,6308
+README.md,3846

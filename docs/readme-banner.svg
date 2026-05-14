@@ -1,0 +1,36 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Global Automation Atlas</title>
+  <desc id="desc">Dark banner for the Global Automation Atlas replication package.</desc>
+  <rect width="1200" height="360" rx="28" fill="#151B24"/>
+  <path d="M0 256C150 198 300 234 450 196C600 158 750 58 900 86C1050 114 1125 218 1200 178V360H0V256Z" fill="#243447" opacity="0.72"/>
+  <path d="M0 290C190 230 300 272 470 232C640 192 760 116 930 138C1080 157 1135 238 1200 218V360H0V290Z" fill="#548C90" opacity="0.32"/>
+  <g opacity="0.85">
+    <circle cx="760" cy="124" r="8" fill="#D1A552"/>
+    <circle cx="812" cy="104" r="5" fill="#7EA56B"/>
+    <circle cx="866" cy="132" r="7" fill="#C95F5A"/>
+    <circle cx="922" cy="92" r="6" fill="#5F82A3"/>
+    <circle cx="984" cy="146" r="9" fill="#D1A552"/>
+    <circle cx="1044" cy="112" r="5" fill="#7EA56B"/>
+    <circle cx="1092" cy="162" r="7" fill="#5F82A3"/>
+    <path d="M760 124C818 98 870 137 922 92C965 59 1002 164 1044 112C1061 91 1079 137 1092 162" stroke="#E8E4DD" stroke-width="2" opacity="0.45"/>
+  </g>
+  <g opacity="0.42">
+    <path d="M720 232H1110" stroke="#E8E4DD" stroke-width="1"/>
+    <path d="M720 274H1110" stroke="#E8E4DD" stroke-width="1"/>
+    <path d="M720 316H1110" stroke="#E8E4DD" stroke-width="1"/>
+    <rect x="744" y="214" width="52" height="102" rx="6" fill="#548C90"/>
+    <rect x="824" y="178" width="52" height="138" rx="6" fill="#D1A552"/>
+    <rect x="904" y="132" width="52" height="184" rx="6" fill="#7EA56B"/>
+    <rect x="984" y="94" width="52" height="222" rx="6" fill="#5F82A3"/>
+  </g>
+  <text x="72" y="112" fill="#E8E4DD" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="54" font-weight="760" letter-spacing="0">Global Automation Atlas</text>
+  <text x="74" y="160" fill="#B8C3CF" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="500">Replication package for task-country automation exposure measures</text>
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="74" y="236" fill="#E8E4DD" font-size="34" font-weight="760">2.33M</text>
+    <text x="74" y="266" fill="#B8C3CF" font-size="18">task-country labels</text>
+    <text x="248" y="236" fill="#E8E4DD" font-size="34" font-weight="760">124</text>
+    <text x="248" y="266" fill="#B8C3CF" font-size="18">countries</text>
+    <text x="376" y="236" fill="#E8E4DD" font-size="34" font-weight="760">18,797</text>
+    <text x="376" y="266" fill="#B8C3CF" font-size="18">O*NET tasks</text>
+  </g>
+</svg>
