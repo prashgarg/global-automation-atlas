@@ -1,0 +1,22 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Measurement objects used in the paper.}
+\label{tab:data_inventory}
+\begin{tabular}{@{}L{0.29\textwidth}L{0.25\textwidth}C{0.11\textwidth}L{0.25\textwidth}@{}}
+\toprule
+Object & Identifier & Count & Role \\
+\midrule
+O*NET task universe & standardised task & 18,797 & Source task unit \\
+Country sample & ISO3 country & 124 & Country contexts \\
+Country-conditioned task labels & country $\times$ task & 2,330,776 & Main task-country dataset \\
+Benchmark task-context labels & task $\times$ context & 91,022 & Context-free and income-group benchmarks \\
+Country-SOC occupation summaries & country $\times$ O*NET-SOC & 114,452 & Intermediate occupation aggregation \\
+Country-ISCO occupation summaries & country $\times$ ISCO-08 major group & 1,116 & International occupation reporting layer \\
+Retained task-ISIC4 graph & task $\times$ ISIC4 edge & 12,294 & Industry linkage \\
+Country-ISIC4 summaries & country $\times$ ISIC4 class & 17,112 & Industry reporting layer \\
+Country-predictor samples & ISO3 country & 68 / 90 / 118 & Main, lean, and minimal predictor screens \\
+\bottomrule
+\end{tabular}
+\caption*{\scriptsize Notes: Counts refer to the constructed objects used in the paper. The country-conditioned label count is the unique country $\times$ task count used for country-level summaries. The larger parsed country $\times$ task-code table repeats standardised tasks across O*NET task-code locations. Validation samples are reported in the relevant subsections.}
+\end{table}

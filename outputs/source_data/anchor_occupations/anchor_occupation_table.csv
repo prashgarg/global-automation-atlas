@@ -1,0 +1,12 @@
+soc,occupation,reader_prior,atlas_mean_exposure,atlas_high_income,atlas_low_income,substitution_share,augmentation_share,n_country_rows
+29-1241.00,Surgeons,Very low,0.718,1.043,0.238,0.0,0.109,124
+39-9011.00,Childcare workers,Very low,0.418,0.641,0.097,0.039,0.024,124
+25-2021.00,Elementary school teachers,Very low,0.684,0.932,0.249,0.043,0.029,124
+53-3032.00,Heavy-truck drivers,Medium,1.363,1.857,0.618,0.296,0.005,124
+45-2092.00,Farm labourers (crops),Medium,1.041,1.585,0.329,0.133,0.012,124
+35-3031.00,Waiters and waitresses,Medium,0.944,1.404,0.318,0.194,0.003,124
+15-1252.00,Software developers,High,1.257,1.617,0.658,0.036,0.118,124
+13-2011.00,Accountants and auditors,High,1.919,2.315,1.218,0.303,0.023,124
+27-3091.00,Interpreters and translators,High,1.503,1.703,1.07,0.125,0.027,124
+41-2011.00,Cashiers,High,1.718,2.122,0.966,0.509,0.005,124
+43-3031.00,Bookkeeping and audit clerks,High,2.542,2.909,1.852,0.853,0.001,124

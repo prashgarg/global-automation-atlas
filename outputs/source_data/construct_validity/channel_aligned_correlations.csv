@@ -1,0 +1,37 @@
+external,atlas_feature,is_aligned,n,pearson,spearman
+Frey-Osborne,Paper overall exposure,True,582,0.44941130736587703,0.4793359094681263
+Frey-Osborne,Paper AI-material share,False,582,-0.14685878274956765,-0.09408707886502483
+Frey-Osborne,Paper rule-based workflow share,False,582,0.2493752568922008,0.21405722745601088
+Frey-Osborne,Paper software-like share (rule+info),False,582,-0.08919394305990194,-0.11966428808340603
+Frey-Osborne,Paper foundation-model-like share,False,582,-0.41193648070028044,-0.37885198228499584
+Frey-Osborne,Paper physical-execution share,False,582,0.5181901271943355,0.43716246187445523
+Webb AI,Paper overall exposure,False,762,0.09438467742269814,0.12688350260623424
+Webb AI,Paper AI-material share,True,762,0.23684577582680946,0.25007315665914154
+Webb AI,Paper rule-based workflow share,False,762,-0.16107854783159412,-0.12016240911691595
+Webb AI,Paper software-like share (rule+info),False,762,-0.08457260044527448,-0.04378877906291541
+Webb AI,Paper foundation-model-like share,False,762,0.14355238279565655,0.13960550648562828
+Webb AI,Paper physical-execution share,False,762,-0.007514781975383643,0.02069022229448308
+Webb Software,Paper overall exposure,False,762,0.1741580847039022,0.2075749449172916
+Webb Software,Paper AI-material share,False,762,-0.03948088213341477,-0.036455765088358724
+Webb Software,Paper rule-based workflow share,False,762,-0.14454590617518148,-0.11879169209462034
+Webb Software,Paper software-like share (rule+info),False,762,-0.3277974476447816,-0.3254953999625171
+Webb Software,Paper foundation-model-like share,False,762,-0.2500209127550088,-0.26818121311830295
+Webb Software,Paper physical-execution share,False,762,0.36665645217087883,0.4295601030023342
+Webb Robot,Paper overall exposure,False,762,0.04998129039761676,0.07233815519746978
+Webb Robot,Paper AI-material share,False,762,-0.4237121786050746,-0.4250152291947327
+Webb Robot,Paper rule-based workflow share,False,762,-0.2150617233440466,-0.2001404481189383
+Webb Robot,Paper software-like share (rule+info),False,762,-0.6059482806277244,-0.6351921946548987
+Webb Robot,Paper foundation-model-like share,False,762,-0.5915881091142733,-0.6272085447933823
+Webb Robot,Paper physical-execution share,True,762,0.7232872965429407,0.7731375121311399
+Felten AIOE,Paper overall exposure,False,665,0.10153634554429054,0.057769534659428474
+Felten AIOE,Paper AI-material share,True,665,0.6099482556962952,0.6016105207356568
+Felten AIOE,Paper rule-based workflow share,False,665,0.317838813683038,0.32325502512273024
+Felten AIOE,Paper software-like share (rule+info),False,665,0.7390633285786266,0.773732385801781
+Felten AIOE,Paper foundation-model-like share,False,665,0.7384416126374846,0.7634674906522079
+Felten AIOE,Paper physical-execution share,False,665,-0.8069437194876303,-0.832628178364244
+Eloundou GPT-4 gamma,Paper overall exposure,False,923,0.21553537001669376,0.22994544999514968
+Eloundou GPT-4 gamma,Paper AI-material share,False,923,0.729944027550901,0.7460704002342178
+Eloundou GPT-4 gamma,Paper rule-based workflow share,False,923,0.3164463526467898,0.30757147731420026
+Eloundou GPT-4 gamma,Paper software-like share (rule+info),False,923,0.7701466764014109,0.8053886676601434
+Eloundou GPT-4 gamma,Paper foundation-model-like share,True,923,0.7833831234312472,0.8090824067710802
+Eloundou GPT-4 gamma,Paper physical-execution share,False,923,-0.8156073861388153,-0.8045414317996775

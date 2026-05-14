@@ -1,0 +1,4 @@
+paraphrase,n,binary_exposed,level_exact,level_adjacent,channel_exact,margin_exact
+paraphrase_1_direct_imperative.txt,999,0.8868868868868869,0.6196196196196196,0.978978978978979,0.7067067067067067,0.751503006012024
+paraphrase_2_expanded_explanatory.txt,1000,0.87,0.647,0.969,0.725,0.748
+paraphrase_3_structured_bullets.txt,1000,0.843,0.6,0.956,0.7,0.682

@@ -1,0 +1,6 @@
+{
+  "main_labelling_model": "Gemini 3.1 Flash-Lite",
+  "benchmark_settings": ["country-conditioned", "income-group", "context-free"],
+  "rerun_policy": "The replication package documents the LLM protocol but does not rerun API classifications.",
+  "retained_outputs": "Trimmed retained labels used in the paper are supplied in data_intermediate/."
+}

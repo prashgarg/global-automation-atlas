@@ -1,0 +1,17 @@
+figure,domain,margin,n_countries,median_gap_pp,female_higher_share
+Broad aggregation figure,ISCO-1 occupations,Substitution-only,90,-0.7543131533401859,0.2222222222222222
+Broad aggregation figure,ISCO-1 occupations,Augmentation-only,90,0.22797498928565016,0.7555555555555555
+Broad aggregation figure,ISIC sections,Substitution-only,80,-1.1134725055243746,0.225
+Broad aggregation figure,ISIC sections,Augmentation-only,80,-0.4029621448277494,0.05
+Four-object figure,ISCO-1 occupations,Substitution-only,90,-0.7543131533401859,0.2222222222222222
+Four-object figure,ISCO-1 occupations,Augmentation-only,90,0.22797498928565016,0.7555555555555555
+Four-object figure,ISCO-2 occupations,Substitution-only,89,2.106589354929847,0.7853107344632768
+Four-object figure,ISCO-2 occupations,Augmentation-only,89,-0.06305644000535027,0.3502824858757062
+Four-object figure,ISIC sections,Substitution-only,80,-1.1134725055243746,0.225
+Four-object figure,ISIC sections,Augmentation-only,80,-0.4029621448277494,0.05
+Four-object figure,ISIC-2 industries,Substitution-only,73,-0.10157594174589613,0.4896551724137931
+Four-object figure,ISIC-2 industries,Augmentation-only,73,-0.8316854379178448,0.09655172413793103
+Two-digit paper-candidate figure,ISCO-2 occupations,Substitution-only,89,2.106589354929847,0.7853107344632768
+Two-digit paper-candidate figure,ISCO-2 occupations,Augmentation-only,89,-0.06305644000535027,0.3502824858757062
+Two-digit paper-candidate figure,ISIC-2 industries,Substitution-only,73,-0.10157594174589613,0.4896551724137931
+Two-digit paper-candidate figure,ISIC-2 industries,Augmentation-only,73,-0.8316854379178448,0.09655172413793103

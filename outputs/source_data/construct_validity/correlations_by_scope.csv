@@ -1,0 +1,11 @@
+comparator,atlas_scope,n,pearson,spearman
+Frey-Osborne,Atlas (US-only),582,0.42746205494478334,0.4566449014856247
+Frey-Osborne,Atlas (mean across countries),582,0.39309351212192833,0.4174565887009547
+Webb AI,Atlas (US-only),762,0.07288390089497618,0.1065266892176052
+Webb AI,Atlas (mean across countries),762,0.08365917952394572,0.13469442205885543
+Felten AIOE,Atlas (US-only),665,0.13902064702301137,0.1014659080856658
+Felten AIOE,Atlas (mean across countries),665,0.21908744256473123,0.17458685990349262
+Eloundou GPT-4 gamma,Atlas (US-only),923,0.2370272945950787,0.2503109373943402
+Eloundou GPT-4 gamma,Atlas (mean across countries),923,0.31173613969571945,0.32101633026245496
+Eloundou human gamma,Atlas (US-only),923,0.2195420106727852,0.20253531741886768
+Eloundou human gamma,Atlas (mean across countries),923,0.29939630284184293,0.27524796541388974

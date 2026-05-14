@@ -1,0 +1,12 @@
+stage,label,n_complete,delta,kind
+Outcomes only,Outcomes only,124,124,total
+log_gdp_per_capita,Log GDP per capita,124,0,change
+goods_trade_openness,Goods trade (% GDP),123,-1,change
+internet_users_pct,Internet users (%),121,-2,change
+wgi_government_effectiveness_score,Government effectiveness,118,-3,change
+wgi_regulatory_quality_score,Regulatory quality,118,0,change
+gross_fixed_capital_formation_pct_gdp,Investment (% GDP),110,-8,change
+pwt_human_capital_index,Human capital,87,-23,change
+barro_lee_years_schooling_15_64,Years of schooling,80,-7,change
+pwt_log_real_capital_stock_per_worker,Capital intensity,68,-12,change
+promoted_model,Promoted RF model,68,68,total

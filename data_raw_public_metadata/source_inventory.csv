@@ -1,0 +1,12 @@
+source,role_in_paper,url
+O*NET 29.1,Task statements and occupation links,https://www.onetcenter.org/database.html
+World Bank income groups,Income-group classification,https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups
+World Development Indicators,Country covariates,https://databank.worldbank.org/source/world-development-indicators
+Penn World Table 10.01,"GDP, human capital, capital stock",https://www.rug.nl/ggdc/productivity/pwt/
+Barro-Lee Educational Attainment,Years of schooling,http://www.barrolee.com/
+Worldwide Governance Indicators,Government effectiveness and regulatory quality,https://www.worldbank.org/en/publication/worldwide-governance-indicators
+CEPII BACI,Goods-trade openness,https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37
+ILOSTAT,"Occupation, industry, and sex-specific employment shares",https://ilostat.ilo.org/data/
+IMF AI Preparedness Index,Country-level AI readiness validation,https://www.imf.org/external/datamapper/datasets/AIPI
+Eurostat ICT Usage in Enterprises,Firm AI adoption validation,https://ec.europa.eu/eurostat/databrowser/
+Felten-Raj-Seamans AI Occupational Exposure,External occupational AI-exposure comparator,https://github.com/AIOE-Data/AIOE

@@ -1,0 +1,87 @@
+{
+  "benchmark_run": "/Users/prashgarg/Library/CloudStorage/Dropbox-PrashantGarg/Prashant Garg/ai_skills_tasks/ai_task_skill_atlas/outputs/llm_runs/stage4_task_automation_v6b_benchmark_full/20260404_131338_v6b_benchmark5_alltasks_flashlite_low/responses.jsonl",
+  "country_panel": "/Users/prashgarg/Library/CloudStorage/Dropbox-PrashantGarg/Prashant Garg/ai_skills_tasks/ai_task_skill_atlas/outputs/analysis_country_automation_v6b_taskid_country124_20260406/country_task_panel.parquet",
+  "country_weights": "/Users/prashgarg/Library/CloudStorage/Dropbox-PrashantGarg/Prashant Garg/ai_skills_tasks/ai_task_skill_atlas/ops/tier3_country_list_150_20260330.csv",
+  "contextfree_mean_exposure": 1.6872421191615778,
+  "high_income_mean_exposure": 1.7429307321350285,
+  "low_income_mean_exposure": 0.8132805193376245,
+  "monotone_share": 0.7662924934830027,
+  "flat_share": 0.17486833005266797,
+  "synthetic_alignment": {
+    "Context-free vs GDP-weighted global": {
+      "task_correlation": 0.8781282587669803,
+      "mean_abs_diff": 0.32551811721232266,
+      "mean_signed_diff": -0.15126808713078504
+    },
+    "Context-free vs Population-weighted global": {
+      "task_correlation": 0.8673605732804399,
+      "mean_abs_diff": 0.46169211227590673,
+      "mean_signed_diff": -0.3802833489284723
+    },
+    "Context-free vs Equal-weighted global": {
+      "task_correlation": 0.86257024233268,
+      "mean_abs_diff": 0.5861904988220776,
+      "mean_signed_diff": -0.5391458558836476
+    },
+    "Lower middle explicit vs GDP-weighted synthetic": {
+      "task_correlation": 0.8459615625006367,
+      "mean_abs_diff": 0.33669620578407783,
+      "mean_signed_diff": -0.020616259510765587
+    },
+    "Lower middle explicit vs Population-weighted synthetic": {
+      "task_correlation": 0.8463430027707131,
+      "mean_abs_diff": 0.3444991938499415,
+      "mean_signed_diff": -0.06300688531298525
+    },
+    "Lower middle explicit vs Equal-weighted synthetic": {
+      "task_correlation": 0.8494575810737747,
+      "mean_abs_diff": 0.4141480415063762,
+      "mean_signed_diff": -0.3111341876912669
+    },
+    "Upper middle explicit vs GDP-weighted synthetic": {
+      "task_correlation": 0.8515548523578587,
+      "mean_abs_diff": 0.32131408909871967,
+      "mean_signed_diff": -0.04335081030550836
+    },
+    "Upper middle explicit vs Population-weighted synthetic": {
+      "task_correlation": 0.8604119734459288,
+      "mean_abs_diff": 0.3265188473862251,
+      "mean_signed_diff": -0.08638423145773334
+    },
+    "Upper middle explicit vs Equal-weighted synthetic": {
+      "task_correlation": 0.8710526506477476,
+      "mean_abs_diff": 0.388625612381157,
+      "mean_signed_diff": -0.29775629129443265
+    },
+    "High income explicit vs GDP-weighted synthetic": {
+      "task_correlation": 0.8752911554198878,
+      "mean_abs_diff": 0.30503035563737185,
+      "mean_signed_diff": -0.17083089366710372
+    },
+    "High income explicit vs Population-weighted synthetic": {
+      "task_correlation": 0.8811082109985439,
+      "mean_abs_diff": 0.312267250025575,
+      "mean_signed_diff": -0.1890342946982816
+    },
+    "High income explicit vs Equal-weighted synthetic": {
+      "task_correlation": 0.8853682939118054,
+      "mean_abs_diff": 0.32308114621315,
+      "mean_signed_diff": -0.21513460212144866
+    },
+    "Low income explicit vs GDP-weighted synthetic": {
+      "task_correlation": 0.7895088916710975,
+      "mean_abs_diff": 0.4021511640317047,
+      "mean_signed_diff": -0.29374739892326274
+    },
+    "Low income explicit vs Population-weighted synthetic": {
+      "task_correlation": 0.7850940214926672,
+      "mean_abs_diff": 0.4085023684738196,
+      "mean_signed_diff": -0.30672391053801157
+    },
+    "Low income explicit vs Equal-weighted synthetic": {
+      "task_correlation": 0.7933123261714959,
+      "mean_abs_diff": 0.4110370827216581,
+      "mean_signed_diff": -0.30333591033202745
+    }
+  }
+}

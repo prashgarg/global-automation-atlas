@@ -1,0 +1,11 @@
+task_id,task_title,Low income,Lower middle income,Upper middle income,High income,high_minus_low
+984,Assign personnel to roles based on skills and requirements.,0.0,2.0,2.0,3.0,3.0
+1641,Maintain and update legal volumes in a law library,0.0,2.0,2.0,3.0,3.0
+2135,Call police or fire departments during emergencies or security breaches,0.0,0.0,0.0,3.0,3.0
+2218,"Butcher and clean fowl, fish, poultry, and shellfish.",0.0,1.0,2.0,3.0,3.0
+2228,Take beverage orders from patrons or serving staff,0.0,2.0,2.0,3.0,3.0
+2316,Receive patron baggage and attach completed claim checks,0.0,1.0,2.0,3.0,3.0
+2415,Wrap and package merchandise for shipment,0.0,2.0,2.0,3.0,3.0
+2557,Arrange cash and coins in dispensers by denomination.,0.0,1.0,2.0,3.0,3.0
+2649,Answer routine inquiries and refer patrons to professional librarians,0.0,2.0,2.0,3.0,3.0
+2680,Recommend products or services to meet specific customer needs,0.0,2.0,3.0,3.0,3.0

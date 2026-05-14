@@ -1,0 +1,6 @@
+field,value
+binary_exposed,0.99
+exposure_exact,0.715
+exposure_adjacent_pm1,1.0
+channel_exact,0.677
+margin_exact_exposed,0.748

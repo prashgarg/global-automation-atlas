@@ -1,0 +1,19 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Occupation-level comparison of the reported output-weighted global summary against external occupation benchmarks.}
+\begin{tabular}{p{0.38\textwidth}rccc}
+\toprule
+Benchmark & Overlap & Pearson & Spearman & Mean abs movement (pp) \\
+\midrule
+GPTs GPT-4 gamma (Eloundou) & 923 & 0.406 & 0.405 & 25.3 \\
+GPTs human gamma (Eloundou) & 923 & 0.387 & 0.359 & 26.1 \\
+Felten AIOE & 665 & 0.313 & 0.261 & 20.6 \\
+Frey-Osborne & 582 & 0.292 & 0.358 & 16.6 \\
+Webb AI & 762 & 0.138 & 0.178 & 24.7 \\
+\bottomrule
+\end{tabular}
+
+\caption*{\scriptsize Notes: Rows compare the output-weighted atlas mean occupation exposure with external occupation benchmarks; output weights are country GDP shares. Eloundou scores are aggregated to occupations using the GPT-4 and human gamma definitions in the source; other measures are occupation-native. Mean absolute movement is reported in percentile points within the matched occupation universe.}
+\label{tab:appendix_occ_external}
+\end{table}

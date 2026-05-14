@@ -1,0 +1,49 @@
+pair,source_state,dest_state,count,row_share,cohort_share
+Low income -> Lower middle income,aug_only,aug_only,38,0.24836601307189543,0.0022926093514328808
+Low income -> Lower middle income,aug_only,both,86,0.5620915032679739,0.005188536953242836
+Low income -> Lower middle income,aug_only,non_exposed,25,0.16339869281045752,0.0015082956259426848
+Low income -> Lower middle income,aug_only,sub_only,4,0.026143790849673203,0.00024132730015082957
+Low income -> Lower middle income,both,aug_only,73,0.0369620253164557,0.004404223227752639
+Low income -> Lower middle income,both,both,1500,0.759493670886076,0.09049773755656108
+Low income -> Lower middle income,both,non_exposed,64,0.03240506329113924,0.003861236802413273
+Low income -> Lower middle income,both,sub_only,338,0.17113924050632912,0.0203921568627451
+Low income -> Lower middle income,non_exposed,aug_only,396,0.03192518542405676,0.023891402714932126
+Low income -> Lower middle income,non_exposed,both,2173,0.17518542405675588,0.13110105580693815
+Low income -> Lower middle income,non_exposed,non_exposed,8954,0.7218639148661722,0.5402111613876319
+Low income -> Lower middle income,non_exposed,sub_only,881,0.07102547565301516,0.05315233785822021
+Low income -> Lower middle income,sub_only,aug_only,2,0.0009789525208027412,0.00012066365007541478
+Low income -> Lower middle income,sub_only,both,341,0.16691140479686736,0.02057315233785822
+Low income -> Lower middle income,sub_only,non_exposed,59,0.02887909936368086,0.003559577677224736
+Low income -> Lower middle income,sub_only,sub_only,1641,0.8032305433186491,0.09900452488687783
+Lower middle income -> Upper middle income,aug_only,aug_only,188,0.3693516699410609,0.01134238310708899
+Lower middle income -> Upper middle income,aug_only,both,255,0.5009823182711198,0.015384615384615385
+Lower middle income -> Upper middle income,aug_only,non_exposed,63,0.1237721021611002,0.003800904977375566
+Lower middle income -> Upper middle income,aug_only,sub_only,3,0.005893909626719057,0.00018099547511312217
+Lower middle income -> Upper middle income,both,aug_only,232,0.05658536585365854,0.013996983408748115
+Lower middle income -> Upper middle income,both,both,3043,0.7421951219512195,0.1835897435897436
+Lower middle income -> Upper middle income,both,non_exposed,129,0.03146341463414634,0.007782805429864253
+Lower middle income -> Upper middle income,both,sub_only,696,0.16975609756097562,0.04199095022624434
+Lower middle income -> Upper middle income,non_exposed,aug_only,637,0.06998461876510657,0.038431372549019606
+Lower middle income -> Upper middle income,non_exposed,both,1402,0.15403208086134915,0.08458521870286576
+Lower middle income -> Upper middle income,non_exposed,non_exposed,6582,0.7231377719182597,0.39710407239819007
+Lower middle income -> Upper middle income,non_exposed,sub_only,481,0.052845528455284556,0.029019607843137254
+Lower middle income -> Upper middle income,sub_only,aug_only,3,0.001047486033519553,0.00018099547511312217
+Lower middle income -> Upper middle income,sub_only,both,491,0.17143854748603352,0.02962292609351433
+Lower middle income -> Upper middle income,sub_only,non_exposed,52,0.018156424581005588,0.003137254901960784
+Lower middle income -> Upper middle income,sub_only,sub_only,2318,0.8093575418994413,0.13984917043740575
+Upper middle income -> High income,aug_only,aug_only,458,0.4320754716981132,0.027631975867269985
+Upper middle income -> High income,aug_only,both,420,0.39622641509433965,0.025339366515837104
+Upper middle income -> High income,aug_only,non_exposed,176,0.1660377358490566,0.0106184012066365
+Upper middle income -> High income,aug_only,sub_only,6,0.005660377358490566,0.00036199095022624434
+Upper middle income -> High income,both,aug_only,422,0.08129454825659796,0.025460030165912518
+Upper middle income -> High income,both,both,3719,0.716432286649971,0.2243740573152338
+Upper middle income -> High income,both,non_exposed,237,0.045655942978231556,0.014298642533936652
+Upper middle income -> High income,both,sub_only,813,0.15661722211519938,0.04904977375565611
+Upper middle income -> High income,non_exposed,aug_only,488,0.0714913565777908,0.029441930618401207
+Upper middle income -> High income,non_exposed,both,697,0.10210958101377088,0.04205128205128205
+Upper middle income -> High income,non_exposed,non_exposed,5387,0.7891883973044242,0.3250075414781297
+Upper middle income -> High income,non_exposed,sub_only,254,0.037210665104014065,0.015324283559577677
+Upper middle income -> High income,sub_only,aug_only,2,0.0005717552887364208,0.00012066365007541478
+Upper middle income -> High income,sub_only,both,497,0.14208118925100058,0.029984917043740573
+Upper middle income -> High income,sub_only,non_exposed,91,0.026014865637507146,0.005490196078431373
+Upper middle income -> High income,sub_only,sub_only,2908,0.8313321898227558,0.1754449472096531

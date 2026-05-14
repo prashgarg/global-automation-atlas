@@ -1,0 +1,121 @@
+scope,atlas_feature,external,n,pearson
+Atlas US,Overall exposure,Frey-Osborne,582,0.44941130736587703
+Atlas US,Overall exposure,Webb AI,762,0.09438467742269813
+Atlas US,Overall exposure,Webb Software,762,0.1741580847039022
+Atlas US,Overall exposure,Webb Robot,762,0.049981290397616784
+Atlas US,Overall exposure,Felten AIOE,665,0.10153634554429045
+Atlas US,Overall exposure,Eloundou DV gamma,923,0.21553537001669373
+Atlas US,AI-material share,Frey-Osborne,582,-0.14685878274956765
+Atlas US,AI-material share,Webb AI,762,0.2368457758268095
+Atlas US,AI-material share,Webb Software,762,-0.039480882133414774
+Atlas US,AI-material share,Webb Robot,762,-0.42371217860507476
+Atlas US,AI-material share,Felten AIOE,665,0.6099482556962956
+Atlas US,AI-material share,Eloundou DV gamma,923,0.729944027550901
+Atlas US,LLM-like share,Frey-Osborne,582,-0.4119364807002803
+Atlas US,LLM-like share,Webb AI,762,0.14355238279565652
+Atlas US,LLM-like share,Webb Software,762,-0.2500209127550088
+Atlas US,LLM-like share,Webb Robot,762,-0.5915881091142734
+Atlas US,LLM-like share,Felten AIOE,665,0.7384416126374838
+Atlas US,LLM-like share,Eloundou DV gamma,923,0.7833831234312472
+Atlas US,Software-like share,Frey-Osborne,582,-0.08919394305990193
+Atlas US,Software-like share,Webb AI,762,-0.08457260044527448
+Atlas US,Software-like share,Webb Software,762,-0.32779744764478147
+Atlas US,Software-like share,Webb Robot,762,-0.6059482806277245
+Atlas US,Software-like share,Felten AIOE,665,0.7390633285786253
+Atlas US,Software-like share,Eloundou DV gamma,923,0.7701466764014109
+Atlas US,Physical share,Frey-Osborne,582,0.5181901271943354
+Atlas US,Physical share,Webb AI,762,-0.007514781975383626
+Atlas US,Physical share,Webb Software,762,0.36665645217087883
+Atlas US,Physical share,Webb Robot,762,0.7232872965429409
+Atlas US,Physical share,Felten AIOE,665,-0.8069437194876282
+Atlas US,Physical share,Eloundou DV gamma,923,-0.8156073861388153
+Atlas GDP-weighted,Overall exposure,Frey-Osborne,582,0.4734794877361308
+Atlas GDP-weighted,Overall exposure,Webb AI,762,0.10782639771235017
+Atlas GDP-weighted,Overall exposure,Webb Software,762,0.20024499454409414
+Atlas GDP-weighted,Overall exposure,Webb Robot,762,0.07902935229118235
+Atlas GDP-weighted,Overall exposure,Felten AIOE,665,0.07816943739858791
+Atlas GDP-weighted,Overall exposure,Eloundou DV gamma,923,0.19063409892218497
+Atlas GDP-weighted,AI-material share,Frey-Osborne,582,-0.14687613392800095
+Atlas GDP-weighted,AI-material share,Webb AI,762,0.2538667606032692
+Atlas GDP-weighted,AI-material share,Webb Software,762,-0.0191079857144349
+Atlas GDP-weighted,AI-material share,Webb Robot,762,-0.4180563003662141
+Atlas GDP-weighted,AI-material share,Felten AIOE,665,0.6315652041020543
+Atlas GDP-weighted,AI-material share,Eloundou DV gamma,923,0.7445441532787436
+Atlas GDP-weighted,LLM-like share,Frey-Osborne,582,-0.4081068764179684
+Atlas GDP-weighted,LLM-like share,Webb AI,762,0.14730810494275517
+Atlas GDP-weighted,LLM-like share,Webb Software,762,-0.2447365541851373
+Atlas GDP-weighted,LLM-like share,Webb Robot,762,-0.5979574079291691
+Atlas GDP-weighted,LLM-like share,Felten AIOE,665,0.7589338648337294
+Atlas GDP-weighted,LLM-like share,Eloundou DV gamma,923,0.8078410849273976
+Atlas GDP-weighted,Software-like share,Frey-Osborne,582,-0.0796083855088888
+Atlas GDP-weighted,Software-like share,Webb AI,762,-0.09106968101821199
+Atlas GDP-weighted,Software-like share,Webb Software,762,-0.32900801907742816
+Atlas GDP-weighted,Software-like share,Webb Robot,762,-0.6097702128925245
+Atlas GDP-weighted,Software-like share,Felten AIOE,665,0.7462122295721803
+Atlas GDP-weighted,Software-like share,Eloundou DV gamma,923,0.7842266490002927
+Atlas GDP-weighted,Physical share,Frey-Osborne,582,0.5254447117430259
+Atlas GDP-weighted,Physical share,Webb AI,762,0.006021529296493015
+Atlas GDP-weighted,Physical share,Webb Software,762,0.38626984762466743
+Atlas GDP-weighted,Physical share,Webb Robot,762,0.7363346914805566
+Atlas GDP-weighted,Physical share,Felten AIOE,665,-0.8158693035051373
+Atlas GDP-weighted,Physical share,Eloundou DV gamma,923,-0.8261139184703497
+Atlas population-weighted,Overall exposure,Frey-Osborne,582,0.43904452853242293
+Atlas population-weighted,Overall exposure,Webb AI,762,0.10791662634348177
+Atlas population-weighted,Overall exposure,Webb Software,762,0.179307974795807
+Atlas population-weighted,Overall exposure,Webb Robot,762,0.024981500309565568
+Atlas population-weighted,Overall exposure,Felten AIOE,665,0.14525081171946225
+Atlas population-weighted,Overall exposure,Eloundou DV gamma,923,0.2501624889017191
+Atlas population-weighted,AI-material share,Frey-Osborne,582,-0.1477662492712843
+Atlas population-weighted,AI-material share,Webb AI,762,0.2299376491230486
+Atlas population-weighted,AI-material share,Webb Software,762,-0.046760835361356924
+Atlas population-weighted,AI-material share,Webb Robot,762,-0.4488718576888727
+Atlas population-weighted,AI-material share,Felten AIOE,665,0.6708204338365142
+Atlas population-weighted,AI-material share,Eloundou DV gamma,923,0.7670540230258316
+Atlas population-weighted,LLM-like share,Frey-Osborne,582,-0.37953697715836754
+Atlas population-weighted,LLM-like share,Webb AI,762,0.15440249811293272
+Atlas population-weighted,LLM-like share,Webb Software,762,-0.2223880500338163
+Atlas population-weighted,LLM-like share,Webb Robot,762,-0.5832523005069452
+Atlas population-weighted,LLM-like share,Felten AIOE,665,0.750041376991081
+Atlas population-weighted,LLM-like share,Eloundou DV gamma,923,0.8027661108915256
+Atlas population-weighted,Software-like share,Frey-Osborne,582,-0.04401400916347531
+Atlas population-weighted,Software-like share,Webb AI,762,-0.09513820265623596
+Atlas population-weighted,Software-like share,Webb Software,762,-0.3135381638978426
+Atlas population-weighted,Software-like share,Webb Robot,762,-0.5882552158771286
+Atlas population-weighted,Software-like share,Felten AIOE,665,0.7253912302693932
+Atlas population-weighted,Software-like share,Eloundou DV gamma,923,0.7701517906454411
+Atlas population-weighted,Physical share,Frey-Osborne,582,0.5215854219609993
+Atlas population-weighted,Physical share,Webb AI,762,0.031025567270982483
+Atlas population-weighted,Physical share,Webb Software,762,0.4033323424729388
+Atlas population-weighted,Physical share,Webb Robot,762,0.7253831207101051
+Atlas population-weighted,Physical share,Felten AIOE,665,-0.7924509739878638
+Atlas population-weighted,Physical share,Eloundou DV gamma,923,-0.8081908471518847
+Atlas unweighted mean,Overall exposure,Frey-Osborne,582,0.4135249743817203
+Atlas unweighted mean,Overall exposure,Webb AI,762,0.10598765332958665
+Atlas unweighted mean,Overall exposure,Webb Software,762,0.16515237407857747
+Atlas unweighted mean,Overall exposure,Webb Robot,762,-0.008585494292326152
+Atlas unweighted mean,Overall exposure,Felten AIOE,665,0.18248769399187498
+Atlas unweighted mean,Overall exposure,Eloundou DV gamma,923,0.2885106865588738
+Atlas unweighted mean,AI-material share,Frey-Osborne,582,-0.16914101590848638
+Atlas unweighted mean,AI-material share,Webb AI,762,0.23229819315404648
+Atlas unweighted mean,AI-material share,Webb Software,762,-0.04675829742237995
+Atlas unweighted mean,AI-material share,Webb Robot,762,-0.45777084113359157
+Atlas unweighted mean,AI-material share,Felten AIOE,665,0.6820686360120581
+Atlas unweighted mean,AI-material share,Eloundou DV gamma,923,0.7750650130912258
+Atlas unweighted mean,LLM-like share,Frey-Osborne,582,-0.3760936820270359
+Atlas unweighted mean,LLM-like share,Webb AI,762,0.1697204393749297
+Atlas unweighted mean,LLM-like share,Webb Software,762,-0.2028236653083038
+Atlas unweighted mean,LLM-like share,Webb Robot,762,-0.5693546533721214
+Atlas unweighted mean,LLM-like share,Felten AIOE,665,0.7463700232828914
+Atlas unweighted mean,LLM-like share,Eloundou DV gamma,923,0.7997348098728159
+Atlas unweighted mean,Software-like share,Frey-Osborne,582,-0.03224301618946871
+Atlas unweighted mean,Software-like share,Webb AI,762,-0.09072353099363106
+Atlas unweighted mean,Software-like share,Webb Software,762,-0.29893291161165947
+Atlas unweighted mean,Software-like share,Webb Robot,762,-0.575588188035106
+Atlas unweighted mean,Software-like share,Felten AIOE,665,0.7181519969132455
+Atlas unweighted mean,Software-like share,Eloundou DV gamma,923,0.7647936632898527
+Atlas unweighted mean,Physical share,Frey-Osborne,582,0.5198140575249665
+Atlas unweighted mean,Physical share,Webb AI,762,0.03959516912002996
+Atlas unweighted mean,Physical share,Webb Software,762,0.40947940857868104
+Atlas unweighted mean,Physical share,Webb Robot,762,0.7172202760738993
+Atlas unweighted mean,Physical share,Felten AIOE,665,-0.7801593508117548
+Atlas unweighted mean,Physical share,Eloundou DV gamma,923,-0.7972452785067143

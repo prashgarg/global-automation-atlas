@@ -1,0 +1,16 @@
+comparison_row,explicit_context_label,synthetic_scope,synthetic_weighting,task_count,task_correlation,mean_abs_diff,mean_signed_diff,comparison_label
+Global context-free,Generic ordinary workplace benchmark,global,GDP-weighted,18797.0,0.8781282587669803,0.32551811721232266,-0.15126808713078504,Context-free vs GDP-weighted global
+Global context-free,Generic ordinary workplace benchmark,global,Population-weighted,18797.0,0.8673605732804399,0.46169211227590673,-0.3802833489284723,Context-free vs Population-weighted global
+Global context-free,Generic ordinary workplace benchmark,global,Equal-weighted,18797.0,0.86257024233268,0.5861904988220776,-0.5391458558836476,Context-free vs Equal-weighted global
+Lower middle,Lower middle income,income_group,GDP-weighted,18797.0,0.8459615625006367,0.33669620578407783,-0.020616259510765587,Lower middle explicit vs GDP-weighted synthetic
+Lower middle,Lower middle income,income_group,Population-weighted,18797.0,0.8463430027707131,0.3444991938499415,-0.06300688531298525,Lower middle explicit vs Population-weighted synthetic
+Lower middle,Lower middle income,income_group,Equal-weighted,18797.0,0.8494575810737747,0.4141480415063762,-0.3111341876912669,Lower middle explicit vs Equal-weighted synthetic
+Upper middle,Upper middle income,income_group,GDP-weighted,18797.0,0.8515548523578587,0.32131408909871967,-0.04335081030550836,Upper middle explicit vs GDP-weighted synthetic
+Upper middle,Upper middle income,income_group,Population-weighted,18797.0,0.8604119734459288,0.3265188473862251,-0.08638423145773334,Upper middle explicit vs Population-weighted synthetic
+Upper middle,Upper middle income,income_group,Equal-weighted,18797.0,0.8710526506477476,0.388625612381157,-0.29775629129443265,Upper middle explicit vs Equal-weighted synthetic
+High income,High income,income_group,GDP-weighted,18797.0,0.8752911554198878,0.30503035563737185,-0.17083089366710372,High income explicit vs GDP-weighted synthetic
+High income,High income,income_group,Population-weighted,18797.0,0.8811082109985439,0.312267250025575,-0.1890342946982816,High income explicit vs Population-weighted synthetic
+High income,High income,income_group,Equal-weighted,18797.0,0.8853682939118054,0.32308114621315,-0.21513460212144866,High income explicit vs Equal-weighted synthetic
+,Low income,income_group,GDP-weighted,18797.0,0.7895088916710975,0.4021511640317047,-0.29374739892326274,Low income explicit vs GDP-weighted synthetic
+,Low income,income_group,Population-weighted,18797.0,0.7850940214926672,0.4085023684738196,-0.30672391053801157,Low income explicit vs Population-weighted synthetic
+,Low income,income_group,Equal-weighted,18797.0,0.7933123261714959,0.4110370827216581,-0.30333591033202745,Low income explicit vs Equal-weighted synthetic

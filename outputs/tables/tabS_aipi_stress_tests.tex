@@ -1,0 +1,31 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\caption{Stress tests of the atlas--AIPI cross-country correlation.}
+\begin{tabularx}{\textwidth}{@{}L{0.24\textwidth} C{0.08\textwidth} C{0.08\textwidth} C{0.10\textwidth} C{0.06\textwidth} >{\raggedright\arraybackslash}X@{}}
+\toprule
+\multicolumn{6}{l}{\textbf{Panel A.} Raw vs partial Pearson after log-GDP control, atlas AI-material share $\times$ IMF AIPI series.} \\
+\midrule
+IMF series & Raw $r$ & Partial $r$ & Share absorbed by log GDP & $n$ & Interpretation \\
+\midrule
+AIPI composite                     & 0.899 & 0.417 & 54\% & 117 & Roughly half development stage, half residual construct. \\
+Digital Infrastructure (DI)        & 0.914 & 0.498 & 46\% & 122 & Largest residual signal. \\
+Human Capital \& LM Policies (HCLMP) & 0.858 & 0.378 & 56\% & 121 & Similar profile to composite. \\
+Innovation \& Economic Integration (IEI) & 0.750 & 0.070 & 91\% & 118 & Mostly development-stage variation. \\
+Regulation \& Ethics (RE)          & 0.835 & 0.319 & 62\% & 122 & More development-loaded than DI or HCLMP. \\
+\addlinespace
+\multicolumn{6}{l}{\textbf{Panel B.} Within-income-group Pearson correlations, atlas features $\times$ AIPI composite.} \\
+\midrule
+Income group & $n$ & AI-material vs AIPI & FM-like vs AIPI & & Interpretation \\
+\midrule
+Low income                 & 19 & 0.718 & 0.710 & & Strong residual correspondence despite compressed range. \\
+Lower middle income        & 35 & 0.839 & 0.826 & & Strongest within-group agreement. \\
+Upper middle income        & 25 & 0.897 & 0.814 & & Strongest within-group agreement. \\
+High income                & 41 & 0.504 & 0.038 & & AIPI approaches ceiling; atlas still varies. \\
+\bottomrule
+\end{tabularx}
+\caption*{\scriptsize Notes: Rows report alternative correlations between country-level AI-material share and the IMF AIPI composite. FM-like denotes the foundation-model-like channel bundle. Partial correlations residualise the named controls before correlating residual series. Within-income rows remove World Bank income-group means. Leave-one-out rows report the range after dropping one country at a time.}
+\label{tab:appendix_aipi_stress_tests}
+\end{table}

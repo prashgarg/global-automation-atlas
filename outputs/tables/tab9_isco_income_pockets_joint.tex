@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{0.98\textwidth}{!}{%
+\begin{tabular}{@{}L{0.10\textwidth}L{0.125\textwidth}C{0.07\textwidth}C{0.06\textwidth}C{0.05\textwidth}L{0.12\textwidth}@{\hspace{0.1em}}L{0.125\textwidth}C{0.07\textwidth}C{0.06\textwidth}C{0.05\textwidth}L{0.12\textwidth}@{}}
+\toprule
+Income group & \multicolumn{5}{c}{Sub-only pocket} & \multicolumn{5}{c}{Aug-only pocket} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-11}
+ & Occupation & Exp. & Share & \% AI & Channel & Occupation & Exp. & Share & \% AI & Channel \\
+\midrule
+Low & Billing and Posting Clerks & 0.69 & 0.78 & 10 & \shortstack{Rule\\workflow} & Database Architects & 0.45 & 0.13 & 70 & \shortstack{Rule\\workflow} \\
+ & Tellers & 0.66 & 0.81 & 9 & \shortstack{Rule\\workflow} & Atmospheric and Space Scientists & 0.31 & 0.13 & 81 & \shortstack{Info\\trans.} \\
+ & Payroll and Timekeeping Clerks & 0.54 & 0.82 & 6 & \shortstack{Rule\\workflow} & Airline Pilots, Copilots, and... & 0.23 & 0.18 & 31 & \shortstack{Plan.\\control} \\
+Low/Mid & Tellers & 0.90 & 0.77 & 24 & \shortstack{Rule\\workflow} & Air Traffic Controllers & 0.37 & 0.28 & 62 & \shortstack{Plan.\\control} \\
+ & Billing and Posting Clerks & 0.89 & 0.74 & 31 & \shortstack{Rule\\workflow} & Database Architects & 0.67 & 0.15 & 80 & \shortstack{Info\\trans.} \\
+ & Brokerage Clerks & 0.84 & 0.68 & 33 & \shortstack{Rule\\workflow} & Transportation Engineers & 0.37 & 0.24 & 77 & \shortstack{Info\\trans.} \\
+Upper/Mid & Tellers & 0.97 & 0.80 & 32 & \shortstack{Rule\\workflow} & Air Traffic Controllers & 0.51 & 0.32 & 75 & \shortstack{Plan.\\control} \\
+ & Billing and Posting Clerks & 0.95 & 0.80 & 45 & \shortstack{Rule\\workflow} & Transportation Engineers & 0.55 & 0.29 & 86 & \shortstack{Info\\trans.} \\
+ & Word Processors and Typists & 0.87 & 0.80 & 51 & \shortstack{Rule\\workflow} & Electrical Engineers & 0.56 & 0.26 & 87 & \shortstack{Info\\trans.} \\
+High & Tellers & 0.99 & 0.86 & 39 & \shortstack{Rule\\workflow} & Air Traffic Controllers & 0.61 & 0.33 & 84 & \shortstack{Plan.\\control} \\
+ & Billing and Posting Clerks & 0.95 & 0.86 & 65 & \shortstack{Rule\\workflow} & Transportation Engineers & 0.65 & 0.30 & 93 & \shortstack{Plan.\\control} \\
+ & Word Processors and Typists & 0.91 & 0.87 & 60 & \shortstack{Rule\\workflow} & Urban and Regional Planners & 0.65 & 0.27 & 96 & \shortstack{Info\\trans.} \\
+\bottomrule
+\end{tabular}
+}
+\caption{Top-three substitution-only and augmentation-only weighted ISCO occupations within each income group.}
+\caption*{\footnotesize Note: Rows report the top three occupations on each side within each income group. Entries are selected separately using exposed share multiplied by the relevant pathway share among exposed tasks. Exp. is the linked occupation-level exposed share; Share is the sub-only or aug-only share within exposed tasks; \% AI is the AI-material share among exposed tasks.}
+\label{tab:isco_income_pockets_joint}
+\end{table}

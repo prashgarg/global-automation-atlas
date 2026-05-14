@@ -1,0 +1,5 @@
+stage,label,n_complete,delta_vs_promoted,loss_vs_promoted
+trade_in_services_pct_gdp,Legacy services trade (% GDP),68,0,0
+services_trade_openness,Services trade (% GDP),24,-44,44
+mean_mfn_tariff_trade_weighted,Mean MFN tariff,47,-21,21
+share_nonzero_tariff_trade_weighted,Nonzero tariff share,47,-21,21

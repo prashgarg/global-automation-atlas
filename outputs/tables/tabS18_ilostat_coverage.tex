@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.08}
+\caption{ILOSTAT sources, sample rules, and overlap with the task-country dataset in the employment-composition appendix.}
+\begin{tabularx}{\textwidth}{@{}L{0.12\textwidth}L{0.20\textwidth}X C{0.09\textwidth} C{0.09\textwidth}@{}}
+\toprule
+Source & Appendix object & Coverage rule & Usable countries & Paper overlap \\
+\midrule
+SEX\_OCU & Total occupation weights & Latest 2015--2025 year with total employment, at least 8 ISCO major groups, and positive counts; shares renormalized within country-year. & 152 & 91 \\
+SEX\_OCU & Female and male weights & Latest common 2015--2025 year with separate female and male counts, at least 8 ISCO major groups in each; shares renormalized within sex-country-year. & 149 & 91 \\
+\bottomrule
+\end{tabularx}
+\caption*{\scriptsize Note: `Usable countries' reports how many countries satisfy the public ILOSTAT coverage rule for each source. `Paper overlap' reports how many of those countries also appear in the task-country dataset used in the paper. The appendix figures use this overlap sample.}
+\label{tab:appendix_ilostat_coverage}
+\end{table}

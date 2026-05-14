@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Task-level comparison of the reported output-weighted global summary against external task-native benchmarks.}
+\begin{tabular}{p{0.38\textwidth}rccc}
+\toprule
+Benchmark & Overlap & Pearson & Spearman & Mean abs movement (pp) \\
+\midrule
+GPTs GPT-4 task (Eloundou) & 23,743 & 0.533 & 0.575 & 19.1 \\
+GPTs human task (Eloundou) & 116 & 0.764 & 0.832 & 0.1 \\
+\bottomrule
+\end{tabular}
+
+\caption*{\scriptsize Notes: Rows compare paper task-level measures with Eloundou task-level GPT-4 and human-labelled exposure scores. Paper measures are computed from the reported output-weighted global task summary. Pearson and Spearman correlations use the matched task sample shown in each row.}
+\label{tab:appendix_task_external}
+\end{table}

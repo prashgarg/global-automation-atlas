@@ -1,0 +1,22 @@
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\caption{Country covariates used in the country-covariate screens.}
+\label{tab:appendix_country_covariate_dictionary}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.26\textwidth}>{\raggedright\arraybackslash}p{0.12\textwidth}}
+\toprule
+Figure label & Construction & Source & Year rule \\
+\midrule
+Log GDP per capita & Natural log of real GDP per capita at PPP. & Penn World Table 10.01 \citep{FeenstraInklaarTimmer2015PWT} & 2019 \\
+Human capital & Human-capital index based on average years of schooling and returns to education. & Penn World Table 10.01 \citep{FeenstraInklaarTimmer2015PWT} & 2019 \\
+Years of schooling & Average years of schooling among adults aged 15--64. & Barro--Lee educational-attainment data \citep{BarroLee2013Education} & 2015 \\
+Capital intensity & Natural log of real capital stock per worker. & Penn World Table 10.01 \citep{FeenstraInklaarTimmer2015PWT} & 2019 \\
+Investment (\% GDP) & Gross fixed capital formation as a percentage of GDP. & World Development Indicators \citep{worldbank_wdi} & Latest non-missing, 2018--2024 \\
+Government effectiveness & Government effectiveness percentile rank. & Worldwide Governance Indicators \citep{worldbank_wgi} & 2024 \\
+Regulatory quality & Regulatory quality percentile rank. & Worldwide Governance Indicators \citep{worldbank_wgi} & 2024 \\
+Internet users (\%) & Individuals using the Internet as a percentage of population. & World Development Indicators \citep{worldbank_wdi} & Latest non-missing, 2018--2024 \\
+Goods trade (\% GDP) & Merchandise-trade value divided by GDP. & CEPII BACI HS22 2023 trade data \citep{GaulierZignago2010BACI} and World Bank GDP \citep{worldbank_wdi} & 2023 trade; latest GDP \\
+\bottomrule
+\end{tabularx}
+\caption*{\scriptsize Notes: The labels match the country-covariate figures. The main 68-country random-forest specification uses all rows in the table. The wider-coverage 90-country specification drops human capital, capital intensity, and investment to reduce complete-case sample loss. PWT variables are constructed national-accounts and education measures rather than survey-question variables.}
+\end{table}

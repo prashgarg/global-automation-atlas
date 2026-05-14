@@ -1,0 +1,78 @@
+file,column,description
+data_intermediate/task_country_labels_analysis.parquet,item_id,Unique task-country item identifier from the labelling pipeline.
+data_intermediate/task_country_labels_analysis.parquet,task_id,Stable O*NET task identifier used in the paper.
+data_intermediate/task_country_labels_analysis.parquet,iso3,ISO 3166-1 alpha-3 country code.
+data_intermediate/task_country_labels_analysis.parquet,country_name,Country name used in the analysis.
+data_intermediate/task_country_labels_analysis.parquet,income_level,World Bank analytical income group.
+data_intermediate/task_country_labels_analysis.parquet,region,World Bank region.
+data_intermediate/task_country_labels_analysis.parquet,exposure_level,Four-level automation exposure label: 0 no credible margin; 1 assistive-only contact; 2 meaningful partial economic exposure; 3 extensive economic exposure.
+data_intermediate/task_country_labels_analysis.parquet,economic_exposed,Indicator equal to TRUE for exposure levels 2 or 3.
+data_intermediate/task_country_labels_analysis.parquet,high_exposure,Indicator equal to TRUE for exposure level 3.
+data_intermediate/task_country_labels_analysis.parquet,dominant_channel,"Dominant technology channel: physical execution, rule-based workflow, planning/control, information transformation, inference/scoring, or none."
+data_intermediate/task_country_labels_analysis.parquet,sub_only_share,Share/probability mass assigned to substitution-only exposure in retained modal aggregation.
+data_intermediate/task_country_labels_analysis.parquet,both_share,Share/probability mass assigned to balanced-both exposure in retained modal aggregation.
+data_intermediate/task_country_labels_analysis.parquet,aug_only_share,Share/probability mass assigned to augmentation-only exposure in retained modal aggregation.
+data_intermediate/task_country_labels_analysis.parquet,neither_share,Share/probability mass assigned to neither exposed margin.
+data_intermediate/task_country_labels_analysis.parquet,margin,Dominant labour-margin label for the task-country observation.
+data_intermediate/task_country_labels_analysis.parquet,has_material_ai_integration,Indicator for whether contemporary AI/ML is material to the automation route.
+data_intermediate/task_country_labels_analysis.parquet,ai_material_share,Share/probability mass for AI-material involvement in retained modal aggregation.
+data_intermediate/task_country_labels_analysis.parquet,dominant_ai_function,Dominant AI function when AI is material.
+data_intermediate/task_metadata.csv,task_id,Stable O*NET task identifier used in the paper.
+data_intermediate/task_metadata.csv,canonical_onet_task_code,Canonical O*NET task code after standardisation.
+data_intermediate/task_metadata.csv,onet_task_code,Original O*NET task code.
+data_intermediate/task_metadata.csv,task_label,O*NET task statement.
+data_intermediate/task_metadata.csv,semantic_title,Short semantic title used for display and summaries.
+data_intermediate/country_metadata.csv,iso3,ISO 3166-1 alpha-3 country code.
+data_intermediate/country_metadata.csv,country_name,Country name.
+data_intermediate/country_metadata.csv,income_level,World Bank analytical income group.
+data_intermediate/country_metadata.csv,region,World Bank region.
+data_intermediate/country_occupation_panel.parquet,iso3,ISO 3166-1 alpha-3 country code.
+data_intermediate/country_occupation_panel.parquet,onet_soc_code,U.S. SOC occupation code from O*NET.
+data_intermediate/country_occupation_panel.parquet,occupation_title,O*NET occupation title.
+data_intermediate/country_occupation_panel.parquet,task_count,Number of linked O*NET tasks.
+data_intermediate/country_occupation_panel.parquet,mean_exposure,Mean exposure level across linked tasks.
+data_intermediate/country_occupation_panel.parquet,substitution_share,Occupation-level substitution share.
+data_intermediate/country_occupation_panel.parquet,augmentation_share,Occupation-level augmentation share.
+data_intermediate/country_occupation_panel.parquet,sub_only_share,Occupation-level substitution-only contribution.
+data_intermediate/country_occupation_panel.parquet,both_share,Occupation-level balanced-both contribution.
+data_intermediate/country_occupation_panel.parquet,aug_only_share,Occupation-level augmentation-only contribution.
+data_intermediate/country_industry_panel.parquet,iso3,ISO 3166-1 alpha-3 country code.
+data_intermediate/country_industry_panel.parquet,isic2_code,Two-digit ISIC Rev. 4 division.
+data_intermediate/country_industry_panel.parquet,isic4_code,Four-digit ISIC Rev. 4 class.
+data_intermediate/country_industry_panel.parquet,activity_description,ISIC activity description.
+data_intermediate/country_industry_panel.parquet,matched_tasks,Number of retained task links to the ISIC class.
+data_intermediate/country_industry_panel.parquet,weighted_exposure,Task-weighted exposure level for the ISIC class.
+data_intermediate/country_industry_panel.parquet,sub_only_share,Industry-level substitution-only contribution.
+data_intermediate/country_industry_panel.parquet,both_share,Industry-level balanced-both contribution.
+data_intermediate/country_industry_panel.parquet,aug_only_share,Industry-level augmentation-only contribution.
+data_intermediate/benchmark_task_labels.parquet,task_id,Stable task identifier.
+data_intermediate/benchmark_task_labels.parquet,context_label,Benchmark context label.
+data_intermediate/benchmark_task_labels.parquet,context_type,"Benchmark context type: country, income-group, or context-free."
+data_intermediate/benchmark_task_labels.parquet,exposure_level,Four-level automation exposure label.
+data_intermediate/benchmark_task_labels.parquet,exposed_ge2,Indicator or share for exposure levels 2 or 3.
+data_intermediate/benchmark_task_labels.parquet,dominant_channel,Dominant technology channel.
+data_intermediate/benchmark_task_labels.parquet,margin,Dominant labour-margin label.
+data_intermediate/benchmark_task_labels.parquet,has_material_ai_integration,AI-materiality indicator/share.
+data_analysis/country_map_panel.csv,share_exposed,Country-level share of tasks at exposure levels 2 or 3.
+data_analysis/country_map_panel.csv,share_high_exposure,Country-level share of tasks at exposure level 3.
+data_analysis/country_map_panel.csv,log_gdp_per_capita,Log GDP per capita used in country-gradient figures.
+data_analysis/country_map_panel.csv,sub_only_share,Country-level substitution-only share of all tasks.
+data_analysis/country_map_panel.csv,both_share,Country-level balanced-both share of all tasks.
+data_analysis/country_map_panel.csv,aug_only_share,Country-level augmentation-only share of all tasks.
+data_analysis/country_channel_ai_panel.csv,ai_material_share_exposed,AI-material share among exposed tasks.
+data_analysis/country_channel_ai_panel.csv,physical_execution_share_exposed,Physical-execution share among exposed tasks.
+data_analysis/country_channel_ai_panel.csv,rule_based_workflow_share_exposed,Rule-based workflow share among exposed tasks.
+data_analysis/country_channel_ai_panel.csv,planning_control_share_exposed,Planning/control share among exposed tasks.
+data_analysis/country_channel_ai_panel.csv,informational_transformation_share_exposed,Information-transformation share among exposed tasks.
+data_analysis/country_channel_ai_panel.csv,inference_scoring_share_exposed,Inference/scoring share among exposed tasks.
+data_analysis/gender_gap_isco_isic_summary.csv,domain,Occupation or industry aggregation object.
+data_analysis/gender_gap_isco_isic_summary.csv,margin,Labour-margin contribution being compared.
+data_analysis/gender_gap_isco_isic_summary.csv,n_countries,Number of countries contributing to the gender-gap summary.
+data_analysis/gender_gap_isco_isic_summary.csv,median_gap_pp,Median female-minus-male employment-weighted gap in percentage points.
+data_analysis/gender_gap_isco_isic_summary.csv,female_higher_share,Share of countries with positive female-minus-male gap.
+data_analysis/gender_fe_regression_table.csv,coef,Fixed-effect regression coefficient for a 10 percentage point exposure-margin increase.
+data_analysis/gender_fe_regression_table.csv,se,Country-clustered standard error.
+data_analysis/gender_fe_regression_table.csv,pvalue,p-value for the reported coefficient.
+data_analysis/gender_fe_regression_table.csv,n_obs,Number of country-cell observations.
+data_analysis/gender_fe_regression_table.csv,n_countries,Number of countries.
+data_analysis/gender_fe_regression_table.csv,n_cells,Number of occupation or industry cells.

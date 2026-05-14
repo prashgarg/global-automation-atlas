@@ -1,0 +1,125 @@
+iso3,iso2,country_name,region,income_level,gdp,gdp_year,population,population_year,gdp_rank,population_rank,in_top95_gdp,in_top95_population,inclusion_source,tranche
+IND,IN,India,South Asia,Lower middle income,3909891533858.08,2024,1450935791,2024,5,1,TRUE,TRUE,both,B
+CHN,CN,China,East Asia & Pacific,Upper middle income,18743803170827.2,2024,1408975000,2024,2,2,TRUE,TRUE,both,B
+USA,US,United States,North America,High income,28750956130731.2,2024,340110988,2024,1,3,TRUE,TRUE,both,B
+IDN,ID,Indonesia,East Asia & Pacific,Upper middle income,1396300098190.97,2024,283487931,2024,16,4,TRUE,TRUE,both,C
+PAK,PK,Pakistan,"Middle East, North Africa, Afghanistan & Pakistan",Lower middle income,371570000121.266,2024,251269164,2024,43,5,TRUE,TRUE,both,D
+NGA,NG,Nigeria,Sub-Saharan Africa,Lower middle income,252261880141.151,2024,232679478,2024,54,6,TRUE,TRUE,both,D
+BRA,BR,Brazil,Latin America & Caribbean,Upper middle income,2185821648943.86,2024,211998573,2024,10,7,TRUE,TRUE,both,C
+BGD,BD,Bangladesh,South Asia,Lower middle income,450119432068.852,2024,173562364,2024,35,8,TRUE,TRUE,both,D
+RUS,RU,Russian Federation,Europe & Central Asia,High income,2173835806671.66,2024,143533851,2024,11,9,TRUE,TRUE,both,C
+ETH,ET,Ethiopia,Sub-Saharan Africa,Not classified,149740297952.986,2024,132059767,2024,60,10,TRUE,TRUE,both,E
+MEX,MX,Mexico,Latin America & Caribbean,Upper middle income,1856365616165.94,2024,130861007,2024,13,11,TRUE,TRUE,both,C
+JPN,JP,Japan,East Asia & Pacific,High income,4027597523550.58,2024,123975371,2024,4,12,TRUE,TRUE,both,B
+EGY,EG,"Egypt, Arab Rep.","Middle East, North Africa, Afghanistan & Pakistan",Lower middle income,389059911003.566,2024,116538258,2024,41,13,TRUE,TRUE,both,D
+PHL,PH,Philippines,East Asia & Pacific,Lower middle income,461617509782.355,2024,115843670,2024,34,14,TRUE,TRUE,both,D
+COD,CD,"Congo, Dem. Rep.",Sub-Saharan Africa,Low income,70962185790.7094,2024,109276265,2024,88,15,TRUE,TRUE,both,E
+VNM,VN,Viet Nam,East Asia & Pacific,Lower middle income,476388230307.175,2024,100987686,2024,32,16,TRUE,TRUE,both,D
+IRN,IR,"Iran, Islamic Rep.","Middle East, North Africa, Afghanistan & Pakistan",Upper middle income,475252089215.416,2024,91567738,2024,33,17,TRUE,TRUE,both,D
+TUR,TR,Turkiye,Europe & Central Asia,Upper middle income,1359123768774.12,2024,85518661,2024,17,18,TRUE,TRUE,both,C
+DEU,DE,Germany,Europe & Central Asia,High income,4685592577804.69,2024,83516593,2024,3,19,TRUE,TRUE,both,B
+THA,TH,Thailand,East Asia & Pacific,Upper middle income,526517658841.684,2024,71668011,2024,30,20,TRUE,TRUE,both,D
+GBR,GB,United Kingdom,Europe & Central Asia,High income,3686033044482.13,2024,69226000,2024,6,21,TRUE,TRUE,both,B
+TZA,TZ,Tanzania,Sub-Saharan Africa,Lower middle income,78844405385.2195,2024,68560157,2024,83,22,TRUE,TRUE,both,E
+FRA,FR,France,Europe & Central Asia,High income,3160442622465.08,2024,68551653,2024,7,23,TRUE,TRUE,both,B
+ZAF,ZA,South Africa,Sub-Saharan Africa,Upper middle income,401144998373.585,2024,64007187,2024,40,24,TRUE,TRUE,both,D
+ITA,IT,Italy,Europe & Central Asia,High income,2380825077243.59,2024,58952704,2024,8,25,TRUE,TRUE,both,B
+KEN,KE,Kenya,Sub-Saharan Africa,Lower middle income,120339557905.932,2024,56432944,2024,65,26,TRUE,TRUE,both,B
+MMR,MM,Myanmar,East Asia & Pacific,Lower middle income,74068349523.8095,2024,54500091,2024,86,27,TRUE,TRUE,both,E
+COL,CO,Colombia,Latin America & Caribbean,Upper middle income,418818154879.271,2024,52886363,2024,38,28,TRUE,TRUE,both,D
+KOR,KR,"Korea, Rep.",East Asia & Pacific,High income,1875388209406.8,2024,51751065,2024,12,29,TRUE,TRUE,both,C
+SDN,SD,Sudan,Sub-Saharan Africa,Low income,49672435513.1126,2024,50448963,2024,95,30,TRUE,TRUE,both,E
+UGA,UG,Uganda,Sub-Saharan Africa,Low income,53911907086.1525,2024,50015092,2024,90,31,TRUE,TRUE,both,E
+ESP,ES,Spain,Europe & Central Asia,High income,1725671652742.19,2024,48848840,2024,15,32,TRUE,TRUE,both,C
+DZA,DZ,Algeria,"Middle East, North Africa, Afghanistan & Pakistan",Upper middle income,269322281664.773,2024,46814308,2024,51,33,TRUE,TRUE,both,D
+IRQ,IQ,Iraq,"Middle East, North Africa, Afghanistan & Pakistan",Upper middle income,279641257615.385,2024,46042015,2024,50,34,TRUE,TRUE,both,D
+ARG,AR,Argentina,Latin America & Caribbean,Upper middle income,638365455340.04,2024,45696159,2024,23,35,TRUE,TRUE,both,C
+AFG,AF,Afghanistan,"Middle East, North Africa, Afghanistan & Pakistan",Low income,17152234636.8715,2023,42647492,2024,138,36,FALSE,TRUE,population,E
+CAN,CA,Canada,North America,High income,2243636826633.76,2024,41288599,2024,9,37,TRUE,TRUE,both,C
+YEM,YE,"Yemen, Rep.","Middle East, North Africa, Afghanistan & Pakistan",Low income,21606160663.0318,2018,40583164,2024,127,38,FALSE,TRUE,population,E
+MAR,MA,Morocco,"Middle East, North Africa, Afghanistan & Pakistan",Lower middle income,160610994054.734,2024,38081173,2024,58,39,TRUE,TRUE,both,D
+AGO,AO,Angola,Sub-Saharan Africa,Lower middle income,100998916781.079,2024,37885849,2024,72,40,TRUE,TRUE,both,E
+UKR,UA,Ukraine,Europe & Central Asia,Upper middle income,190741262414.705,2024,37860221,2024,57,41,TRUE,TRUE,both,D
+POL,PL,Poland,Europe & Central Asia,High income,917767106146.761,2024,36559233,2024,21,42,TRUE,TRUE,both,C
+UZB,UZ,Uzbekistan,Europe & Central Asia,Lower middle income,114965293466.611,2024,36361859,2024,67,43,TRUE,TRUE,both,E
+MYS,MY,Malaysia,East Asia & Pacific,Upper middle income,422227005428.688,2024,35557673,2024,37,44,TRUE,TRUE,both,D
+SAU,SA,Saudi Arabia,"Middle East, North Africa, Afghanistan & Pakistan",High income,1239804533333.33,2024,35300280,2024,18,45,TRUE,TRUE,both,C
+MOZ,MZ,Mozambique,Sub-Saharan Africa,Low income,22745341305.0622,2024,34631766,2024,125,46,FALSE,TRUE,population,E
+GHA,GH,Ghana,Sub-Saharan Africa,Lower middle income,82308110386.4641,2024,34427414,2024,81,47,TRUE,TRUE,both,E
+PER,PE,Peru,Latin America & Caribbean,Upper middle income,289221969062.941,2024,34217848,2024,49,48,TRUE,TRUE,both,D
+MDG,MG,Madagascar,Sub-Saharan Africa,Low income,17420501490.1231,2024,31964956,2024,137,49,FALSE,TRUE,population,E
+CIV,CI,Cote d'Ivoire,Sub-Saharan Africa,Lower middle income,87113179149.284,2024,31934230,2024,78,50,TRUE,TRUE,both,E
+NPL,NP,Nepal,South Asia,Lower middle income,42914268286.7109,2024,29651054,2024,103,51,TRUE,TRUE,both,E
+CMR,CM,Cameroon,Sub-Saharan Africa,Lower middle income,53296694320.2057,2024,29123744,2024,92,52,TRUE,TRUE,both,E
+VEN,VE,"Venezuela, RB",Latin America & Caribbean,Not classified,119802963257.783,2024,28405543,2024,66,53,TRUE,TRUE,both,E
+AUS,AU,Australia,East Asia & Pacific,High income,1757022451652.83,2024,27196812,2024,14,54,TRUE,TRUE,both,C
+NER,NE,Niger,Sub-Saharan Africa,Low income,19876128485.7857,2024,27032412,2024,131,55,FALSE,TRUE,population,E
+SYR,SY,Syrian Arab Republic,"Middle East, North Africa, Afghanistan & Pakistan",Low income,23622827079.5047,2022,24672760,2024,123,56,FALSE,TRUE,population,E
+MLI,ML,Mali,Sub-Saharan Africa,Low income,26794747239.8805,2024,24478595,2024,114,57,FALSE,TRUE,population,E
+BFA,BF,Burkina Faso,Sub-Saharan Africa,Low income,23124729853.0218,2024,23548781,2024,124,58,FALSE,TRUE,population,E
+LKA,LK,Sri Lanka,South Asia,Lower middle income,98963185509.6499,2024,21916000,2024,73,59,TRUE,TRUE,both,E
+MWI,MW,Malawi,Sub-Saharan Africa,Low income,11316411329.4619,2024,21655286,2024,153,60,FALSE,TRUE,population,E
+ZMB,ZM,Zambia,Sub-Saharan Africa,Lower middle income,25303185342.2511,2024,21314956,2024,117,61,FALSE,TRUE,population,A
+KAZ,KZ,Kazakhstan,Europe & Central Asia,Upper middle income,291480274648.826,2024,20592571,2024,48,62,TRUE,TRUE,both,D
+TCD,TD,Chad,Sub-Saharan Africa,Low income,19518819751.283,2024,20299123,2024,133,63,FALSE,TRUE,population,E
+CHL,CL,Chile,Latin America & Caribbean,High income,330267137371.592,2024,19764771,2024,45,64,TRUE,TRUE,both,D
+ROU,RO,Romania,Europe & Central Asia,High income,382564217988.866,2024,19051804,2024,42,65,TRUE,TRUE,both,D
+SOM,SO,"Somalia, Fed. Rep.",Sub-Saharan Africa,Low income,11967000000,2024,19009151,2024,152,66,FALSE,TRUE,population,E
+SEN,SN,Senegal,Sub-Saharan Africa,Lower middle income,32808056600.9436,2024,18501984,2024,110,67,TRUE,TRUE,both,E
+GTM,GT,Guatemala,Latin America & Caribbean,Upper middle income,113199581158.203,2024,18406359,2024,69,68,TRUE,TRUE,both,E
+ECU,EC,Ecuador,Latin America & Caribbean,Upper middle income,124676074700,2024,18135478,2024,63,69,TRUE,TRUE,both,E
+NLD,NL,Netherlands,Europe & Central Asia,High income,1214927698572.66,2024,17993485,2024,19,70,TRUE,TRUE,both,C
+KHM,KH,Cambodia,East Asia & Pacific,Lower middle income,46352647037.2406,2024,17638801,2024,99,71,TRUE,TRUE,both,E
+ZWE,ZW,Zimbabwe,Sub-Saharan Africa,Lower middle income,41539411516.4448,2024,16634373,2024,104,72,TRUE,TRUE,both,E
+GIN,GN,Guinea,Sub-Saharan Africa,Lower middle income,25008678293.4084,2024,14754785,2024,119,73,FALSE,TRUE,population,E
+BEN,BJ,Benin,Sub-Saharan Africa,Lower middle income,21482643706.4249,2024,14462724,2024,128,74,FALSE,TRUE,population,E
+RWA,RW,Rwanda,Sub-Saharan Africa,Low income,14251642235.0968,2024,14256567,2024,145,75,FALSE,TRUE,population,E
+BDI,BI,Burundi,Sub-Saharan Africa,Low income,3082433067.32634,2024,14047786,2024,181,76,FALSE,TRUE,population,E
+BOL,BO,Bolivia,Latin America & Caribbean,Lower middle income,54881327452.9667,2024,12413315,2024,89,77,TRUE,TRUE,both,E
+TUN,TN,Tunisia,"Middle East, North Africa, Afghanistan & Pakistan",Lower middle income,51332285656.5422,2024,12277109,2024,94,78,TRUE,TRUE,both,E
+SSD,SS,South Sudan,Sub-Saharan Africa,Low income,11997800760.2242,2015,11943408,2024,151,79,FALSE,TRUE,population,E
+BEL,BE,Belgium,Europe & Central Asia,High income,671370081636.406,2024,11858610,2024,22,80,TRUE,TRUE,both,C
+HTI,HT,Haiti,Latin America & Caribbean,Lower middle income,25224154990.7946,2024,11772557,2024,118,81,FALSE,TRUE,population,E
+JOR,JO,Jordan,"Middle East, North Africa, Afghanistan & Pakistan",Lower middle income,53352289577.4648,2024,11552876,2024,91,82,TRUE,TRUE,both,E
+DOM,DO,Dominican Republic,Latin America & Caribbean,Upper middle income,124282245638.568,2024,11427557,2024,64,83,TRUE,TRUE,both,E
+ARE,AE,United Arab Emirates,"Middle East, North Africa, Afghanistan & Pakistan",High income,552324846834.581,2024,10986400,2024,26,84,TRUE,TRUE,both,C
+CUB,CU,Cuba,Latin America & Caribbean,Upper middle income,107352000000,2020,10979783,2024,70,85,TRUE,TRUE,both,E
+CZE,CZ,Czechia,Europe & Central Asia,High income,347034062928.479,2024,10905028,2024,44,86,TRUE,TRUE,both,D
+HND,HN,Honduras,Latin America & Caribbean,Lower middle income,37093565854.0437,2024,10825703,2024,106,87,TRUE,TRUE,both,E
+PRT,PT,Portugal,Europe & Central Asia,High income,313271185085.102,2024,10694681,2024,46,88,TRUE,TRUE,both,D
+TJK,TJ,Tajikistan,Europe & Central Asia,Lower middle income,14204575548.5536,2024,10590927,2024,146,89,FALSE,TRUE,population,E
+PNG,PG,Papua New Guinea,East Asia & Pacific,Lower middle income,31800428265.5246,2024,10576502,2024,111,90,FALSE,TRUE,population,E
+SWE,SE,Sweden,Europe & Central Asia,High income,603715224265.798,2024,10569709,2024,25,91,TRUE,TRUE,both,C
+GRC,GR,Greece,Europe & Central Asia,High income,256238371778.118,2024,10405134,2024,53,92,TRUE,TRUE,both,D
+AZE,AZ,Azerbaijan,Europe & Central Asia,Upper middle income,74315882352.9412,2024,10202830,2024,85,93,TRUE,TRUE,both,E
+ISR,IL,Israel,"Middle East, North Africa, Afghanistan & Pakistan",High income,540379921261.681,2024,9974400,2024,28,94,TRUE,TRUE,both,C
+HUN,HU,Hungary,Europe & Central Asia,High income,222722738925.641,2024,9562065,2024,55,95,TRUE,TRUE,both,D
+TGO,TG,Togo,Sub-Saharan Africa,Low income,10651180146.531,2024,9515236,2024,157,96,FALSE,TRUE,population,E
+AUT,AT,Austria,Europe & Central Asia,High income,534790720466.822,2024,9177982,2024,29,97,TRUE,TRUE,both,D
+BLR,BY,Belarus,Europe & Central Asia,Upper middle income,75961865471.9129,2024,9132629,2024,84,98,TRUE,TRUE,both,E
+CHE,CH,Switzerland,Europe & Central Asia,High income,936564198048.516,2024,9005582,2024,20,99,TRUE,TRUE,both,C
+SLE,SL,Sierra Leone,Sub-Saharan Africa,Low income,6971127235.3123,2024,8642022,2024,166,100,FALSE,TRUE,population,E
+LAO,LA,Lao PDR,East Asia & Pacific,Lower middle income,16502933121.3379,2024,7769819,2024,140,101,FALSE,TRUE,population,E
+HKG,HK,"Hong Kong SAR, China",East Asia & Pacific,High income,406863396487.342,2024,7524100,2024,39,102,TRUE,TRUE,both,D
+TKM,TM,Turkmenistan,Europe & Central Asia,Upper middle income,51387209872.2994,2024,7494498,2024,93,103,TRUE,TRUE,both,E
+LBY,LY,Libya,"Middle East, North Africa, Afghanistan & Pakistan",Upper middle income,48487151215.345,2024,7381023,2024,97,104,TRUE,TRUE,both,E
+KGZ,KG,Kyrgyz Republic,Europe & Central Asia,Lower middle income,17478259659.2625,2024,7221868,2024,136,105,FALSE,TRUE,population,E
+PRY,PY,Paraguay,Latin America & Caribbean,Upper middle income,44458118397.4445,2024,6929153,2024,100,106,TRUE,TRUE,both,E
+NIC,NI,Nicaragua,Latin America & Caribbean,Lower middle income,19693982967.5926,2024,6916140,2024,132,107,FALSE,TRUE,population,E
+SRB,RS,Serbia,Europe & Central Asia,Upper middle income,90097765959.1114,2024,6586476,2024,77,108,TRUE,TRUE,both,E
+BGR,BG,Bulgaria,Europe & Central Asia,High income,113343355779.985,2024,6441421,2024,68,109,TRUE,TRUE,both,E
+SLV,SV,El Salvador,Latin America & Caribbean,Upper middle income,35364960000,2024,6338193,2024,107,110,TRUE,TRUE,both,E
+COG,CG,"Congo, Rep.",Sub-Saharan Africa,Lower middle income,15719986076.6464,2024,6332961,2024,142,111,FALSE,TRUE,population,E
+SGP,SG,Singapore,East Asia & Pacific,High income,547386645891.847,2024,6036860,2024,27,112,TRUE,TRUE,both,C
+DNK,DK,Denmark,Europe & Central Asia,High income,424524722037.047,2024,5976992,2024,36,113,TRUE,TRUE,both,D
+FIN,FI,Finland,Europe & Central Asia,High income,298696961297.656,2024,5619911,2024,47,115,TRUE,TRUE,both,D
+NOR,NO,Norway,Europe & Central Asia,High income,483592648313.301,2024,5572279,2024,31,117,TRUE,TRUE,both,D
+SVK,SK,Slovak Republic,Europe & Central Asia,High income,140934076532.375,2024,5422069,2024,61,118,TRUE,TRUE,both,E
+IRL,IE,Ireland,Europe & Central Asia,High income,609157459747.205,2024,5395790,2024,24,119,TRUE,TRUE,both,C
+NZL,NZ,New Zealand,East Asia & Pacific,High income,260172385097.616,2024,5287500,2024,52,122,TRUE,TRUE,both,D
+OMN,OM,Oman,"Middle East, North Africa, Afghanistan & Pakistan",High income,107137198769.386,2024,5281538,2024,71,123,TRUE,TRUE,both,E
+CRI,CR,Costa Rica,Latin America & Caribbean,High income,95350423176.5962,2024,5129910,2024,74,125,TRUE,TRUE,both,E
+KWT,KW,Kuwait,"Middle East, North Africa, Afghanistan & Pakistan",High income,160227273053.334,2024,4897263,2024,59,126,TRUE,TRUE,both,E
+HRV,HR,Croatia,Europe & Central Asia,High income,92983810328.9088,2024,3866200,2024,76,128,TRUE,TRUE,both,E
+PRI,PR,Puerto Rico (US),Latin America & Caribbean,High income,126029527033.705,2024,3203295,2024,62,133,TRUE,FALSE,gdp,E
+QAT,QA,Qatar,"Middle East, North Africa, Afghanistan & Pakistan",High income,219162637362.637,2024,2857822,2024,56,138,TRUE,FALSE,gdp,D

@@ -1,0 +1,10 @@
+rule,eligible_n,flagged_n,flagged_share,view
+level3_says_no_automation,175802,19,0.00010807613110203525,per_rule
+level0_says_automation_happens,804336,549,0.0006825505758787373,per_rule
+augment_says_replacement,95375,1,1.0484927916120577e-05,per_rule
+substitute_says_assistive_only,357000,0,0.0,per_rule
+not_ai_material_mentions_ai,1683883,2099,0.0012465236598979857,per_rule
+0,804336,1096,0.0013626146287123789,by_level
+1,561918,1318,0.002345537961054816,by_level
+2,788720,214,0.0002713256922608784,by_level
+3,175802,26,0.0001478936530869956,by_level

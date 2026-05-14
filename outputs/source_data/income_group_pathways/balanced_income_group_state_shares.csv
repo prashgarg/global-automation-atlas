@@ -1,0 +1,17 @@
+context_label,state,count,total_tasks,share
+Low income,aug_only,153,16575,0.009230769230769232
+Low income,both,1975,16575,0.1191553544494721
+Low income,non_exposed,12404,16575,0.7483559577677225
+Low income,sub_only,2043,16575,0.1232579185520362
+Lower middle income,aug_only,509,16575,0.030708898944193062
+Lower middle income,both,4100,16575,0.2473604826546003
+Lower middle income,non_exposed,9102,16575,0.5491402714932127
+Lower middle income,sub_only,2864,16575,0.17279034690799397
+Upper middle income,aug_only,1060,16575,0.06395173453996983
+Upper middle income,both,5191,16575,0.3131825037707391
+Upper middle income,non_exposed,6826,16575,0.41182503770739065
+Upper middle income,sub_only,3498,16575,0.21104072398190046
+High income,aug_only,1370,16575,0.08265460030165912
+High income,both,5333,16575,0.3217496229260935
+High income,non_exposed,5891,16575,0.3554147812971342
+High income,sub_only,3981,16575,0.24018099547511312

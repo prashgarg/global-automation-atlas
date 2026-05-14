@@ -1,0 +1,24 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{External comparator variables and matched paper variables.}
+\begin{tabularx}{\textwidth}{@{}L{0.17\textwidth}L{0.28\textwidth}Xr@{}}
+\toprule
+Source & Other paper variable & Our variable & Rows \\
+\midrule
+Frey--Osborne & Occupation computerisation probability & Output-weighted mean occupation exposure & 582 \\
+Felten AIOE & AI Occupational Exposure index & Output-weighted mean occupation exposure; AI-material share in channel-aligned checks & 665 \\
+Webb AI & AI patent-text exposure score & Output-weighted mean occupation exposure; AI-material share in channel-aligned checks & 762 \\
+Webb Software & Software patent-text exposure score & Software-like channel share & 762 \\
+Webb Robotics & Robotics patent-text exposure score & Physical-execution channel share & 762 \\
+Eloundou GPT-4 task ratings & Task-level GPT-4 exposure rating, Eloundou rubric & Output-weighted task exposure & 23,743 \\
+Eloundou human task ratings & Task-level human exposure rating, Eloundou rubric & Output-weighted task exposure & 116 \\
+Eloundou GPT-4 gamma & Occupation-level gamma score from GPT-4 task ratings & Output-weighted mean occupation exposure; AI-material share as a broad AI check; foundation-model-like share for channel checks & 923 \\
+Eloundou human gamma & Occupation-level gamma score from human task ratings & Output-weighted mean occupation exposure; AI-material share as a broad AI check; foundation-model-like share for channel checks & 923 \\
+\bottomrule
+\end{tabularx}
+
+\caption*{\scriptsize Notes: Rows list external benchmark variables used in the appendix comparator suite and the paper variable matched to each one. The comparison unit differs across sources.}
+\label{tab:appendix_comparator_coverage}
+\end{table}

@@ -1,0 +1,21 @@
+context_label,dominant_ai_function,n,share,context_display
+Generic ordinary workplace benchmark,Adaptive control,784,0.08694687811910835,Context-free
+Generic ordinary workplace benchmark,Content transformation,4191,0.4647887323943662,Context-free
+Generic ordinary workplace benchmark,Recommendation / decision,1837,0.20372629477653323,Context-free
+Generic ordinary workplace benchmark,State inference,2205,0.24453809470999224,Context-free
+High income,Adaptive control,975,0.10765154024511428,High income
+High income,Content transformation,3640,0.40189908358175996,High income
+High income,Recommendation / decision,2205,0.24345809870818153,High income
+High income,State inference,2237,0.24699127746494423,High income
+Low income,Adaptive control,15,0.010087424344317418,Low income
+Low income,Content transformation,961,0.6462676529926026,Low income
+Low income,Recommendation / decision,147,0.0988567585743107,Low income
+Low income,State inference,364,0.24478816408876933,Low income
+Lower middle income,Adaptive control,165,0.03676470588235294,Lower middle
+Lower middle income,Content transformation,2195,0.4890819964349376,Lower middle
+Lower middle income,Recommendation / decision,882,0.196524064171123,Lower middle
+Lower middle income,State inference,1246,0.27762923351158647,Lower middle
+Upper middle income,Adaptive control,586,0.0766113217414041,Upper middle
+Upper middle income,Content transformation,3255,0.42554582298339655,Upper middle
+Upper middle income,Recommendation / decision,1853,0.24225388939730683,Upper middle
+Upper middle income,State inference,1955,0.25558896587789254,Upper middle

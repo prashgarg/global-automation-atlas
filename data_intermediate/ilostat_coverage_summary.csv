@@ -1,0 +1,5 @@
+source_file,appendix_object,sample_rule,usable_countries,atlas_overlap
+EMP_TEMP_SEX_OCU_NB_A.csv.gz,Total occupation employment weights,Latest year in 2015--2025 with SEX_T coverage for at least 8 ISCO major groups and positive total employment; shares renormalized within country-year.,152,91
+EMP_TEMP_SEX_OCU_NB_A.csv.gz,Female and male occupation employment weights,Latest common year in 2015--2025 where both SEX_F and SEX_M have at least 8 ISCO major groups and positive total employment; shares renormalized within sex-country-year.,149,91
+EMP_TEMP_ECO_OCU_NB_A.csv.gz,Broad-sector employment supplement,Latest country year in 2015--2025; within-sector cells require at least 5 ISCO major groups and positive employment; shares renormalized within country-sector.,125,72
+EMP_TEMP_SEX_OCU_EC2_NB_A.csv.gz,Excluded occupation-by-sector-by-sex triple cross,Excluded from v1 because local gzip integrity fails: Compressed file ended before the end-of-stream marker was reached.,0,0

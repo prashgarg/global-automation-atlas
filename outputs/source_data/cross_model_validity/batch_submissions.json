@@ -1,0 +1,23 @@
+[
+  {
+    "input_file": "batch_input_01.jsonl",
+    "file_id": "file-EifE97QK4iL2PkshSfanBs",
+    "batch_id": "batch_69e206bb9ff88190b55eee75d035fb6c",
+    "status": "validating",
+    "created_at": 1776420539
+  },
+  {
+    "input_file": "batch_input_02.jsonl",
+    "file_id": "file-QDzuqY6Xv3Kmk8uvH1ARXF",
+    "batch_id": "batch_69e2073eadbc819081be304e206798d0",
+    "status": "validating",
+    "created_at": 1776420670
+  },
+  {
+    "input_file": "batch_input_03.jsonl",
+    "file_id": "file-C2gWRQ4ABCbENPjYnD2XSk",
+    "batch_id": "batch_69e207427d9481908a260688630809af",
+    "status": "validating",
+    "created_at": 1776420674
+  }
+]

@@ -1,0 +1,46 @@
+income_level,isco_major,employment_weighted_contribution,countries,isco_major_label
+High income,1,0.040556637936963444,29,Managers
+High income,2,0.11891613493471437,29,Professionals
+High income,3,0.08918367861155331,28,Technicians
+High income,4,0.0730704928928746,29,Clerical support
+High income,5,0.08156667342912004,29,Service and sales
+High income,6,0.012565140119878707,28,Skilled agriculture
+High income,7,0.057792194788192974,29,Craft and trades
+High income,8,0.050449243714777464,29,Plant and machine operators
+High income,9,0.059754362964956044,29,Elementary occupations
+Low income,1,0.004206137654927718,16,Managers
+Low income,2,0.007759311560595838,16,Professionals
+Low income,3,0.0033974442911319422,16,Technicians
+Low income,4,0.0034063619674358555,16,Clerical support
+Low income,5,0.01797040588085687,16,Service and sales
+Low income,6,0.034303490321338614,16,Skilled agriculture
+Low income,7,0.006910894142009625,16,Craft and trades
+Low income,8,0.003459168173249338,16,Plant and machine operators
+Low income,9,0.017150281840002533,16,Elementary occupations
+Lower middle income,1,0.009909064444973522,29,Managers
+Lower middle income,2,0.023567629435862547,29,Professionals
+Lower middle income,3,0.015457723545215222,29,Technicians
+Lower middle income,4,0.016436147948492814,29,Clerical support
+Lower middle income,5,0.0502171473081957,29,Service and sales
+Lower middle income,6,0.061071921397229216,29,Skilled agriculture
+Lower middle income,7,0.03413685183515929,29,Craft and trades
+Lower middle income,8,0.02554050680036097,29,Plant and machine operators
+Lower middle income,9,0.04534386427828097,29,Elementary occupations
+Not classified,1,0.0012227463906540836,1,Managers
+Not classified,2,0.005326526155953337,1,Professionals
+Not classified,3,0.003254383114124397,1,Technicians
+Not classified,4,0.002779121252919363,1,Clerical support
+Not classified,5,0.01926954382510185,1,Service and sales
+Not classified,6,0.05837089284941341,1,Skilled agriculture
+Not classified,7,0.0042703404620628325,1,Craft and trades
+Not classified,8,0.0038394751836760103,1,Plant and machine operators
+Not classified,9,0.045165705829649204,1,Elementary occupations
+Upper middle income,1,0.018553940675396386,16,Managers
+Upper middle income,2,0.05114843336156441,16,Professionals
+Upper middle income,3,0.038321327051332336,16,Technicians
+Upper middle income,4,0.04430896676780517,16,Clerical support
+Upper middle income,5,0.08233958578322341,16,Service and sales
+Upper middle income,6,0.0447635375118672,16,Skilled agriculture
+Upper middle income,7,0.0574318548113973,16,Craft and trades
+Upper middle income,8,0.05102509635744666,16,Plant and machine operators
+Upper middle income,9,0.07681172577947376,16,Elementary occupations

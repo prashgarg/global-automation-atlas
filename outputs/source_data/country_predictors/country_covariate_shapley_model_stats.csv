@@ -1,0 +1,4 @@
+outcome,n,full_model_r2
+mean_task_exposure,68,0.9310783448143984
+substitution_share,68,0.9327676338398538
+augmentation_share,68,0.4033281739489457
