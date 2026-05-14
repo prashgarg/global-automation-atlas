@@ -1,8 +1,16 @@
-# Global Automation Atlas replication package
+# Global Automation Atlas
 
-This repository contains the public replication package for **Global Automation Atlas** by Prashant Garg, Tommaso Crosta, and Jasmin Baier.
+Public replication package for **Global Automation Atlas** by Prashant Garg, Tommaso Crosta, and Jasmin Baier.
 
-The paper is available at [automationatlas.org/paper](https://automationatlas.org/paper/). The accompanying online atlas is available at [automationatlas.org](https://automationatlas.org/), with country-, occupation-, industry-, and task-level exposure measures, documentation, and downloadable data.
+<p>
+  <a href="https://automationatlas.org/">Atlas website</a> |
+  <a href="https://automationatlas.org/paper/">Paper</a> |
+  <a href="https://automationatlas.org/data/">Data downloads</a>
+</p>
+
+![Cross-country exposure map from the Global Automation Atlas](outputs/figures/fig3_map_share_exposed.png)
+
+The accompanying online atlas is available at [automationatlas.org](https://automationatlas.org/), with country-, occupation-, industry-, and task-level exposure measures, documentation, and downloadable data. The current paper version is available at [automationatlas.org/paper](https://automationatlas.org/paper/).
 
 This package contains the data and code needed to check the results reported in the paper. It starts from the retained task-country labels used in the analysis and rebuilds the downstream checks, tables, and selected figures from those fixed labels.
 
