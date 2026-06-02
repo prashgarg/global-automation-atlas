@@ -1,0 +1,21 @@
+target_name,hypothesis_id,hypothesis_rank,side,neuron_idx,candidate_idx,target_separation_score,yes_share_top_minus_low,interpretation
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h01__n217,1,Exposed,217,2,0.5885382358225044,0.548,"AI-assisted data analysis, prediction, and automated report generation in digital workflows"
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h02__n110,2,Exposed,110,2,0.5416409969196303,0.504,"AI-driven optimization and information-processing software in digitized, data-rich work environments"
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h03__n197,3,Exposed,197,2,0.541583658480606,0.416,text-heavy knowledge synthesis and interpretive document analysis
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h04__n367,4,Non-exposed,367,2,-0.53751617076326,0.416,"high-level expert legal, regulatory, and scientific judgment with institutional accountability"
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h05__n152,5,Non-exposed,152,1,-0.5362162744358878,0.244,"manual, paper-based workflows with limited automation infrastructure"
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h06__n287,6,Non-exposed,287,1,-0.5327431740614335,0.424,"manual, paper-based administrative and record-keeping workflows lacking digital integration"
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h07__n301,7,Non-exposed,301,1,-0.5321041912316432,0.836,manual dexterity and fine tactile manipulation of small physical components
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h08__n238,8,Non-exposed,238,1,-0.5309862164761192,0.560,manual low-cost labor for basic material handling and loading
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h09__n373,9,Exposed,373,2,0.5218367986626267,0.512,digital platforms and automated administrative workflows
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h10__n462,10,Non-exposed,462,1,-0.5206729247969624,0.556,manual healthcare documentation and patient-facing clinical coordination
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h11__n393,11,Exposed,393,1,0.5191049735229987,0.416,routine administrative and reporting workflows automated by digital software systems
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h12__n31,12,Non-exposed,31,2,-0.5189768118956015,0.548,"interpersonal, trust-based service work requiring real-time human rapport and adaptive social judgment"
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h13__n248,13,Non-exposed,248,2,-0.5188174861096551,0.516,limited digital infrastructure and unreliable electricity/connectivity
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h14__n36,14,Non-exposed,36,1,-0.5178849953207861,0.200,context-dependent qualitative judgment requiring local institutional knowledge
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h15__n45,15,Non-exposed,45,2,-0.5171913084063683,0.604,interpersonal trust-based communication and negotiation
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h16__n336,16,Non-exposed,336,1,-0.5163934426229508,0.260,"manual, small-scale, site-specific work with limited automation infrastructure and capital-intensive equipment"
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h17__n420,17,Exposed,420,2,0.5149446685282864,0.564,drafting and synthesizing structured written content
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h18__n276,18,Non-exposed,276,2,-0.5148550724637682,0.516,high-context interpersonal negotiation and subjective judgment in collaborative design and communication
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h19__n341,19,Exposed,341,1,0.5146304831943653,0.720,computer vision-based visual inspection and monitoring of physical scenes
+same_task_exposed_vs_non_exposed,same_task_exposed_vs_non_exposed__h20__n239,20,Non-exposed,239,2,-0.5139397062612728,0.408,"requires deep local regulatory, legal, and institutional knowledge"

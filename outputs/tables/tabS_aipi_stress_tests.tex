@@ -3,18 +3,18 @@
 \scriptsize
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.08}
-\caption{Stress tests of the atlas--AIPI cross-country correlation.}
+\caption{Atlas--AIPI cross-country correlation checks.}
 \begin{tabularx}{\textwidth}{@{}L{0.24\textwidth} C{0.08\textwidth} C{0.08\textwidth} C{0.10\textwidth} C{0.06\textwidth} >{\raggedright\arraybackslash}X@{}}
 \toprule
-\multicolumn{6}{l}{\textbf{Panel A.} Raw vs partial Pearson after log-GDP control, atlas AI-material share $\times$ IMF AIPI series.} \\
+\multicolumn{6}{l}{\textbf{Panel A.} Raw and log-GDP-residual Pearson correlations, atlas AI-material share $\times$ IMF AIPI series.} \\
 \midrule
-IMF series & Raw $r$ & Partial $r$ & Share absorbed by log GDP & $n$ & Interpretation \\
+IMF series & Raw $r$ & Residual $r$ & Raw-to-residual change & $n$ & Interpretation \\
 \midrule
-AIPI composite                     & 0.899 & 0.417 & 54\% & 117 & Roughly half development stage, half residual construct. \\
-Digital Infrastructure (DI)        & 0.914 & 0.498 & 46\% & 122 & Largest residual signal. \\
+AIPI composite                     & 0.899 & 0.417 & 54\% & 117 & Positive residual association beyond the common GDP gradient. \\
+Digital Infrastructure (DI)        & 0.914 & 0.498 & 46\% & 122 & Largest residual association. \\
 Human Capital \& LM Policies (HCLMP) & 0.858 & 0.378 & 56\% & 121 & Similar profile to composite. \\
-Innovation \& Economic Integration (IEI) & 0.750 & 0.070 & 91\% & 118 & Mostly development-stage variation. \\
-Regulation \& Ethics (RE)          & 0.835 & 0.319 & 62\% & 122 & More development-loaded than DI or HCLMP. \\
+Innovation \& Economic Integration (IEI) & 0.750 & 0.070 & 91\% & 118 & Closely tied to the GDP gradient in this sample. \\
+Regulation \& Ethics (RE)          & 0.835 & 0.319 & 62\% & 122 & Positive residual association after GDP adjustment. \\
 \addlinespace
 \multicolumn{6}{l}{\textbf{Panel B.} Within-income-group Pearson correlations, atlas features $\times$ AIPI composite.} \\
 \midrule
@@ -26,6 +26,6 @@ Upper middle income        & 25 & 0.897 & 0.814 & & Strongest within-group agree
 High income                & 41 & 0.504 & 0.038 & & AIPI approaches ceiling; atlas still varies. \\
 \bottomrule
 \end{tabularx}
-\caption*{\scriptsize Notes: Rows report alternative correlations between country-level AI-material share and the IMF AIPI composite. FM-like denotes the foundation-model-like channel bundle. Partial correlations residualise the named controls before correlating residual series. Within-income rows remove World Bank income-group means. Leave-one-out rows report the range after dropping one country at a time.}
+\caption*{\scriptsize Notes: Panel~A reports raw Pearson correlations and log-GDP-residual Pearson correlations between country-level atlas AI-material share and IMF AIPI series. Residual correlations are computed by residualising both variables on log GDP per capita and then correlating the residuals. Panel~B reports within-income-group Pearson correlations after removing World Bank income-group means. FM-like denotes the foundation-model-like channel bundle.}
 \label{tab:appendix_aipi_stress_tests}
 \end{table}

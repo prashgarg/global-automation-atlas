@@ -24,6 +24,7 @@ This note explains the main files in the replication package.
 - `outputs/figures/`: exact figure files used in the manuscript.
 - `outputs/tables/`: exact LaTeX table files used in the manuscript.
 - `outputs/source_data/`: compact source data behind validation checks, country figures, predictors, benchmarks, and ILOSTAT analyses.
+- `outputs/source_data/rationale_concepts/`: fixed concepts, fidelity summaries, place-mask terms, evaluation-sample paired tests, and source files for the same-task rationale-concept analysis.
 - `reproduced/`: files created by `Rscript code/make_all.R`.
 
 ## Checks
@@ -32,4 +33,4 @@ This note explains the main files in the replication package.
 - `reproduced/checks/figure_reproduction_status.csv`: which figures are rebuilt from source data and which are preserved as final manuscript files.
 - `reproduced/checks/manuscript_figure_artifact_exact_match.csv`: checksum comparison between manuscript figures and package copies.
 - `reproduced/checks/manuscript_table_artifact_exact_match.csv`: checksum comparison between manuscript tables and package copies.
-
+- `reproduced/checks/rationale_concept_audit.csv`: compact audit of the rationale-concept source bundle.

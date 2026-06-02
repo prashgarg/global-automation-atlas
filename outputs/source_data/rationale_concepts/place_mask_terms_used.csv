@@ -1,0 +1,339 @@
+term,source,term_length
+"Middle East, North Africa, Afghanistan & Pakistan",region_or_bloc,49
+Latin America & Caribbean,region_or_bloc,25
+Bosnia and Herzegovina,curated_country_alias,22
+Europe & Central Asia,region_or_bloc,21
+"Hong Kong SAR, China",country_name,20
+Syrian Arab Republic,country_name,20
+United Arab Emirates,country_name,20
+East Asia & Pacific,region_or_bloc,19
+Dominican Republic,country_name,18
+"Iran, Islamic Rep.",country_name,18
+Russian Federation,country_name,18
+"Somalia, Fed. Rep.",country_name,18
+Sub-Saharan Africa,region_or_bloc,18
+Papua New Guinean,country_variant:Papua New Guinea,17
+"Congo, Dem. Rep.",country_name,16
+"Egypt, Arab Rep.",country_name,16
+Papua New Guinea,country_name,16
+Puerto Rico (US),country_name,16
+Kyrgyz Republic,country_name,15
+Slovak Republic,country_name,15
+European Union,region_or_bloc,14
+Sierra Leonean,country_variant:Sierra Leone,14
+South Sudanese,country_variant:South Sudan,14
+Southeast Asia,region_or_bloc,14
+United Kingdom,country_name,14
+Cote d'Ivoire,country_name,13
+Côte d'Ivoire,country_variant:Cote d'Ivoire,13
+Herzegovinian,curated_country_variant:Bosnia and Herzegovina,13
+Hong Kong SAR,"country_variant:Hong Kong SAR, China",13
+Latin America,region_or_bloc,13
+North America,region_or_bloc,13
+South African,country_variant:South Africa,13
+United States,country_name,13
+"Venezuela, RB",country_name,13
+Burkina Faso,country_name,12
+Central Asia,region_or_bloc,12
+North Africa,region_or_bloc,12
+Puerto Rican,country_variant:Puerto Rico (US),12
+Saudi Arabia,country_name,12
+Sierra Leone,country_name,12
+South Africa,country_name,12
+South Korean,"country_variant:Korea, Rep.",12
+Turkmenistan,country_name,12
+Afghanistan,country_name,11
+Argentinian,country_variant:Argentina,11
+Azerbaijani,country_variant:Azerbaijan,11
+Bangladeshi,country_variant:Bangladesh,11
+Cameroonian,country_variant:Cameroon,11
+"Congo, Rep.",country_name,11
+Costa Rican,country_variant:Costa Rica,11
+El Salvador,country_name,11
+Ivory Coast,country_variant:Cote d'Ivoire,11
+Kazakhstani,country_variant:Kazakhstan,11
+"Korea, Rep.",country_name,11
+Kyrgyzstani,country_variant:Kyrgyz Republic,11
+Middle East,region_or_bloc,11
+Netherlands,country_name,11
+New Zealand,country_name,11
+Philippines,country_name,11
+Puerto Rico,curated_country_alias,11
+Singaporean,country_variant:Singapore,11
+South Korea,"country_variant:Korea, Rep.",11
+South Sudan,country_name,11
+Switzerland,country_name,11
+"Yemen, Rep.",country_name,11
+Australian,country_variant:Australia,10
+Azerbaijan,country_name,10
+Bangladesh,country_name,10
+Belarusian,country_variant:Belarus,10
+Costa Rica,country_name,10
+Ecuadorian,country_variant:Ecuador,10
+Guatemalan,country_variant:Guatemala,10
+Indonesian,country_variant:Indonesia,10
+Kazakhstan,country_name,10
+Lithuanian,curated_country_variant:Lithuania,10
+Madagascar,country_name,10
+Mozambican,country_variant:Mozambique,10
+Mozambique,country_name,10
+Nicaraguan,country_variant:Nicaragua,10
+Panamanian,curated_country_variant:Panama,10
+Paraguayan,country_variant:Paraguay,10
+Philippine,country_variant:Philippines,10
+Portuguese,country_variant:Portugal,10
+Salvadoran,country_variant:El Salvador,10
+Senegalese,country_variant:Senegal,10
+South Asia,region_or_bloc,10
+Sri Lankan,country_variant:Sri Lanka,10
+Tajikistan,country_name,10
+Uzbekistan,country_name,10
+Venezuelan,"country_variant:Venezuela, RB",10
+Vietnamese,country_variant:Viet Nam,10
+Zimbabwean,country_variant:Zimbabwe,10
+Abu Dhabi,country_variant:United Arab Emirates,9
+Argentina,country_name,9
+Argentine,country_variant:Argentina,9
+Australia,country_name,9
+Botswanan,curated_country_variant:Botswana,9
+Brazilian,country_variant:Brazil,9
+Bulgarian,country_variant:Bulgaria,9
+Burkinabe,country_variant:Burkina Faso,9
+Burkinabè,country_variant:Burkina Faso,9
+Burundian,country_variant:Burundi,9
+Cambodian,country_variant:Cambodia,9
+Caribbean,region_or_bloc,9
+Colombian,country_variant:Colombia,9
+Congolese,"country_variant:Congo, Dem. Rep.",9
+Dominican,country_variant:Dominican Republic,9
+East Asia,region_or_bloc,9
+Ethiopian,country_variant:Ethiopia,9
+Guatemala,country_name,9
+Hong Kong,"country_variant:Hong Kong SAR, China",9
+Hungarian,country_variant:Hungary,9
+Indonesia,country_name,9
+Jordanian,country_variant:Jordan,9
+Lithuania,curated_country_alias,9
+Malaysian,country_variant:Malaysia,9
+Mongolian,curated_country_variant:Mongolia,9
+Nicaragua,country_name,9
+Norwegian,country_variant:Norway,9
+Pakistani,country_variant:Pakistan,9
+Singapore,country_name,9
+Slovakian,country_variant:Slovak Republic,9
+Slovenian,curated_country_variant:Slovenia,9
+Sri Lanka,country_name,9
+Taiwanese,curated_country_variant:Taiwan,9
+Tanzanian,country_variant:Tanzania,9
+Ukrainian,country_variant:Ukraine,9
+Uruguayan,curated_country_variant:Uruguay,9
+Venezuela,"country_variant:Venezuela, RB",9
+Albanian,curated_country_variant:Albania,8
+Algerian,country_variant:Algeria,8
+American,country_variant:United States,8
+Armenian,curated_country_variant:Armenia,8
+Austrian,country_variant:Austria,8
+Beninese,country_variant:Benin,8
+Bolivian,country_variant:Bolivia,8
+Botswana,curated_country_alias,8
+Bulgaria,country_name,8
+Cambodia,country_name,8
+Cameroon,country_name,8
+Canadian,country_variant:Canada,8
+Colombia,country_name,8
+Croatian,country_variant:Croatia,8
+Egyptian,"country_variant:Egypt, Arab Rep.",8
+Estonian,curated_country_variant:Estonia,8
+Ethiopia,country_name,8
+Filipino,country_variant:Philippines,8
+Georgian,curated_country_variant:Georgia,8
+Ghanaian,country_variant:Ghana,8
+Honduran,country_variant:Honduras,8
+Honduras,country_name,8
+Japanese,country_variant:Japan,8
+Lebanese,curated_country_variant:Lebanon,8
+Malagasy,country_variant:Madagascar,8
+Malawian,country_variant:Malawi,8
+Malaysia,country_name,8
+Moldovan,curated_country_variant:Moldova,8
+Mongolia,curated_country_alias,8
+Moroccan,country_variant:Morocco,8
+Nepalese,country_variant:Nepal,8
+Nigerian,country_variant:Nigeria,8
+Nigerien,country_variant:Niger,8
+Pakistan,country_name,8
+Paraguay,country_name,8
+Peruvian,country_variant:Peru,8
+Portugal,country_name,8
+Romanian,country_variant:Romania,8
+Slovakia,country_variant:Slovak Republic,8
+Slovenia,curated_country_alias,8
+Somalian,"country_variant:Somalia, Fed. Rep.",8
+Sudanese,country_variant:Sudan,8
+Tanzania,country_name,8
+Thailand,country_name,8
+Togolese,country_variant:Togo,8
+Tunisian,country_variant:Tunisia,8
+Viet Nam,country_name,8
+Zimbabwe,country_name,8
+Albania,curated_country_alias,7
+Algeria,country_name,7
+Angolan,country_variant:Angola,7
+Armenia,curated_country_alias,7
+Austria,country_name,7
+Belarus,country_name,7
+Belgian,country_variant:Belgium,7
+Belgium,country_name,7
+Bolivia,country_name,7
+Bosnian,curated_country_variant:Bosnia and Herzegovina,7
+British,country_variant:United Kingdom,7
+Burmese,country_variant:Myanmar,7
+Burundi,country_name,7
+Chadian,country_variant:Chad,7
+Chilean,country_variant:Chile,7
+Chinese,country_variant:China,7
+Croatia,country_name,7
+Czechia,country_name,7
+Denmark,country_name,7
+Ecuador,country_name,7
+Emirati,country_variant:United Arab Emirates,7
+Estonia,curated_country_alias,7
+Finland,country_name,7
+Finnish,country_variant:Finland,7
+Georgia,curated_country_alias,7
+Germany,country_name,7
+Guinean,country_variant:Guinea,7
+Haitian,country_variant:Haiti,7
+Hungary,country_name,7
+Iranian,"country_variant:Iran, Islamic Rep.",7
+Ireland,country_name,7
+Israeli,country_variant:Israel,7
+Italian,country_variant:Italy,7
+Ivorian,country_variant:Cote d'Ivoire,7
+Kuwaiti,country_variant:Kuwait,7
+Lao PDR,country_name,7
+Laotian,country_variant:Lao PDR,7
+Latvian,curated_country_variant:Latvia,7
+Lebanon,curated_country_alias,7
+Mexican,country_variant:Mexico,7
+Moldova,curated_country_alias,7
+Morocco,country_name,7
+Myanmar,country_name,7
+Nigeria,country_name,7
+Romania,country_name,7
+Russian,country_variant:Russian Federation,7
+Rwandan,country_variant:Rwanda,7
+Senegal,country_name,7
+Serbian,country_variant:Serbia,7
+Somalia,"country_variant:Somalia, Fed. Rep.",7
+Spanish,country_variant:Spain,7
+Swedish,country_variant:Sweden,7
+Tunisia,country_name,7
+Turkish,country_variant:Turkiye,7
+Turkiye,country_name,7
+Turkmen,country_variant:Turkmenistan,7
+Türkiye,country_variant:Turkiye,7
+Ugandan,country_variant:Uganda,7
+Ukraine,country_name,7
+Uruguay,curated_country_alias,7
+Vietnam,country_variant:Viet Nam,7
+Zambian,country_variant:Zambia,7
+Afghan,country_variant:Afghanistan,6
+Africa,region_or_bloc,6
+Angola,country_name,6
+Brazil,country_name,6
+Canada,country_name,6
+Danish,country_variant:Denmark,6
+Europe,region_or_bloc,6
+France,country_name,6
+French,country_variant:France,6
+German,country_variant:Germany,6
+Greece,country_name,6
+Guinea,country_name,6
+Indian,country_variant:India,6
+Israel,country_name,6
+Jordan,country_name,6
+Kazakh,country_variant:Kazakhstan,6
+Kenyan,country_variant:Kenya,6
+Korean,"country_variant:Korea, Rep.",6
+Kuwait,country_name,6
+Kyrgyz,country_variant:Kyrgyz Republic,6
+Latvia,curated_country_alias,6
+Libyan,country_variant:Libya,6
+Malawi,country_name,6
+Malian,country_variant:Mali,6
+Mexico,country_name,6
+Nepali,country_variant:Nepal,6
+Norway,country_name,6
+Panama,curated_country_alias,6
+Poland,country_name,6
+Polish,country_variant:Poland,6
+Qatari,country_variant:Qatar,6
+Riyadh,country_variant:Saudi Arabia,6
+Russia,country_variant:Russian Federation,6
+Rwanda,country_name,6
+Serbia,country_name,6
+Slovak,country_variant:Slovak Republic,6
+Somali,"country_variant:Somalia, Fed. Rep.",6
+Sweden,country_name,6
+Syrian,country_variant:Syrian Arab Republic,6
+Taiwan,curated_country_alias,6
+Turkey,country_variant:Turkiye,6
+Uganda,country_name,6
+Yemeni,"country_variant:Yemen, Rep.",6
+Zambia,country_name,6
+ASEAN,region_or_bloc,5
+Benin,country_name,5
+Chile,country_name,5
+China,country_name,5
+Congo,"country_variant:Congo, Rep.",5
+Cuban,country_variant:Cuba,5
+Czech,country_variant:Czechia,5
+Dubai,country_variant:United Arab Emirates,5
+Dutch,country_variant:Netherlands,5
+Egypt,"country_variant:Egypt, Arab Rep.",5
+Ghana,country_name,5
+Greek,country_variant:Greece,5
+Haiti,country_name,5
+India,country_name,5
+Iraqi,country_variant:Iraq,5
+Irish,country_variant:Ireland,5
+Italy,country_name,5
+Japan,country_name,5
+Kenya,country_name,5
+Khmer,country_variant:Cambodia,5
+Korea,"country_variant:Korea, Rep.",5
+Libya,country_name,5
+Nepal,country_name,5
+Niger,country_name,5
+Omani,country_variant:Oman,5
+Qatar,country_name,5
+Saudi,country_variant:Saudi Arabia,5
+Spain,country_name,5
+Sudan,country_name,5
+Swiss,country_variant:Switzerland,5
+Syria,country_variant:Syrian Arab Republic,5
+Tajik,country_variant:Tajikistan,5
+Uzbek,country_variant:Uzbekistan,5
+Yemen,"country_variant:Yemen, Rep.",5
+Chad,country_name,4
+Cuba,country_name,4
+Gulf,region_or_bloc,4
+Iran,"country_variant:Iran, Islamic Rep.",4
+Iraq,country_name,4
+Laos,country_variant:Lao PDR,4
+Mali,country_name,4
+OECD,region_or_bloc,4
+Oman,country_name,4
+Peru,country_name,4
+Thai,country_variant:Thailand,4
+Togo,country_name,4
+U.K.,country_variant:United Kingdom,4
+U.S.,country_variant:United States,4
+DRC,"country_variant:Congo, Dem. Rep.",3
+GCC,region_or_bloc,3
+Lao,country_variant:Lao PDR,3
+UAE,country_variant:United Arab Emirates,3
+EU,region_or_bloc,2
+UK,country_variant:United Kingdom,2
+US,country_variant:United States,2
