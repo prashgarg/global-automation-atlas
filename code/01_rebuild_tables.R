@@ -1,3 +1,7 @@
+if (!exists("read_parquet_here", inherits = FALSE)) {
+  source("code/00_setup.R")
+}
+
 message("Rebuilding summary tables...")
 
 labels <- read_parquet_here("data_intermediate/task_country_labels_analysis.parquet")
@@ -31,8 +35,17 @@ validation_channels <- read_csv_here("outputs/source_data/construct_validity/cha
   arrange(desc(pearson))
 write_csv(validation_channels, file.path(pkg_root, "reproduced/tables/validation_channel_aligned_correlations_rebuilt.csv"))
 
-gender_fe <- read_csv_here("data_analysis/gender_fe_regression_table.csv") %>%
-  filter(model == "Baseline", term == "x")
+gender_fe <- read_csv_here("outputs/source_data/ilostat_gender/gender_fe_table_current.csv") %>%
+  transmute(
+    domain,
+    margin,
+    coef = coefficient,
+    se = standard_error,
+    pvalue = p_value,
+    n_obs = observations,
+    n_countries = countries,
+    n_cells = cells
+  )
 write_csv(gender_fe, file.path(pkg_root, "reproduced/tables/gender_fe_regression_table_rebuilt.csv"))
 
 gender_fe_tex <- c(

@@ -1,0 +1,1186 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage[authoryear,round]{natbib}
+\tcbuselibrary{listings,breakable,skins}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newtcblisting{promptbox}[1][]{%
+  enhanced,
+  breakable,
+  colback=gray!7,
+  colframe=gray!40,
+  title=#1,
+  fonttitle=\bfseries\footnotesize,
+  listing only,
+  listing options={
+    basicstyle=\ttfamily\fontsize{7.4}{8.3}\selectfont,
+    columns=fullflexible,
+    keepspaces=true,
+    breaklines=true,
+    breakatwhitespace=false,
+    showstringspaces=false,
+  },
+  boxrule=0.4pt,
+  arc=1.5pt,
+  outer arc=1.5pt,
+  boxsep=0.6pt,
+  before skip=4pt,
+  after skip=4pt,
+  left=3.5pt,right=3.5pt,top=3pt,bottom=3pt
+}
+
+\graphicspath{{01_Figures/refresh_country124_20260406/}{01_Figures/refresh_country124_20260405/}}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\captionsetup{font=small,labelfont=bf,justification=raggedright,singlelinecheck=false}
+\captionsetup[table]{position=top,skip=4pt}
+\captionsetup[figure]{position=top,skip=6pt}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\renewcommand{\topfraction}{0.90}
+\renewcommand{\bottomfraction}{0.80}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.75}
+\renewcommand{\arraystretch}{1.08}
+\setlength{\emergencystretch}{3em}
+
+\newcounter{extendeddatafigure}
+\renewcommand{\theextendeddatafigure}{\arabic{extendeddatafigure}}
+\newcommand{\edfigcaption}[2]{%
+  \refstepcounter{extendeddatafigure}%
+  \caption*{\textbf{Extended Data Fig.~\theextendeddatafigure\ | #1}}%
+  \label{#2}%
+}
+
+\title{Global Automation Atlas\thanks{The accompanying online atlas is available at \href{https://automationatlas.org}{automationatlas.org}. It provides country-, occupation-, industry-, and task-level exposure measures, with documentation and downloadable data.}}
+\date{July 2026}
+\author{Prashant Garg\\Imperial College London
+\and Tommaso Crosta\\Bocconi University
+\and Jasmin Baier\\University of Oxford}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+
+\noindent
+
+\noindent
+% Currently 256 words...
+% Automation changes the labour content of work, but not uniformly across countries. Existing exposure measures assign globally fixed scores to tasks or occupations, limiting comparisons across development settings. We use a large language model to construct a country-specific measure of automation exposure for 18,797 work tasks in 124 economies, producing 2.33 million task-country labels that record exposure level, whether automation substitutes or augments worker input, the technology channel through which automation occurs, and whether AI is materially involved. Aggregated, our measure strongly correlates with established foundation-model, AI and robotics exposure scores, including the IMF AI Preparedness Index at 0.90, and industry-level exposure correlates positively with firm-reported AI adoption. We find that exposure is highly uneven: the exposed task share ranges from 3.3\% in South Sudan to 61.6\% in China, rises strongly with income, but remains heterogeneous within income groups. Exposed work is more often labour-substituting than labour-augmenting, with the skew strongest in low-income economies and heterogeneous across middle-income economies. Automation channels also vary with income: rule-based routes account for more than half of exposed tasks in low-income economies but about one quarter in high-income economies, while physical-execution, planning and inference routes rise with income. AI is more often tied to labour-substituting exposure in lower-income settings and labour-augmenting exposure in higher-income settings. Cross-country employment data show that women are disproportionately employed in occupations with greater labour-substituting exposure. Machine-learning analysis of classification justifications turns same-task country differences into hypotheses about automation complements and constraints: digital and equipment-supported systems on the exposed side; local judgement, trust-based relationships, low-cost manual work and low digital integration on the non-exposed side.
+
+
+% CURRENTLY 251 WORDS!!
+%Articles start with a fully referenced summary paragraph, ideally of no more than 200 words, which is separate from the main text and avoids numbers, abbreviations, acronyms or measurements unless essential. It is aimed at readers outside the discipline. This summary paragraph should be structured as follows: 2-3 sentences of basic-level introduction to the field; a brief account of the background and rationale of the work; a statement of the main conclusions (introduced by the phrase 'Here we show' or its equivalent); and finally, 2-3 sentences putting the main findings into general context so it is clear how the results described in the paper have moved the field forwards. Please refer to our annotated example  to see how the summary paragraph should be constructed.
+%Automation changes the labour content of work, but not uniformly across countries. Existing exposure measures assign fixed scores to tasks or occupations, limiting comparisons across development settings \citep{frey2017future,Webb2020,felten2021occupational,EloundouEtAl2024,PizzinelliEtAl2023,GmyrekBergBescond2023,CazzanigaEtAl2024GenAI}. Here we use a large language model to construct country-specific labels for $18{,}797$ tasks in $124$ economies, recording exposure, labour margin, technology channel and material AI involvement. The measure strongly correlates with external exposure scores \citep{EloundouEtAl2024,felten2021occupational,Webb2020}, AI preparedness \citep{CazzanigaEtAl2024GenAI}, ChatGPT use \citep{ChatterjiEtAl2025HowPeopleUseChatGPT} and firm-reported AI adoption \citep{Eurostat2024AIAdoption}. We find that exposure ranges from $3.3\%$ in South Sudan to $61.6\%$ in China, rises with income and varies within income groups. Automation is more often labour-substituting than labour-augmenting, especially in low-income economies. Rule-based routes dominate low-income economies. Physical execution, planning and inference rise with income, while AI-material exposure becomes more labour-augmenting. Country conditioning changes occupation exposure rankings, especially in lower-income economies. Combined with employment data, our results show that women are disproportionately employed in occupations with labour-substituting exposure. Analysis of classification rationales generates hypotheses for future research from same-task country differences: digital and equipment-supported systems enable exposure, whereas local judgement, trust-based relationships and limited digital integration constrain it. These findings show that feasible automation depends on production context as well as task content. The atlas can identify where transition policies or complementary investments warrant evaluation.
+
+
+% ALTERNATIVE DRAFT (Didn't want to overwrite other one directly)
+Automation can displace or complement labour, but this need not be constant across economies. Existing exposure measures typically assign fixed scores to tasks or occupations and capture cross-country variation through employment structure \citep{frey2017future,Webb2020,felten2021occupational,EloundouEtAl2024,PizzinelliEtAl2023,GmyrekBergBescond2023,CazzanigaEtAl2024GenAI}. Here we show that feasible automation depends jointly on task content and national production conditions. We use a large language model to classify 18,797 work tasks in 124 economies by exposure, labour margin, technology channel and artificial-intelligence materiality. Construct-matched components of the measure correlate strongly with established exposure indices \citep{EloundouEtAl2024,felten2021occupational,Webb2020}, observed work-related ChatGPT use \citep{ChatterjiEtAl2025HowPeopleUseChatGPT}, AI preparedness \citep{CazzanigaEtAl2024GenAI} and firm-reported adoption \citep{Eurostat2024AIAdoption}. The exposed share of tasks ranges from 3.3\% to 61.6\%, rises with income yet remains heterogeneous within income groups. Lower-income economies are more concentrated in rule-based and labour-substituting forms of automation, whereas physical execution, planning and inference channels, together with labour-augmenting uses of artificial intelligence, become more prominent with development. Country conditioning changes occupation exposure rankings, especially in lower-income economies. Combined with employment data, we find that women are disproportionately employed in occupations with substitution-facing exposure. Machine-learning hypothesis generation \citep{LudwigMullainathan2024HypothesisGeneration,MovvaEtAl2025HypotheSAEs} identifies digital records, capital equipment, local judgement, trust-based exchange and data integration as conditions associated with exposure differences. The atlas can identify where transition policies or complementary investments warrant evaluation.
+\end{abstract}
+
+\newpage
+\section{Introduction}
+
+Automation has become a central topic in the study of technological change, work organisation, and labour-market adjustments. Early work on industrial automation has shown that, historically, automation is not a deterministic technological process, but a contested reallocation of tasks, discretion, and control within the production process \citep{Noble1984ForcesProduction}. The central question is therefore not only whether a technology can perform a task, but which functions it can take over, which human roles it leaves in place, and how firms organise that division between workers and machines. This insight runs through modern task-based theory, which models automation as labour displacement from existing tasks, reinstatement through new tasks, and reallocation across newly created ones \citep{AutorLevyMurnane2003,AcemogluRestrepo2018,AcemogluRestrepo2019JEP,Restrepo2024AutomationOutlook}.
+
+Therefore, automation exposure should not be treated as a unidimensional concept, labelled onto an occupation or a task. Existing measures have focused on specific technological frontiers: computerisation risk \citep{frey2017future}, robot exposure \citep{graetz2018robots,acemoglu2020robots}, software-, robot- and AI-related patent exposure \citep{Webb2020}, AI capability alignment \citep{BrynjolfssonMitchellRock2018,felten2021occupational}, and LLM exposure \citep{EloundouEtAl2024}. These measures recover distinct and important margins of automation, but they are also limited in their scope. Moreover, cross-country applications often assume homogeneous exposure to automation of a particular task or occupation across countries, and only introduce country variation through employment weights, sectoral composition or readiness indices \citep{PizzinelliEtAl2023,GmyrekBergBescond2023,CazzanigaEtAl2024GenAI}.
+
+We therefore measure feasible automation exposure at the task-country level: whether currently available technology can reallocate a nontrivial share of labour input for a given task in a specific country setting. Using the O*NET task dictionary, we classify $18{,}797$ standardised tasks across $124$ country contexts, covering economies that account for about $99\%$ of world population and GDP \citep{onet2024,onet_database_29_1}. The task-country label differs from a portable task or occupation score because the same nominal task may have a different feasible automation margin when infrastructure, skills, capital intensity, institutions and production organisation differ across countries \citep{CominHobijn2010,CominMestieri2018TechnologyIncomeDivergence,CaunedoKellerShin2021,CireraCominCruz2024,LewandowskiMadonPark2025DevelopmentStages}. For each task-country pair, we then keep four dimensions jointly observed: (i) Exposure records the extent of economically credible labour reallocation, (ii) the technology channel indicates the function through which automation reaches the task core, in line with engineering, human-factors and operations work that distinguishes stages such as prediction, prescription, control and execution \citep{ParasuramanSheridanWickens2000Automation,BertsimasKallus2020PredictivePrescriptive}, (iii) the labour margin captures whether the feasible route mainly substitutes for workers, augments them, or leaves both routes plausible, following task-based and management literatures that separate displacement from complementarity and shared human--technology workflows \citep{AcemogluRestrepo2018,RaischKrakowski2021AutomationAugmentation,BrynjolfssonLiRaymond2023GenerativeAIatWork,DellAcquaEtAl2026JaggedFrontier}, and finally, (iv) AI materiality identifies whether learned models are central to the automation route, rather than treating AI as synonymous with automation \citep{BrynjolfssonMitchellRock2018,EloundouEtAl2024,AmershiEtAl2019HumanAIInteraction,SvanbergLiFlemingGoehringThompson2024}. This design allows us to aggregate the same labels to countries, occupations and industries while preserving the underlying composition of exposure.
+
+Because the labels are produced with large language models, we evaluate the measure against external evidence and through internal robustness checks. \hyperref[sec:validation_construct]{Supplementary Note~\ref*{sec:validation_construct}} compares specific dimensions of our measure with the external measures they most closely represent. At the US occupation level, our foundation-model-like channel share correlates with the GPT-4 gamma measure at 0.78 by \citet{EloundouEtAl2024}, AI-material share correlates with the \citet{felten2021occupational} AI Occupational Exposure index at 0.61, and physical-execution share correlates with \citet{Webb2020} robotics measure at 0.72. The country-level AI-material share correlates with the IMF AI Preparedness Index \citep{CazzanigaEtAl2024GenAI} at 0.90 across 117 countries and remains positively associated after removing their common relationship with GDP per capita. At the industry level, AI-material share correlates positively with Eurostat firm-reported AI adoption, and country-conditioned scores improve leave-country-out prediction relative to otherwise identical context-free scores. We then test convergence across an independent model family, agreement between labels and the accompanying rationales that explain each classification,\footnote{We also use the rationales substantively to identify recurring production conditions associated with exposed versus non-exposed task-country labels and with substitution versus augmentation margins.} stability across prompt paraphrases, and face validity through direct inspection of label distributions and anchor occupations. Taken together, these validation exercises suggest that the measure recovers established aggregate patterns, is internally coherent, and adds a decomposition by country context, channel, labour margin and AI materiality.
+
+We report five descriptive results, following the order of the empirical section. First, country-conditioned exposure is highly uneven. The economically exposed share of tasks ranges from $3.3\%$ in South Sudan to $61.6\%$ in China. Exposure rises strongly with per capita income, but income tiers do not exhaust the variation: substantial heterogeneity remains within income groups, especially among middle-income countries. Second, distinguishing labour-substituting from labour-augmenting automation is crucial. Substitution-only exposure is larger than augmentation-only exposure in every country in our sample; low-income countries are especially skewed toward substitution among exposed tasks, while middle-income countries display wider heterogeneity in the substitution-versus-augmentation frontier.
+
+Third, the channels of automation exposure change with income levels, together with the salience of AI across each channel. Less technologically advanced forms of automation account for more than half of exposed tasks in low- and lower-middle-income countries but roughly one quarter in high-income countries, while more complex channels generally become more relevant as per capita income rises. This is intuitive, but underscores and quantifies how solely focusing on AI-related exposure in automation disregards economically meaningful dynamics in the global labour market. Moreover, the share of exposed tasks for which AI is materially involved ranges from roughly $35\%$ to more than $70\%$ across income brackets. It is less prevalent in simpler channels, and its relationship with labour margins changes drastically across countries: in lower-income settings it is more tied to substituting exposure, while in higher-income settings it is more closely associated with augmenting and shared human--technology workflows.
+
+Fourth, aggregating the task-country labels to occupations and industries recovers important patterns at standard labour-market levels. Some occupations and industries are already exposed at lower income levels, especially clerical, transactional, and routine information-processing work; others rise steeply with development, including business administration, ICT, plant operation, manufacturing, and information-intensive services. Complementing the measure with ILOSTAT data shows that female employment is more exposed to labour-substituting automation across occupations. Industry gaps vary with income and reverse in high-income economies, while male employment is more exposed to labour-augmenting automation across industries.
+
+
+Fifth, we link the task-country measures to country covariates and to the rationales behind the labels. GDP per capita, internet use, schooling and regulatory quality are the strongest predictors of the exposed-task share, highlighting the role of complementary inputs in enabling automation. Within exposed tasks, the relevant covariates differ by labour margin: substitution-only composition is lower in countries with higher per capita income, regulatory quality and capital intensity, while augmentation-only composition is most closely related to capital intensity. The rationale analysis gives these correlations a more concrete interpretation and provides hypotheses for future work to consider and test. Exposed-country rationales more often mention capital equipment, digital systems and structured records; non-exposed rationales more often mention weak digital integration, local institutional knowledge and trust-based exchange. Within exposed work, routinised task cores tend to be classified as substitution, in contrast to safety‑, accountability‑, judgement‑, and relational‑oriented tasks, which more often receive augmentation labels. These patterns suggest that country context matters not only through broad development variables, but through the way tasks are organised in specific production settings.
+
+% The rest of the paper proceeds as follows. \hyperref[sec:data_measurement]{Section~\ref*{sec:data_measurement}} defines the data and measurement pipeline: \hyperref[sec:methods_exposure]{task universe and labels}, \hyperref[sec:methods_benchmark]{country conditioning}, \hyperref[sec:data_classifications]{aggregation methods}, \hyperref[sec:data_country]{country predictors and labour-force inputs}, and \hyperref[sec:methods_validation]{validation design}. \hyperref[sec:results]{Section~\ref*{sec:results}} reports the five descriptive results: \hyperref[sec:results_global_trends]{trends in global exposure}, \hyperref[sec:results_margin_heterogeneity]{labour margin frontier}, \hyperref[sec:results_channels_ai]{channels of automation and the role of AI}, \hyperref[sec:results_occupation_industry]{occupation and industry aggregates}, and \hyperref[sec:results_country_predictors]{country-level correlates}. Lastly, \hyperref[sec:discussion]{Section~\ref*{sec:discussion}} discusses what the measure implies for studying the drivers of automation and closely related literatures. The supplementary notes provide \hyperref[sec:appendix_methods_audit]{construction details}, \hyperref[sec:appendix_measurement_inventory]{prompt and diagnostic details}, \hyperref[sec:validation_construct]{construct validity}, \hyperref[sec:appendix_validation]{internal validity}, \hyperref[sec:validation_country_contribution]{country-conditioning checks}, and \hyperref[sec:appendix_results]{results companions}.
+
+
+\section{Results}
+\label{sec:results}
+\noindent We organise the results around five questions. First, how uneven is automation exposure across countries, and how closely does it track income per capita? Second, once tasks are exposed, do they mainly substitute labour, augment labour, or combine both margins? Third, which technology channels carry exposed work, and when is AI materially involved? Fourth, how do the task-country labels aggregate to the occupation and industry units used in labour-market and production data? Fifth, which dimensions of country context help explain variation in exposure levels, in the composition of exposed work, and in the rationales applied to the same tasks across countries?
+
+\FloatBarrier
+\subsection{Global trends in automation exposure}
+\label{sec:results_global_trends}
+
+We begin by investigating cross-country heterogeneity in automation exposure, that is, where is automation currently economically feasible? Technology-diffusion and task-based development models predict that automation exposure should rise with income because richer economies have stronger complementary inputs for adoption and a production structure with more formal, capital-intensive, and information-intensive tasks that can be codified, reorganised, or automated \citep{CominHobijn2010,CominMestieri2018TechnologyIncomeDivergence,CaunedoKellerShin2021,CireraCominCruz2024,LewandowskiMadonPark2025DevelopmentStages}. However, income should not fully determine exposure to automation. Countries at similar income levels can occupy different positions in the technology-diffusion process and can differ in sectoral composition, firm capabilities, infrastructure, and regulatory or organisational constraints. The same task universe can therefore imply different feasible automation shares even within the same income group.
+
+Figure~\ref{fig:country_opening} is consistent with this prediction: the exposed task share ranges from $3.3\%$ in South Sudan to $61.6\%$ in China and rises strongly with GDP per capita. However, the relationship is not deterministic: substantial heterogeneity remains within income tiers, especially among middle-income countries (Supplementary Figure~\ref{fig:appendix_within_income_variability}). The measure therefore shows that, while income is a strong predictor of feasible automation exposure, consistent with models of technology diffusion and complementary capabilities, it is not exhaustive: sectoral composition, institutions, and production capabilities can also shape which tasks can be automated in practice \citep{CominMestieri2018TechnologyIncomeDivergence,CireraCominCruz2024,LewandowskiMadonPark2025DevelopmentStages}. We return to these country-level correlates in Section~\ref{sec:results_country_predictors}.
+
+\begin{figure}[!t]
+\centering
+\caption{Cross-country patterns in automation exposure.}
+\label{fig:country_opening}
+\begin{subfigure}[t]{0.97\textwidth}
+    \centering
+    \caption{Economically exposed task share.}
+    \includegraphics[width=\textwidth]{fig3_map_share_exposed.png}
+\end{subfigure}
+
+\vspace{0.35em}
+
+\begin{subfigure}[t]{0.78\textwidth}
+    \centering
+    \caption{Exposed task share and GDP per capita.}
+    \includegraphics[width=\textwidth]{fig_country_opening_scatter_log_nopanel.pdf}
+\end{subfigure}
+\caption*{\scriptsize Notes: Panels use 124 country shares constructed from 2,330,776 task-country labels. Panel~(a) maps the share of tasks rated 2 or 3 on the 0--3 exposure scale, corresponding to meaningful partial or extensive economic exposure. Panel~(b) plots the same exposed-task share against log GDP per capita; point size scales with the share of tasks at exposure level 3, and colour denotes World Bank income group.}
+\end{figure}
+
+
+
+\FloatBarrier
+\subsection{Heterogeneity in automation margins}
+\label{sec:results_margin_heterogeneity}
+
+Automation exposure can imply very different labour-market consequences. Task-based models distinguish technologies that replace labour in particular tasks from those that raise the productivity of workers who remain involved, while management and AI-adoption work shows that similar technologies can be deployed as labour-saving automation, worker augmentation, or shared human--technology workflows depending on task design, complementary skills, and managerial choices \citep{Autor2015,AcemogluRestrepo2018,RaischKrakowski2021AutomationAugmentation,BrynjolfssonLiRaymond2023GenerativeAIatWork,DellAcquaEtAl2026JaggedFrontier}. In this section, we therefore ask whether the labour margin is substitution-only, augmentation-only, or balanced between the two, and how that mix changes from low- to high-income country contexts. This distinction is especially important for low- and middle-income countries, where direct evidence on automation exposure remains limited and existing cross-country measures often adapt high-income occupation or task scores through employment weights rather than measuring country-specific labour margins \citep{PizzinelliEtAl2023,GmyrekBergBescond2023,CazzanigaEtAl2024GenAI,LewandowskiMadonPark2025DevelopmentStages}.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Labour-margin composition across countries and income groups.}
+\begin{subfigure}[t]{0.72\textwidth}
+\centering
+
+\caption{Shares of all tasks.}
+\label{fig:task_country_pathways_all}
+\includegraphics[width=\textwidth]{fig_tasks_country_pathways_joint_review_all_tasks.pdf}\end{subfigure}\\[0.2em]
+\begin{subfigure}[t]{0.72\textwidth}
+\centering
+
+\caption{Same tasks across income groups.}
+\label{fig:income_group_pathway_flow_main}
+\includegraphics[width=\textwidth]{fig_income_group_pathway_modal_alluvial_main.pdf}\end{subfigure}\\[0.2em]
+\begin{subfigure}[t]{0.72\textwidth}
+\centering
+
+\caption{Shares within exposed tasks.}
+\label{fig:task_country_pathways_within}
+\includegraphics[width=\textwidth]{fig_tasks_country_pathways_joint_review.pdf}\end{subfigure}
+\caption*{\scriptsize Notes: Panels~(a) and~(c) use 124 country observations constructed from the task-country dataset. Panel~(a) reports substitution-only and augmentation-only shares as shares of all tasks. Panel~(b) follows the same 18,797-task universe across income-group contexts, assigning each task to its modal pathway within each group. Panel~(c) reports substitution-only and augmentation-only shares within exposed tasks; the remaining exposed share is balanced-both. Scatter points are countries; colour denotes World Bank income group, bubble size denotes exposed share, and the dashed line marks equal substitution-only and augmentation-only shares.}
+\label{fig:task_country_pathways}
+\end{figure}
+
+Figure~\ref{fig:task_country_pathways}a shows that, according to this measure, the dominant margin of automation exposure is substitution rather than pure augmentation: substitution-only exposure exceeds augmentation-only exposure in every country. Figure~\ref{fig:task_country_pathways}b shows that, across income brackets, newly exposed tasks mostly move from non-exposure into balanced-both or substitution-only exposure, while augmentation-only exposure remains comparatively small.\footnote{The adjacent-step transition probabilities behind the alluvial ribbons are reported in Supplementary Figure~\ref{fig:appendix_income_group_pathway_heatmaps}.} The measure suggests that the expansion of economically feasible automation is mostly an expansion of tasks for which labour input can be reduced, not only tasks in which technology complements workers. This is the displacement side of the task-based automation literature \citep{AcemogluRestrepo2018,AcemogluRestrepo2019JEP}. It also qualifies AI-exposure measures that identify where technology can enter work but usually do not distinguish whether the affected task margin is substitutive or augmenting \citep{PizzinelliEtAl2023,GmyrekBergBescond2023,CazzanigaEtAl2024GenAI}.
+
+Within exposed tasks, countries differ in how far exposure leans toward substitution or augmentation (Figure~\ref{fig:task_country_pathways}c). Three patterns stand out. First, most low-income countries sit in a substitution-heavy part of the automation frontier, with few purely augmentation-oriented paths, consistent with the concern that automation reduces labour demand when tasks are codifiable and complementary assets are scarce \citep{AcemogluRestrepo2018}. Second, high-income countries lie closer to the middle of the distribution, with several smaller high-income economies near the upper tail of augmentation exposure, consistent with evidence that complementarities depend on skills, capital, and organisational design \citep{BresnahanBrynjolfssonHitt2002,RaischKrakowski2021AutomationAugmentation}. Third, middle-income countries show the widest dispersion, in line with heterogeneous structural-transformation paths \citep{Rodrik2016PrematureDeindustrializationJEG,CaunedoKellerShin2021,LewandowskiMadonPark2025DevelopmentStages}. Supplementary Figure~\ref{fig:appendix_polarisation_p} shows why the boundary matters: the balanced-both margin remains large, covering roughly $45\%$ to $55\%$ of exposed tasks. Many exposed tasks therefore sit between displacement and complementarity, so production organisation and deployment choices may determine whether the same feasible technology is used mainly to replace labour or to support remaining workers \citep{RaischKrakowski2021AutomationAugmentation,BrynjolfssonLiRaymond2023GenerativeAIatWork,DellAcquaEtAl2026JaggedFrontier}.
+
+
+\FloatBarrier
+\subsection{Channels of automation and the role of AI}
+\label{sec:results_channels_ai}
+
+Automation can operate through different functions and technological channels: evidence suggest that countries differ not only in how much technology is feasible, but also in which production functions are most readily automated as infrastructure, capital intensity, managerial systems, and work organization change \citep{CominHobijn2010,LewandowskiMadonPark2025DevelopmentStages}. We therefore test whether the channel composition of exposed work varies systematically with economic development, e.g. depending on the amount of complementary capital required. A second hypothesis is that AI changes the composition of automation rather than replacing older automation channels: learned models may matter most where the task core requires prediction, classification, or information transformation, while large areas of economically meaningful exposure can still be carried by deterministic workflow systems, conventional software, and physical machinery with little direct AI content \citep{SvanbergLiFlemingGoehringThompson2024}.
+
+Figure~\ref{fig:channel_ai_mechanism} supports both hypotheses. Rule-based workflow automation dominates exposed work outside high-income countries, accounting for more than $50\%$ of exposed tasks in low-income countries, about $40\%$ in lower-middle-income countries, and about $25\%$ in high-income countries. This is the low-cost, codifiable margin of automation: it can replace routine administrative and transactional work without relying on contemporary AI \citep{SyedEtAl2020RPA}. Physical execution follows the opposite pattern, rising from roughly $5\%$ of exposed tasks in low-income countries to about $25\%$ in high-income countries, consistent with robotics evidence that physical automation is more salient where production is more capital-intensive \citep{graetz2018robots,acemoglu2020robots}. The AI-materiality panel reinforces the distinction. Rule-based workflow and physical execution have relatively low AI materiality, while informational transformation, inference/scoring, and planning/control are more AI-material. Thus, AI becomes more important as the channel mix diversifies with income, but it does not exhaust the automation margin: much exposed work, especially in low- and middle-income countries, remains non-AI or only weakly AI-mediated.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Automation channels and AI materiality.}
+\includegraphics[width=0.98\textwidth]{fig_channel_ai_mechanism.pdf}
+\caption*{\scriptsize Notes: Panel~(a) shows the country-level share of exposed tasks in each dominant technology channel against log GDP per capita; fitted curves are locally smoothed trends (LOESS) with $95\%$ bootstrap intervals, and brackets mark World Bank income tiers. Panel~(b) reports, within each dominant channel, the share of exposed tasks for which contemporary learned models are material to the automation route. Channel categories are mutually exclusive; AI materiality is measured separately and can appear within any channel.}
+\label{fig:channel_ai_mechanism}
+\end{figure}
+
+We next ask whether AI-material exposure is predominantly substituting or augmenting. AI-exposure studies show that generative AI and related systems reach a broad set of information-processing and professional tasks, especially in economies with stronger digital and organisational resources \citep{PizzinelliEtAl2023,GmyrekBergBescond2023,CazzanigaEtAl2024GenAI}. Adoption evidence is more selective: firms and workers use AI unevenly, and realised effects depend on task fit, workflow design, and complementary capabilities \citep{McElheranEtAl2023AIAdoptionAmerica,BickBlandinDeming2024RapidAdoption}. Field experiments point to large productivity gains in some knowledge tasks, but also to a jagged frontier where AI can help, substitute, or misfire depending on the task and human judgment \citep{BrynjolfssonLiRaymond2023GenerativeAIatWork,NoyZhang2023ProductivityEffectsGenAI,DellAcquaEtAl2026JaggedFrontier}.
+
+Figure~\ref{fig:ai_materiality_margins} shows that AI materiality rises with income, from roughly $35\%$ of exposed tasks at the low-income end to more than $70\%$ at the high-income end, consistent with evidence that AI adoption and effective use depend on digital, organisational, and human-capital complements \citep{CazzanigaEtAl2024GenAI,McElheranEtAl2023AIAdoptionAmerica}. But higher AI materiality does not mechanically imply augmentation. In low- and middle-income countries, AI-material exposure remains heavily labour-substituting; while augmentation is concentrated in a smaller group of mostly high-income economies. This suggests that other factors are at play in determining the labour margin of AI adoption: Where complementary capabilities are limited, AI is more likely to economise on labour input; where they are stronger, it is more likely to operate through human--technology complementarities, consistent with field evidence on uneven productivity gains of AI use \citep{BrynjolfssonLiRaymond2023GenerativeAIatWork,NoyZhang2023ProductivityEffectsGenAI,DellAcquaEtAl2026JaggedFrontier}.
+
+\begin{figure}[!htbp]
+\centering
+\caption{AI materiality, AI function mix, and labour-margin composition.}
+\includegraphics[width=0.98\textwidth]{fig_ai_materiality_margins_2x2.pdf}
+\caption*{\scriptsize Notes: Panel~(a) plots the AI-material share among exposed tasks against log GDP per capita. Panel~(b) decomposes AI-material exposed tasks by dominant AI function. Panels~(c) and~(d) relate the AI-material share among exposed tasks to the substitution-only and augmentation-only shares among exposed tasks. Points are countries; colours denote World Bank income group; fitted curves are locally smoothed trends (LOESS) with $95\%$ bootstrap intervals.}
+\label{fig:ai_materiality_margins}
+\end{figure}
+
+\FloatBarrier
+\subsection{Structural transformation and the role of informality and gender}
+\label{sec:results_occupation_industry}
+
+We next aggregate task-level exposure to occupations and industries, since many administrative datasets are organized at those levels. This connects the atlas to structural-transformation questions, where development is studied through the reallocation of labour across sectors, occupations, and tasks \citep{mcmillan2011_globalization,Rodrik2016PrematureDeindustrializationJEG,CaunedoKellerShin2021,LewandowskiMadonPark2025DevelopmentStages}. We report exposure by ISCO-08 occupation and ISIC Rev.~4 industry, preserving the income-group comparison used above.\footnote{Occupation summaries map O*NET tasks to SOC occupations and then to ISCO-08 using the bridge in Section~\ref{sec:methods_occupation}. Industry summaries use retained task--ISIC Rev.~4 class links. Values are computed within countries and averaged within World Bank income groups. Country profiles are available at \url{https://automationatlas.org/}.} Holding these mappings fixed, and replacing context-free task labels with country-conditioned labels changes exposure levels substantially at both the ISCO-2 and ISIC-2 levels, with larger ranking changes for industries (Supplementary Table~\ref{tab:appendix_country_conditioning_isco_isic}).
+
+Structural transformation changes not only where workers are employed, but also which parts of production are technologically reachable. As economies move toward more formal administration, capital-intensive production, and information-intensive services, exposure should rise unevenly across occupations and industries rather than uniformly across the workforce \citep{mcmillan2011_globalization,Rodrik2016PrematureDeindustrializationJEG,LewandowskiMadonPark2025DevelopmentStages}. We find this pattern in the atlas. Clerical support occupations are exposed even in low-income settings, consistent with routine-task accounts of codifiable transactional work \citep{AutorLevyMurnane2003,goos2014explaining}. Business-administration, ICT, and professional occupations become more exposed with income, matching AI-exposure evidence for information-processing work \citep{felten2021occupational,EloundouEtAl2024,GmyrekBergBescond2023}. Plant-operator and manufacturing exposure rise later, when capital intensity makes physical automation more deployable \citep{graetz2018robots,acemoglu2020robots}. Importantly, transactional and clerical pockets are mainly substitution-facing, while professional, care, analytical, and service-upgrading pockets are more augmentation-facing, emphasizing differential labour effects of automation across industries, occupations, and development (Supplementary Figure~\ref{fig:isco_income_rotation}; Supplementary Figure~\ref{fig:industry_isic_income_main}; Supplementary Tables~\ref{tab:isco_income_pockets_joint}--\ref{tab:isic_income_pockets_joint}).\footnote{Supplementary Figure~\ref{fig:industry_isic_income_main} is an equal-weighted class-content measure: task exposure is computed at retained four-digit ISIC classes, averaged to two-digit divisions, and then averaged across countries within income group because credible class-size weights are unavailable at this granularity. Pathway decomposition and top rankings by margin are reported in Supplementary Figure~\ref{fig:joint_pathway_decomposition} and \ref{sec:appendix_aggregation_route}.}
+
+We next test whether automation exposure is unequally distributed by gender, since women and men are unevenly distributed across occupations and industries, especially in low- and middle-income countries \citep{BorrowmanKlasen2020}. Recent AI-exposure studies show that women are often over-represented in exposed occupations \citep{GmyrekBergBescond2023,GmyrekEtAl2025,CazzanigaPantonLiPizzinelliTavares2025GenderLens,AlbanesiDiasDaSilvaJimenoLamoWabitsch2025WomenAI,Lane2024WorkersAffectedAI,WilliamsonEtAl2025IrelandAIComplementarity}. Our test asks whether that exposure is concentrated in substitution-facing or augmentation-facing occupation and industry cells. If women are concentrated in substitution-facing cells, automation may reinforce existing disadvantages; if they are concentrated in augmentation-facing cells, exposure may instead reflect access to complements.
+
+Figure~\ref{fig:gender_informality_margin_applications} shows that, in aggregate, female employment is more exposed to labour-substituting automation across occupations and industries, except in high-income economies, where the industry gap reverses. The occupation result is driven by women working in occupations where substitution-facing tasks are common. Country-specific exposure differences modestly offset this pattern (Supplementary Figure~\ref{fig:appendix_gender_gap_decomposition}). A separate fixed-effect comparison of the same two-digit cell across countries shows that, once country averages and average cell gender composition are controlled for, more substitution-intensive cells employ relatively more men (Supplementary Table~\ref{tab:appendix_ilostat_gender_fe_baseline}). Thus, the result is not that substitution technology is intrinsically female-biased. Rather, existing gender sorting places women in parts of the labour market where substitution exposure is higher. This distinction also matters for future labour market trajectories, since gender gaps in generative-AI use may shape who can convert exposure into productivity gains \citep{CranneyDelecourtKoning2026GenderGapsGenAI}.\footnote{Supplementary Figure~\ref{fig:appendix_ilostat_country_weighting} compares equal-weighted and ILOSTAT employment-weighted occupation exposure across income groups. Supplementary Table~\ref{tab:appendix_ilostat_country_adjustment} reports the corresponding country-level shifts from equal weighting to employment weighting.}
+
+We next ask whether informality is associated with automation exposure. Informal work is often low-productivity and weakly covered by labour regulation, and formalization can raise effective labour costs before firms and workers acquire the skills, capital, or organization needed to raise productivity \citep{LaPortaShleifer2014Informality,MeghirNaritaRobin2015WagesInformality,Levy2008GoodIntentions}. In that setting, policies that reduce informality may unintentionally make labour-substituting automation more attractive unless they are paired with training and productivity-enhancing support; more generally, lower informality need not mechanically raise output or welfare \citep{Ulyssea2018FirmsInformalityDevelopment}. Figure~\ref{fig:gender_informality_margin_applications} therefore tests whether countries with more informal labour are more or less exposed to automation, and whether the association differs by labour margin. We find that informality is indeed negatively correlated with substitution exposure even after controlling for GDP per capita. This suggests that informality partly proxies for a low-wage, low-productivity labour regime that delays automation, but also that formalization can increase displacement risk if it raises labour costs without raising workers productivity.
+
+
+\begin{figure}[!htbp]
+\centering
+\caption{Labour-margin exposure linked to gender composition and informality.}
+\includegraphics[width=0.96\textwidth]{fig_gender_informality_margin_applications.pdf}
+\caption*{\scriptsize Notes: Panels~(a) and~(b) report female-minus-male exposure gaps after weighting task-country labels by female and male employment shares. These shares are separately normalised within each country, and the same exposure score is used for both sexes within a country--cell. Positive values indicate higher female employment-weighted exposure; negative values indicate higher male employment-weighted exposure. Points show World Bank income-group medians and horizontal lines show interquartile ranges across countries. Panel~(a) uses 88 countries with two-digit ISCO-08 occupation employment data; panel~(b) uses 72 countries with two-digit ISIC Rev.~4 industry employment data. Panel~(c) reports country-level OLS associations between informality and exposure outcomes after controlling for log GDP per capita. The substitution-only and augmentation-only rows are measured among exposed tasks. Points are coefficients for a 10 percentage point higher informality share; horizontal lines are 95\% confidence intervals based on HC1 robust standard errors. The informality sample contains 92 countries.}
+\label{fig:gender_informality_margin_applications}
+\end{figure}
+
+
+
+
+\FloatBarrier
+\subsection{Country-level correlates of automation exposure}
+\label{sec:results_country_predictors}
+
+
+The preceding results show that per capita income is strongly correlated with our exposure measure, but it may nonetheless proxy for several other country-level variables: digital infrastructure, education levels, institutions, capital intensity, social norms, and trade. We therefore ask which country covariates are most correlated with (i) the exposed-task share and (ii) the substitution-versus-augmentation mix within exposed tasks. Therefore, in this section, we investigate what are the main country-level correlates of both automation exposure and, conditional on it, its interaction with labour. In order to achieve this, we employ two different strategies: first we use country-level data from World Penn Tables \citep{FeenstraInklaarTimmer2015PWT} and rank variable importance using treeSHAP values \citep{LundbergLee2017SHAP,LundbergEtAl2020TreeSHAP} to measure their predictive contribution\footnote{The fitted forests allow nonlinearities and interactions among the country covariates \citep{Breiman2001RandomForests}. TreeSHAP values are averaged in absolute value across countries and across five random-forest seeds \citep{LundbergLee2017SHAP,LundbergEtAl2020TreeSHAP}. We calculate the one-dimensional accumulated local effect of each covariate separately in the same five forests and summarise these estimates by their median. Direction markers are positive or negative only when at least four of the five signs agree; otherwise they are mixed \citep{ApleyZhu2020ALE}. \ref{sec:appendix_residual_country_explanations} reports variance-inflation diagnostics, wider-coverage random-forest specifications, the earlier permutation-importance version, and a linear Shapley $R^2$ companion based on dominance-analysis logic \citep{Budescu1993DominanceAnalysis}.}. Second, we apply a hypothesis-generation procedure \citep{GentzkowKellyTaddy2019,LudwigMullainathan2024HypothesisGeneration,MovvaEtAl2025HypotheSAEs} to the short rationales that accompany each LLM classification. Candidate concepts are identified in a discovery sample and evaluated in a separate heldout sample for each comparison.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Country covariates and rationale concepts behind country-conditioned exposure and labour margins.}
+\includegraphics[width=0.98\textwidth]{fig_country_context_rf_rationale_combined.pdf}
+\caption*{\scriptsize Notes:
+Panels~(a)--(c) report mean absolute TreeSHAP values averaged across five random-forest seeds on the 68-country complete-case sample. Values are multiplied by 100, so magnitudes are in percentage points of the predicted outcome share. Panel~(a) uses exposed share among all tasks. Panels~(b) and~(c) use substitution-only and augmentation-only shares within exposed tasks. Colours in panels~(a)--(c) indicate the sign of the one-dimensional accumulated local effect. Panels~(d)--(f) report pooled rationale-concept families for the corresponding contrasts: exposed versus non-exposed task-country labels, substitution-only versus other exposed labels, and augmentation-only versus other exposed labels. Points are first-group-minus-second-group differences in concept presence, in percentage points, with 95\% confidence intervals from paired standard errors. Colours in panels~(d)--(f) distinguish whether the concept mainly describes country context, task-specific conditions, country--task interactions, or mixed conditions. The figure ranks predictive covariates and recurring rationale concepts; it does not estimate causal effects or separate marginal coefficients. The displayed concepts are selected in discovery samples and evaluated in separate heldout samples.
+}
+\label{fig:country_covariate_feature_importance}
+\end{figure}
+
+
+Panels~(a)--(c) of Figure~\ref{fig:country_covariate_feature_importance} report the country-covariate exercise. In Panel~(a), log GDP per capita and internet use make the largest predictive contributions to the exposed-task share, and both have positive correlations, followed by level of schooling, government effectiveness, regulatory quality, and human-capital. These results are consistent with the idea that automation exposure is higher where the complements needed for deployment are already in place: while income captures the scale and capital environment for adoption \citep{CominHobijn2010,CominMestieri2018TechnologyIncomeDivergence}, internet use captures the digital infrastructure needed for non-physical automation \citep{AndrewsNicolettiTimiliotis2020DigitalDiffusionEER}; schooling and human capital proxy for workforce capacity to learn, operate, and adapt to new technology \citep{NelsonPhelps1966HumanCapitalDiffusion}; and governance and regulatory quality proxy for the institutional setting in which firms can standardise processes, invest, and implement technologies at scale \citep{BloomVanReenen2007,cirera2022_innovationparadox,CireraCominCruz2024}.
+
+Within exposed tasks, substitution-only automation is negatively associated with per capita income, regulatory quality, government effectiveness and capital intensity. These results are consistent with pathways of structural-transformation in which richer economies contain more professional, service, and coordination-intensive tasks, so exposed work is less often pure labour replacement \citep{Rodrik2016PrematureDeindustrializationJEG,CaunedoKellerShin2021,LewandowskiMadonPark2025DevelopmentStages}, while stronger regulatory environments may preserve human roles in compliance, accountability, and judgement-intensive parts of exposed tasks. Augmentation-only automation is instead most strongly associated with capital intensity, with a smaller role for regulatory quality. These results are consistent with complementarity accounts in which technology raises worker productivity when firms have the machinery, software, and complementary investment needed to reorganise tasks around human--technology systems \citep{BresnahanBrynjolfssonHitt2002,RaischKrakowski2021AutomationAugmentation}. The association with regulatory quality points in the same direction: clearer rules and standards may make firms more likely to deploy automation in supervised, auditable workflows, where workers remain central to judgement, compliance, and coordination \citep{VaccaroAlmaatouqMalone2024HumanAIUseful,BabinaFedykHeHodson2024AIFirmGrowth}.\footnote{Robustness checks preserve the main qualitative pattern. A wider-coverage $90$-country specification points to the same broad capability cluster; adding balanced-both to the within-exposed margin decomposition does not change the interpretation; and the earlier permutation-importance ranking gives a similar ordering (Supplementary Figure~\ref{fig:appendix_country_covariate_permutation_importance}). A linear Shapley $R^2$ decomposition shows how explanatory mass is allocated under a linear specification with highly correlated covariates (Supplementary Figure~\ref{fig:appendix_country_predictor_linear_shapley}).}
+
+Panels~(d)--(f) of Figure~\ref{fig:country_covariate_feature_importance} separate three types of rationale-based hypotheses. Country-level hypotheses refer to broad conditions that affect many tasks in the same economy, such as capital equipment, digital infrastructure, or formal administrative capacity. Task-level hypotheses refer to features of the work itself, such as whether the task is routine, relational, judgement-intensive, or physically dexterous. Interaction hypotheses capture cases where automability depends on how a specific task is organised in a particular country. The same standardised task may be feasible to automate when records are digital, information is centralised, and procedures are formalised, but not when performance depends on weak records, dispersed information, local institutional knowledge, or trust-based exchange.
+
+Panel~(d) applies this distinction to exposure. On the exposed side, the main recurring rationales mention material and digital complements: capital equipment, structured records, and digital systems. This is consistent with work showing that technology adoption depends on infrastructure, management practices, and firm capabilities \citep{AndrewsNicolettiTimiliotis2020DigitalDiffusionEER,BloomVanReenen2007,CireraCominCruz2024}. Vendor-payment processing and customs documentation make the mechanism concrete: both become more exposed when invoices, approvals, tariff codes, shipment records, and validation rules are codified in digital systems. On the non-exposed side, recurring concepts include interaction terms: otherwise automatable tasks are less likely to be exposed when country settings make them depend on local institutional knowledge, trust-based exchange, or information dispersed across stakeholders, rather than on formal and machine-readable routines \citep{North1990Institutions,BakerGibbonsMurphy2002RelationalContracts}. Land-title checks and credit or loan intermediation illustrate this margin: the task may be partly automatable where registries, borrower records, and verification rules are formalised, but less so where the work depends on local office knowledge, broker relationships, informal collateral information, or interpersonal trust.
+
+Panels~(e)--(f) show that the margin concepts differ not only in sign, but also in the level at which they operate. In Panel~(e), substitution-only labels are less common when the rationale contains interaction hypotheses about relational and trust-based markets, meaning cases where the task becomes harder to replace because of how exchange is organised in that country. They are also less common when rationales contain task-level hypotheses about authority and liability constraints, which limit replacement because the task itself carries delegated responsibility or error risk. This fits the task-based logic that codifiable routines are easier to replace \citep{AutorLevyMurnane2003,AcemogluRestrepo2018}, but that replacement is harder when performance depends on non-contractible information, authority, or responsibility for mistakes \citep{BakerGibbonsMurphy2002RelationalContracts}. Staff scheduling illustrates the substituting case: once availability, demand, and constraints are codified, software can replace much of routine roster construction. By contrast, in engineering calculations, computation and drafting can be automated, but authority, liability, and final approval keep replacement limited.
+
+Panel~(f) reverses the pattern by showing that augmentation-only labels are more common for interaction hypotheses about local institutional knowledge and relational or trust-based markets, where country context leaves workers central to interpretation and exchange, and for task-level hypotheses about safety or regulatory compliance and human accountability, where the task itself requires oversight. In food‑safety monitoring, clinical referrals, and community‑resource referrals, technology can flag risks, screen cases, or match resources, yet workers remain central to judgement, trust, compliance, and accountability. For policy, this distinction matters, given that country-level constraints point to broad infrastructure and capability gaps, while task and interaction hypotheses point to occupations where training, oversight, and institutional design may shift exposure from displacement toward complementarity \citep{RaischKrakowski2021AutomationAugmentation,VaccaroAlmaatouqMalone2024HumanAIUseful}.
+
+
+\section{Discussion}
+\label{sec:discussion}
+
+This paper develops a task-based and country-specific atlas of automation exposure. It extends the task-based automation literature by measuring not only whether work is exposed, but which function is automated, through which channel, with which labour margin, and under which country context \citep{AutorLevyMurnane2003,AcemogluRestrepo2018,Restrepo2024AutomationOutlook}. The measure strongly aligns with corresponding external exposure indices using primary and secondary data, country-level AI-material exposure tracks independent preparedness measures, and industry-level AI-material exposure is positively associated with firm-reported adoption. Country conditioning also adds predictive information relative to an otherwise identical context-free industry score.
+
+Across $18{,}797$ O*NET tasks and $124$ country settings, the atlas estimates that exposure is highly uneven across countries, rises with per capita income levels, yet it remains heterogeneous within income groups, and differs sharply by substitution versus augmentation margins, technology channels, and presence of artificial intelligence. Using the same task universe in every country makes the magnitude of these differences directly comparable across development levels, technology channels and labour margins. The contribution of the atlas therefore lies not only in identifying broad patterns that may appear intuitive, but in quantifying their magnitude, heterogeneity and composition. Automation may be expected to be more feasible where digital infrastructure, capital and organisational capacity are stronger, and routine tasks may be expected to be more susceptible to labour substitution. Intuition alone, however, cannot show how large these relationships are, how much countries depart from the average pattern, or how the form of exposure changes across settings. The atlas shows that exposure ranges from 3.3\% to 61.6\%, that countries at similar income levels can occupy markedly different positions, and that these differences concern not only how much work is exposed but also the technologies involved and whether exposure is more substituting or augmenting.
+
+More broadly, the results challenge the view that automation exposure is an intrinsic property of a task that can be measured once and transported across economies. Country context changes the feasible automation margin itself. The same nominal task can be exposed where records are digitised, workflows are standardised and complementary capital is available, yet remain non-exposed where information is fragmented, institutions are informal or production depends on local knowledge and trust. Cross-country differences in automation are therefore not only compositional—arising because countries employ workers in different occupations—but also intensive, arising because nominally similar work is organised under different technological and institutional conditions.
+
+The same-task rationale analysis helps interpret what the country-specific labels are capturing. The exposed side points to broad production complements, including digital records, platform workflows, capital equipment, managerial systems and formal routines, which are the kinds of capabilities emphasised in work on technology diffusion and distance to frontier \citep{CominHobijn2010,AcemogluAghionZilibotti2006DistanceToFrontier,CireraCominCruz2024}. The non-exposed side points instead to country-task interactions: weak records, dispersed information, local institutional knowledge and trust-based exchange can make an otherwise automatable task hard to automate in practice \citep{North1990Institutions,BakerGibbonsMurphy2002RelationalContracts}. Within exposed work, the same distinction helps separate labour margins. Routinised and codifiable tasks tend to be classified as substitution only, whereas tasks involving accountability, safety, compliance, local judgement or relational exchange are labelled augmentation only. These are hypotheses and do not describe causal relationships, but they show why countries at similar income levels can differ in both the amount and the form of feasible automation.
+
+Development appears to change not only how much work is exposed, but the form that exposure takes. Lower-income settings are more concentrated in rule-based and substitution-facing routes, whereas higher-income settings contain more physical-execution, planning, inference and augmentation-facing exposure. This pattern is consistent with a process in which complementary capital, skills and organisational capacity expand the set of technologies that can be deployed and the range of human–technology arrangements that firms can sustain. The automation frontier is therefore multidimensional: economies move not simply from low to high exposure, but across different combinations of technology channel and labour margin.
+
+By incorporating these margins within a single dataset, our contribution also speaks to industrial policy and firm-level adoption. Because the atlas separates exposure by country, sector, channel, AI materiality and labour margin, it can be linked to labour-force, firm, education and policy data without collapsing automation into a single score. This helps study which complementary investments, capabilities and conditionalities are associated with productivity-enhancing adoption, and which settings carry greater displacement risk \citep{cirera2022_innovationparadox,MazzucatoRodrik2026Conditionalities}. At the same time, the remaining heterogeneity in exposure levels and labour margins points to firm-level differences: observed adoption, union representation, management practices and organisational choices are likely to shape which feasible automation opportunities firms actually use, and whether they use them to substitute or augment workers \citep{Noble1984ForcesProduction,BresnahanBrynjolfssonHitt2002,BloomVanReenen2007,BloomSadunVanReenen2016,AgnolinAnelliColantoneStanig2025RobotsUnions,NoyZhang2023ProductivityEffectsGenAI}.
+
+The labour-margin distinction also matters for skills and social protection. Substitution-facing exposure raises questions about income support, job-search assistance and protection against displacement. Augmentation-facing exposure points instead to training, certification and matching policies that help workers use new systems and move toward complementary tasks. This distinction is especially important in low- and middle-income countries, where policy design must account for informality, weak insurance systems and frictions in matching workers to firms \citep{oecd2018_automation_training,LassebieQuintini2022,AbebeCariaEtAl2020JobSearch,Freeman2010LaborRegulations,BanerjeeHannaOlkenLisker2024SocialProtection}.
+
+The large balanced-both margin also cautions against treating substitution and augmentation as fixed technological properties. For many exposed tasks, both routes are feasible, and the realised outcome is likely to depend on organisational design, worker capability, regulation and managerial choice. This implies that exposure does not map mechanically into displacement. Two firms facing similar technological possibilities may use the same system to remove labour from a workflow, to support workers who remain in it, or to create a hybrid arrangement. The labour consequences of automation may therefore partly be endogenous to deployment choices rather than determined by technical capability alone.
+
+The measure has important limitations. It captures feasible exposure under stated country contexts, not realised adoption, employment effects, wage effects or productivity changes. This distinction matters because technological capability does not automatically translate into use \citep{SvanbergLiFlemingGoehringThompson2024,FlemingLiThompson2024LastMileAI,McElheranEtAl2023AIAdoptionAmerica}. Adoption and productivity effects depend on firm scale, complementary investment, management practices, organisational redesign and local capabilities \citep{BresnahanBrynjolfssonHitt2002,BloomVanReenen2007,CireraCominCruz2024}. The task dictionary also imposes a boundary. O*NET provides a comparable task universe, but it was developed for the United States and cannot capture every country-, sector-, firm- or workplace-specific variation in task content, especially in informal or locally organised work. This limitation indicates the value of extending and validating task dictionaries in settings beyond high‑income countries.
+
+\section{Methods}
+\label{sec:data_measurement}
+
+We measure automation exposure at the level of work tasks. The task dictionary is based on O*NET, a detailed database of occupational work activities created and maintained by the US Labour Department. We take each standardised O*NET task and evaluate it separately in each country context using a structured language-model classification protocol. For each task-country pair, the protocol records exposure level, labour margin, dominant technology channel, AI materiality, and AI function. The resulting dataset contains $2.33$ million task-country labels, which we aggregate to country, occupation, and industry measures (Extended Data Fig.~\ref{edfig:task_country_exposure_measures}).
+
+This section outlines the O*NET task universe, the classification protocol, and the country-conditioning design. It then describes the benchmark variants, aggregation links to occupations and industries, additional cross-country variables used in the analyses, and measurement robustness checks. Supplementary Table~\ref{tab:data_inventory} lists the main datasets and tables used.
+
+\FloatBarrier
+\subsection{Task source and automation labels}
+\label{sec:methods_exposure}
+
+We use O*NET version 29.1, released in November 2024, and retain $18{,}797$ unique standardised task statements and their occupation links \citep{onet2024,onet_database_29_1}. These tasks form the labelling universe for the language-model classification. We use tasks as the unit of measurement because occupation titles can bundle different work activities across workplaces and countries; country, occupation, and industry summaries are then built by aggregating task-level labels. This choice follows the task-based literature on technological change, where automation operates by reallocating task content between workers and technology \citep{AutorLevyMurnane2003,AcemogluAutor2011,AcemogluRestrepo2018}.
+
+Task automation labelling uses \texttt{gemini-3.1-flash-lite} under a fixed structured classification protocol. We apply the country-conditioned version to $124$ country contexts, spanning economies that account for $99.0\%$ of world population and $99.1\%$ of world GDP. The retained dataset contains $2{,}330{,}776$ country--task observations.
+
+Each country--task observation is labelled along five dimensions. The \textit{exposure level} records how much of the task can plausibly be automated with currently available technology. The \textit{dominant technology channel} records the mechanism through which automation reaches the task core. The \textit{AI materiality} flag records whether contemporary AI/ML models are central to that mechanism; when they are, the \textit{dominant AI function} records the role they play. Finally, the \textit{labour margin} records whether the dominant route is substitution, augmentation, or a balanced combination of the two. The same protocol is also run under income-group and context-free settings for benchmark comparisons. The exact prompt schemas and model configurations are reported in \ref{sec:appendix_measurement_inventory}.
+
+We keep these dimensions separate because they answer different empirical questions. Exposure records the \emph{extent} of economically credible automation; channel records the \emph{mechanism} through which automation reaches the task core; labour margin records the \emph{labour-reallocation route}; and AI materiality records whether AI/ML is central to that route. Country context enters as the assessment setting: the same task is evaluated under the production conditions, complements, and constraints of the named country.
+
+This schema also clarifies how the measure relates to earlier exposure measures. Capability-alignment measures emphasise what AI or machine-learning systems can do \citep{felten2021occupational,BrynjolfssonMitchellRock2018}; text-similarity measures connect technologies to occupational or task descriptions \citep{Webb2020}; and exposure-intensity measures summarise automatable work into a single score \citep{frey2017future,EloundouEtAl2024}. Our schema keeps these margins visible in the same task-country measurement exercise.
+
+\paragraph{Exposure levels.} Exposure is defined as whether currently available technology can perform, transform, or materially reorganise a nontrivial share of the task core at sufficient quality, reliability, and effective cost. This definition follows the task-based view that automation reallocates task content between labour and technology \citep{AutorLevyMurnane2003,AcemogluRestrepo2018}. The four-level scale separates no credible automation margin, assistive contact, partial economic exposure, and extensive economic exposure:
+\begin{itemize}[leftmargin=*,itemsep=0.1em,topsep=0.3em]
+    \item \textbf{Level 0}. \textit{no credible economic automation margin}: current technology cannot create a credible labour-reallocation margin for the task core.
+    \item \textbf{Level 1}. \textit{assistive-only contact}: technology may help, but does not materially reduce human labour input on the task core.
+    \item \textbf{Level 2}. \textit{meaningful partial economic exposure}: a nontrivial share of the task core can be reassigned away from labour, while humans remain central.
+    \item \textbf{Level 3}. \textit{extensive economic exposure}: a large share of the task core can be reassigned away from labour, or the task is mostly automatable in typical settings.
+\end{itemize}
+Throughout the paper, the \textit{economically exposed share} means the share of tasks at levels 2 or 3, and the \textit{high-exposure share} means the share at level 3 alone. Level 1 is an assistive-contact category: it records cases where technology may help with the task but does not create an economically meaningful automation margin. The cutoff keeps broad tool assistance separate from task-core automation that creates an economically material labour-reallocation margin \citep{AutorLevyMurnane2003,AcemogluRestrepo2018}. It also reflects the human-factors point that automation can leave people responsible for monitoring, oversight, and exception handling even in heavily automated settings \citep{Bainbridge1983,Endsley2017}.
+
+\paragraph{Dominant technology channel.} Each labelled task is assigned one dominant channel from a fixed taxonomy of five technology archetypes, with \textit{none} reserved for cases where no automation mechanism is identified:
+\begin{itemize}[leftmargin=*,itemsep=0.1em,topsep=0.3em]
+    \item \textbf{Physical execution}: robotics, mechanical actuation, and embodied systems that physically perform the task, such as warehouse picking or assembly automation \citep{graetz2018robots,acemoglu2020robots}.
+    \item \textbf{Rule-based workflow}: scripted software, robotic process automation, and deterministic business rules that execute structured workflows without learning, such as claims routing or payroll rules \citep{AutorLevyMurnane2003,SyedEtAl2020RPA}.
+    \item \textbf{Information transformation}: systems that extract, translate, transcribe, summarise, or generate informational content when the transformed content is the economically relevant output, such as transcription, translation, drafting, or form extraction \citep{EloundouEtAl2024,BrynjolfssonLiRaymond2023GenerativeAIatWork}.
+    \item \textbf{Planning/control}: optimisation, scheduling, routing, and control systems that choose or update allocations, action sequences, or control settings under objectives and constraints, such as dispatch, routing, or scheduling \citep{BertsimasKallus2020PredictivePrescriptive,ParasuramanSheridanWickens2000Automation}.
+    \item \textbf{Inference/scoring}: statistical or learned models that predict, classify, detect, rank, or score from data when the assessed output is economically relevant, such as risk scoring, defect detection, or document classification \citep{BrynjolfssonMitchellRock2018,Webb2020}.
+\end{itemize}
+
+The channel is assigned by the mechanism that produces the task's economically relevant output, not by tool names, upstream models, or sector labels. This mechanism-first rule follows automation and human-factors work that classifies automation by the function and control stage transferred from humans to machines, and operations work that distinguishes prediction from downstream prescription and control \citep{ParasuramanSheridanWickens2000Automation,EndsleyKaber1999,BertsimasKallus2020PredictivePrescriptive}. If an inferential model only informs scheduling, routing, or allocation, the channel is \textit{planning/control}; if extraction or summarisation feeds a deterministic workflow, the channel is \textit{rule-based workflow}; and if learned perception is embedded in a machine whose contribution is physical actuation, the channel is \textit{physical execution}. The taxonomy therefore separates tasks where inference or information transformation is the task-core output from tasks where learned models support a broader workflow, planning, or physical-execution system.
+
+\paragraph{Labour margin.} The labour-margin label is assigned separately from the exposure level and only among tasks that clear the economic-exposure threshold. It records the dominant labour-reallocation route within economically exposed work: substitution-only, augmentation-only, balanced-both, or unclear. Substitution-only means technology can reduce human labour input on the task core. Augmentation-only means technology mainly raises worker productivity while humans remain central to the task. Balanced-both is reserved for cases in which both routes are materially plausible, and the route taken primarily depends on worker capability or work organisation and management. The \textit{unclear} category denotes genuine measurement uncertainty.
+
+Each task-country record that clears the exposure threshold is assigned to one margin. Country margin shares use the full task universe as the denominator unless explicitly labelled within-exposed: a substitution-only share is the share of all tasks with exposure level 2 or 3 and a substitution-only margin. Non-exposed (level 0) and assistive-contact (level 1) tasks remain outside the three exposed-margin shares, while within-exposed shares renormalise the same exposed tasks to sum to one.
+
+This distinction follows task-based models in which technologies can either displace labour from task content or raise the productivity of remaining workers \citep{AcemogluRestrepo2018}. It also aligns with management work that treats automation and augmentation as distinct organisational designs \citep{RaischKrakowski2021AutomationAugmentation}. Recent field evidence on generative AI adoption shows why the distinction matters: the same exposed task can look substitution-heavy or augmentation-heavy depending on workflow, deployment choice, and division of labour \citep{BrynjolfssonLiRaymond2023GenerativeAIatWork,NoyZhang2023ProductivityEffectsGenAI}.
+
+\paragraph{AI materiality and dominant AI function.} AI materiality records whether contemporary learned models are central to the technology that would perform the exposed task core. When AI is material, the schema also records one dominant AI function:
+\begin{itemize}[leftmargin=*,itemsep=0.1em,topsep=0.3em]
+    \item \textbf{State inference}: learned prediction, classification, detection, or recognition used to infer a relevant state of the world from data \citep{BrynjolfssonMitchellRock2018,Webb2020}.
+    \item \textbf{Content transformation}: learned drafting, summarisation, translation, extraction, or rewriting where transformed informational content is the material AI contribution \citep{EloundouEtAl2024,BrynjolfssonLiRaymond2023GenerativeAIatWork,NoyZhang2023ProductivityEffectsGenAI}.
+    \item \textbf{Recommendation and decision support}: learned ranking, prioritisation, proposal, or advice that supports human or organisational choice without itself constituting the final task output \citep{Puranam2021HACD,AmershiEtAl2019HumanAIInteraction}.
+    \item \textbf{Adaptive control}: learned updating of control actions or control-relevant parameters inside embodied or robotic systems \citep{GuoPan2023AdaptiveRobotControl}.
+\end{itemize}
+AI materiality is separate from channel because many exposed tasks are automated through legacy software, optimisation, or robotics, with learned models playing at most a supporting role. This dimension asks whether AI is central to the exposed automation route; the dominant AI function records what the learned model does within that route. This contribution-based treatment follows work that separates the role of AI inside a larger system from the broader process being automated and from the residual human role around it \citep{AmershiEtAl2019HumanAIInteraction,Puranam2021HACD,RaischKrakowski2021AutomationAugmentation}.
+
+\paragraph{Country-level dimension.}
+\label{sec:methods_benchmark}
+
+Each task is evaluated in a named country context, meaning the institutional, productive, and deployment environment of that country. The task-country dataset covers $124$ countries, spanning economies that account for $99.0\%$ of world population and $99.1\%$ of world GDP. We treat country conditioning as the baseline because the same nominal task can imply different feasible labour-saving margins across economies when complementary capital, skill mix, production organisation, infrastructure, technology diffusion, and distance to frontier differ \citep{CaselliColeman2001Computers,CominHobijn2010,AcemogluAghionZilibotti2006DistanceToFrontier,CaunedoKellerShin2021}. Countries are also grouped into four World Bank income levels (low, lower-middle, upper-middle, high) using the analytical classification for fiscal year 2025 \citep{worldbank_incomegroups}; these groups are used for the income-conditioned benchmark and for the income-gradient figures.
+
+The context-free and income-group runs are used as aggregate benchmarks. They show how the same task labels change when the schema is applied with no country context, with broad development context, or with full country context. The context-free benchmark approximates the single global task assessment implicit in much prior exposure work. The income-group benchmark captures the part of country context summarised by broad development level. Comparing both to the task-country dataset separates common task rankings, income-gradient shifts, and remaining country-level variation. Across all three runs, only the context supplied to the classifier changes: the schema, response structure, and aggregation logic are held fixed. Supplementary Figure~\ref{fig:appendix_benchmark_ladder_country_deviation} reports the benchmark ladder and shows how exposure patterns change as context is added.
+
+
+\FloatBarrier
+\subsection{Task linkages to occupations and industries}
+\label{sec:data_classifications}
+\label{sec:methods_occupation}
+\label{sec:methods_industry}
+Once task labels are defined, we aggregate them to occupation- and industry-level measures. Occupation summaries first use the O*NET task-to-occupation mapping, which links each task to U.S. Standard Occupational Classification (SOC) occupations. This preserves the task-to-occupation structure in the source data, while holding the task-to-occupation bundle fixed across countries. We then map SOC occupations to the International Standard Classification of Occupations 2008 (ISCO-08), the occupation taxonomy used in cross-country labour-force data. Industry summaries require a separate task-to-activity linkage because O*NET does not provide an equivalent industry mapping. The country-specific variation in these summaries comes from the task-country labels. Holding the aggregation bridges fixed keeps the occupation and industry comparisons consistent across countries, but it also means that these aggregates do not capture country-specific variation in the task bundles performed within the same occupation or industry.
+
+\paragraph{Occupation linkage: task $\rightarrow$ SOC $\rightarrow$ ISCO.} Occupation summaries are reported at the two-digit ISCO-08 level, the International Labour Organization's occupation taxonomy for cross-country labour statistics \citep{isco08}. O*NET links tasks to U.S. SOC occupations, which we map to ISCO-08 using the SOC--ISCO crosswalk reference maintained by the U.S. Bureau of Labor Statistics \citep{bls_soc_isco_crosswalk}. The baseline bridge weights SOC occupations by their linked task content; a modal bridge is retained as a sensitivity check. This type of occupation bridge is standard in cross-country AI-exposure work that maps U.S. occupation or task information into ISCO-based labour-force data \citep{PizzinelliEtAl2023,CazzanigaEtAl2024,GmyrekBergBescond2023}. Full bridge details are reported in \ref{sec:appendix_methods_audit}.
+
+\paragraph{Industry linkage: task $\rightarrow$ ISIC4.} Industry summaries are reported at the two-digit level of the International Standard Industrial Classification of All Economic Activities, Revision 4 (ISIC Rev.~4), the United Nations taxonomy of economic activities \citep{isicrev4}. ISIC classes describe productive activities carried out by establishments. Because O*NET is occupation-native, industry reporting requires a direct task-to-industry link: which O*NET tasks are meaningful components of each ISIC class's activity.
+
+We construct a task-to-ISIC4 graph in which each retained edge links an O*NET task to an ISIC4 class. The graph uses a bottom-up candidate-then-prune design, following the build-prune logic in \citet{FetzerLambertFeldGarg2024AIPNET}. Embedding similarity proposes candidate task--ISIC4 edges, and a structured LLM voter removes candidates that share language without representing a meaningful activity component. The retained graph contains $12{,}294$ task--ISIC4 edges across $418$ retained ISIC4 classes and $88$ two-digit divisions. For the two-digit industry figures, country-task exposure is first averaged within retained four-digit classes and then averaged equally to two-digit divisions and income-group cells. The equal-weight design makes the ISIC results a measure of class content. Full construction details are reported in \ref{sec:appendix_methods_audit}; the occupation and industry rankings that use the linkage are reported in \ref{sec:appendix_aggregation_route}.
+
+\FloatBarrier
+\subsection{Country-context analyses and labour-force inputs}
+\label{sec:data_country}
+\label{sec:methods_weighting}
+
+\paragraph{Country-level variables.} The descriptive exercise in Section~\ref{sec:results_country_predictors} uses country-level variables from the Penn World Table and other public sources to ask which national characteristics are associated with the amount of exposed work and with the substitution-versus-augmentation mix within exposed tasks. The covariates cover five broad domains. First, income level is measured using log GDP per capita, computed from World Bank GDP and population fields \citep{worldbank_wdi}. Second, human-capital capacity is measured using the Penn World Table human-capital index, which combines schooling and returns to education, and average years of schooling for adults aged 15--64 from the Barro--Lee educational-attainment data \citep{FeenstraInklaarTimmer2015PWT,BarroLee2013Education}. Third, capital deepening and investment are measured using log real capital stock per worker from the Penn World Table and gross fixed capital formation as a percentage of GDP from the World Development Indicators \citep{FeenstraInklaarTimmer2015PWT,worldbank_wdi}. Fourth, digital connectivity is measured by the share of individuals using the Internet from the World Development Indicators \citep{worldbank_wdi}. Fifth, institutional and market conditions are measured using government effectiveness and regulatory quality percentile ranks from the Worldwide Governance Indicators, and goods-trade openness, measured as CEPII BACI merchandise trade divided by GDP \citep{worldbank_wgi,GaulierZignago2010BACI}. For time-varying covariates, we retain the most recent non-missing value per country in the available window. \ref{tab:appendix_country_covariate_dictionary} provides more details on these inputs.
+
+\paragraph{Predictor ranking.} We fit random forests to allow nonlinearities and interactions among covariates that are partly overlapping proxies for development, connectivity, institutions, and production structure. The main figure ranks covariates by mean absolute TreeSHAP values averaged across five random-forest seeds. These values express each covariate's average predictive contribution in the same units as the outcome \citep{LundbergLee2017SHAP,LundbergEtAl2020TreeSHAP}. TreeSHAP is used because unconditional permutation-importance rankings can be sensitive when predictors are highly correlated \citep{StroblEtAl2008ConditionalImportance}. The ranking should still be read by predictor clusters rather than as separate marginal effects. We calculate one-dimensional accumulated local effects separately in the same five forests and summarise them by their median. Direction markers are positive or negative only when at least four of five signs agree; otherwise they are mixed \citep{ApleyZhu2020ALE}. \ref{sec:appendix_residual_country_explanations} reports wider-coverage specifications, a permutation-importance companion, variance-inflation diagnostics, and a linear Shapley $R^2$ decomposition.
+
+% \paragraph{Rationale-concept analysis.}
+
+% The rationale-concept analysis asks which parts of the country-conditioned rationales are associated with exposure differences for the same task. We first form same-task comparisons among tasks that are exposed in at least one country and non-exposed in at least one other country. Exposed observations have exposure level 2 or 3; non-exposed observations have exposure level 0 or 1. This restriction leaves 15{,}143 eligible tasks and keeps task content fixed while country context varies.
+
+% The text input is limited to the short rationale generated for each task-country label. We use task identifiers, country names, income groups and label fields only to define the sample and comparison. These fields are excluded from the embeddings so that the procedure cannot recover the outcome from metadata. We also replace country names, demonyms, possessive country forms, region names and country-bloc labels in the rationale text with a common \texttt{[PLACE]} token. This mask prevents the analysis from selecting concepts only because they name particular countries or regions. We leave terms such as infrastructure, connectivity, capital, skills, institutions, trust and paper-based records unmasked because these are candidate production-context concepts.
+
+% The analysis has a discovery stage and a separate evaluation stage. In the discovery stage, we draw 10{,}000 same-task pairs, containing 10{,}000 exposed-country rationales and 10{,}000 non-exposed-country rationales. Following recent work using machine learning for hypothesis generation \citep{LudwigMullainathan2024HypothesisGeneration,MovvaEtAl2025HypotheSAEs}, we embed the place-masked rationales with \texttt{text-embedding-3-large} using 1{,}024 output dimensions. We then train a sparse autoencoder with 512 features, eight active features and 25 training epochs. Sparse features associated with the exposed or non-exposed side of the same-task comparison are interpreted as candidate rationale concepts, which serve as hypotheses about the text features associated with each side of the comparison.
+
+% We audit these candidate interpretations before using them in the evaluation sample. For each selected sparse feature, an interpretation model proposes natural-language concept labels. A yes/no coding pass then checks whether each proposed concept appears more often in high-activation rationales than in zero- or low-activation rationales for the same feature. We retain at most one interpretation per feature, require a high-minus-low activation fidelity gap of at least 0.20, and fix the 20 retained concepts with the largest absolute discovery-stage separation.
+
+% The evaluation stage uses a separate sample of 2{,}000 same-task pairs. Each pair contains one exposed-country rationale and one non-exposed-country rationale for the same task, and no rationale from the discovery sample is reused. For each fixed concept, \texttt{gpt-5-nano} codes whether the concept is present in each rationale. We estimate exposed-minus-non-exposed differences in concept presence within task pairs, with paired standard errors across tasks and Bonferroni-adjusted p-values across the 20 fixed concepts. For presentation, the 20 concepts are grouped into seven concept families; family scores average the fixed child-concept indicators. Full sample construction, masking rules, prompts, fidelity checks and evaluation details are reported in Supplementary Note~\ref{sec:appendix_rationale_concept_analysis}.
+
+\paragraph{Hypothesis generation from rationales.}
+
+Each task-country label includes a short classifier rationale. We use these rationales as a text corpus to generate hypotheses about production conditions associated with country-conditioned exposure and labour-margin labels. The analysis follows recent work using machine learning for hypothesis generation from high-dimensional text and LLM-based sparse-feature interpretation \citep{LudwigMullainathan2024HypothesisGeneration,MovvaEtAl2025HypotheSAEs}. In our setting, the relevant text is the rationale itself. Task identifiers, country names, income groups and label fields are used only to construct samples and comparisons. They are excluded from the embedded text. We also replace country names, demonyms, possessive country forms, region names and country-bloc labels with a common \texttt{[PLACE]} token, while leaving production-condition terms such as infrastructure, connectivity, capital, skills, institutions, trust, manual work, paper records, software, platforms and equipment unmasked.
+
+We run the procedure for three paper-facing contrasts. The first holds the standardised task fixed and compares exposed-country rationales with non-exposed-country rationales for the same task; exposed observations have exposure level 2 or 3, while non-exposed observations have exposure level 0 or 1. The second compares substitution-only rationales with other exposed-label rationales. The third compares augmentation-only rationales with other exposed-label rationales. These are the same contrasts summarised in panels~(d)--(f) of Figure~\ref{fig:country_covariate_feature_importance}.
+
+For each contrast, the analysis has a discovery stage and a separate heldout evaluation stage. The discovery stage is designed to find recurring rationale patterns without letting the procedure select country names, label names, or one-off examples. We embed the place-masked rationales with OpenAI's \texttt{text-embedding-3-large} using 1{,}024 output dimensions, then train sparse autoencoders with 512 features, eight active features and 25 training epochs. The embeddings represent the rationale text; the sparse autoencoder reduces that representation to recurring features that can be inspected as candidate production-condition hypotheses. We rank sparse features by their signed association with the two sides of each contrast.
+
+We then convert selected sparse features into plain-language hypotheses. For each selected feature, \texttt{gpt-5.4-mini} reads high-activation and low-activation rationales and proposes a natural-language production-condition label. The prompt asks for a concept visible in the high-activation rationales and absent, or much less prominent, in low-activation rationales. It also instructs the model not to use country names, income groups, task identifiers, label names, or the target variable. A separate \texttt{gpt-5-nano} yes/no coding pass then checks whether the proposed label is more common in high-activation rationales than in low-activation rationales for the same feature. We retain at most one interpretation per feature, require a high-minus-low activation fidelity gap of at least 0.20, and fix 20 hypotheses per contrast before heldout evaluation.
+
+The heldout evaluation asks whether these fixed hypotheses recur on one side of the comparison in new rationales. The heldout samples use matched rationale comparisons, with no rationale from discovery reused. For each fixed hypothesis, \texttt{gpt-5-nano} codes whether the hypothesis is present in each heldout rationale. We then estimate first-group-minus-second-group differences in hypothesis presence, using paired standard errors for the matched comparisons and Bonferroni-adjusted p-values across the 20 fixed hypotheses within each contrast. The main text reports pooled hypothesis families for the exposure, substitution and augmentation contrasts; Supplementary Note~\ref{sec:appendix_rationale_concept_analysis} reports the target definitions, masking rules, prompts, fidelity checks, heldout evaluation details and full hypothesis inventories. These estimates are hypothesis-generating summaries of recurring explanation text, not causal estimates of production conditions.
+
+\paragraph{Labour-force inputs.} ILOSTAT provides labour-force, occupation, and industry employment data used to reweight the constructed exposure measures \citep{ilostat_database,ILOSTATLabourForceStats2026,ILOSTATProfiles2026}. These data enter after the task-country labels have been constructed. For the broad employment-weighted occupation summaries, we use each country's latest usable total-employment observation from 2015--2025 at the ISCO-08 major-group level. For the sex-specific analysis, we use the latest common female and male observations from 2018--2024 at the most detailed cross-country level available for both views: two-digit ISCO-08 occupation groups and two-digit ISIC Rev.~4 industry divisions. These shares reweight the occupation and industry exposure summaries, so the female--male comparison holds exposure scores fixed and varies observed employment composition.
+
+\paragraph{Statistical reporting.}
+The unit of analysis changes across exercises, so we report sample size, denominators and uncertainty at the level used for each comparison. The main measurement repeats the same standardized task across country contexts, producing distinct task-country observations. Country-level figures use one observation per country; same-task rationale comparisons use paired task designs; and labour-force regressions use country--occupation or country--industry cells with standard errors clustered by country. Unless otherwise stated, reported null-hypothesis tests are two-sided. Validation exercises report Pearson, Spearman or partial Pearson correlations as specified. Country-predictor screens report random-forest TreeSHAP summaries as descriptive attribution measures. Rationale-concept tests report paired standard errors and Bonferroni-adjusted p-values across the retained child concepts.
+
+
+\FloatBarrier
+\subsection{Measurement validity}
+\label{sec:data_external_benchmarks}
+\label{sec:methods_validation}
+
+We assess the task labels through four measurement checks, summarised here and reported in detail in \ref{sec:validation_construct} and \ref{sec:appendix_validation}. The checks assess both external alignment and internal consistency. First, we ask whether aggregates built from the labels align with independent measures along the dimensions they are meant to capture. We then examine cross-model convergence, rationale and prompt consistency, and the distribution of labels across tasks and countries.
+
+\paragraph{Construct validity.} Construct validity asks whether aggregates built from the labels line up with external measures, often derived from primary data, that were not used to produce them. These include task- and occupation-level exposure scores from \citet{EloundouEtAl2024}, occupation-level exposure scores from \citet{frey2017future}, \citet{Webb2020}, and \citet{felten2021occupational}; observed U.S. ChatGPT use across O*NET intermediate work activities; the IMF AI Preparedness Index \citep{CazzanigaEtAl2024GenAI}; and firm-reported AI adoption from the Eurostat ICT Usage in Enterprises AI module. Because these comparators measure different parts of exposure, the test is construct-specific: agreement should be strongest along the matched dimension. We compare AI-focused measures with AI-material share, robotics measures with physical execution, and foundation-model measures with inference and information-transformation channels.
+
+The external comparisons follow that pattern. Eloundou et al.\ score tasks and occupations by exposure to GPT-style systems; their broad GPT-4 gamma occupation score is therefore closest to our foundation-model-like share, defined as the sum of inference/scoring and information-transformation channels. This matched share correlates more strongly with Eloundou's GPT-4 gamma score than overall exposure does (Pearson $0.78$ versus $0.22$ for overall exposure). Felten's AI Occupational Exposure index measures occupational exposure to AI capabilities, so its closest counterpart in our schema is AI-material share ($0.61$ versus $0.10$ for overall exposure). Webb's robotics-patent sub-score links occupation tasks to robotics patents, so its closest counterpart is physical-execution share ($0.72$ versus $0.05$ for overall exposure), the strongest clean channel correspondence in the matrix (Supplementary Figure~\ref{fig:validation_channel_alignment}).
+
+As an external observed-use check, we compare atlas measures with public OpenAI data on U.S. work-related ChatGPT messages by O*NET intermediate work activity. The strongest correlations are for the parts of the taxonomy most closely related to observed ChatGPT use: work-related message shares are most correlated with the AI content-transformation function (Spearman $\rho=0.435$) and the information-transformation channel ($0.417$). This is a demanding comparison: the atlas measures potential exposure for detailed tasks, while the OpenAI series measures realised consumer ChatGPT use after work has been aggregated to broader IWA categories. The public data also leave out enterprise systems, embedded AI and non-ChatGPT tools. A correlation near $0.44$ is therefore large for this kind of check. Broader measures are positive but smaller: AI-material exposed share correlates at $0.226$, and broad economic exposure at $0.182$. Recommendation/decision is also positive ($0.216$), while rule-based workflow ($0.122$), planning/control ($0.090$), and inference/scoring ($-0.066$) are weaker. Physical execution is negative ($-0.279$). Observed ChatGPT use is highest for information and content transformation, weaker for broad exposure aggregates, and lowest for channels that public ChatGPT messages should capture poorly.
+
+We further extend this exercise to widely used country readiness and firm adoption data. The IMF AI Preparedness Index summarises country readiness for AI through digital infrastructure, human capital and labour-market policies, innovation and integration, and regulation and ethics. Country-level AI-material share correlates strongly with the IMF index, at Pearson $0.90$ across $117$ countries. Because the IMF index is built from development-related preparedness components, we also ask whether the alignment remains after removing the common log-GDP gradient. The residual association remains positive, with partial Pearson $0.42$ (Supplementary Figure~\ref{fig:validation_imf_aipi}). Eurostat's ICT Usage in Enterprises module reports the share of firms using AI technologies by country and industry. Industry-level AI-material share correlates positively with that reported adoption, at Pearson $0.41$ across reported country--NACE cells and $0.52$ across reported NACE-cell means (Supplementary Figure~\ref{fig:validation_eurostat_adoption}). Taken together, these correlations suggest that our labelling recovers meaningful patterns observed in the real world.
+
+\paragraph{Convergent validity.} Convergent validity asks whether classifications are similar across model families, a central concern in recent multi-model replications of LLM-generated occupational exposure scores \citep{YinVuPersico2026LLMExposureStability}. We re-label the $18{,}177$ tasks with usable context-free labels using \texttt{gpt-5.4-mini} under the same prompt and schema, and compare the two runs task by task. Across the paired classifications, $95.0\%$ differ by no more than one exposure level, and $75.1\%$ agree on exposed versus non-exposed status. The disagreements are systematic: the independent model assigns fewer extreme labels and more middle-category labels. Exact four-level agreement is $48.1\%$. Exact levels and the exposed-versus-non-exposed boundary are therefore more sensitive to model choice (Supplementary Figure~\ref{fig:validation_cross_model_validity}).
+
+\paragraph{Reasoning consistency.} Reasoning consistency asks whether the label is recoverable from the model's stated rationale, and whether prompt paraphrases change the classification. We use two tests. First, an independent model receives the task description and original rationale, with the original label withheld, and predicts the label under the same schema. Second, the main labelling model classifies the same task sample under three paraphrased prompts.
+The independent model recovers the binary exposed label for $99.0\%$ of a stratified $1{,}000$-observation sample from the task descriptions and rationales (Supplementary Figure~\ref{fig:validation_rationale_predictability}); across the three paraphrases, $99.8\%$ of tasks receive exposure levels within one step of each other (Supplementary Figure~\ref{fig:validation_paraphrase_stability}). Disagreements concentrate at adjacent levels, with greater sensitivity around the exposed-versus-not-exposed cutoff.
+
+\paragraph{Face validity.} Face validity asks whether the labels look plausible before they are compared with external measures. We use four checks. First, the distributional check asks whether the label shares across all $2{,}330{,}776$ country-task observations have sensible mass across exposure levels, channels, margins, and AI materiality, both overall and by income group. Second, we explore rationale-label relationships for internal consistency. Third, country-conditioning rationales for the same task are compared across countries to see whether they remain task-relevant while reflecting different production environments, skill levels, and adoption constraints. Fourth, we observe whether occupations with strong prior rankings in the literature, such as clerical, professional, and physical-production roles, appear in the expected order.
+
+The appendix reports the evidence from these checks. The distributional figures show how label shares vary overall and by income group, rather than concentrating in a single category (Supplementary Figures~\ref{fig:validation_distribution_overview} and~\ref{fig:validation_distribution_by_income}). The rationale-consistency screen flags potential rationale--label mismatches in $0.11\%$ of observations (Supplementary Table~\ref{tab:validation_rationale_consistency}). The country-conditioning check compares rationales for the same task across country contexts, while the anchor-occupation check asks whether occupations with strong prior rankings appear in the expected order. For example, clerical and administrative occupations sit high in exposure, while occupations centred on in-person care and physical services sit lower. Supplementary Figure~\ref{fig:validation_country_conditioning_divergence} and Supplementary Tables~\ref{tab:validation_quadrant_examples} and~\ref{tab:validation_anchor_occupations} report the supporting examples and rankings.
+
+\section*{Data availability}
+The constructed exposure measures are available through the accompanying online atlas at \url{https://automationatlas.org/}. The public replication package is available at \url{https://github.com/prashgarg/global-automation-atlas}. It includes the retained task-country labels used in the analyses, country-, occupation-, and industry-level exposure panels, source data for the paper figures and tables, prompt protocols, data dictionaries, and, for the rationale-concept analysis, fixed concept lists and evaluation-sample paired tests. The analysis also uses public source data from O*NET, the World Bank, Penn World Table, Barro--Lee, Worldwide Governance Indicators, CEPII BACI, ILOSTAT, the IMF AI Preparedness Index, Eurostat ICT Usage in Enterprises, and external exposure measures cited in the paper. Source links and their roles in the analysis are documented in the replication package. Underlying public datasets remain subject to their original terms of use.
+
+\section*{Code availability}
+The code used to reproduce the paper figures, tables, and numerical checks is available in the public replication repository at \url{https://github.com/prashgarg/global-automation-atlas}. The repository documents the language-model prompts, and the reproducible analysis starts from the retained labels used in the paper.
+
+\section*{Competing interests}
+The authors declare no competing interests.
+
+\bibliographystyle{apalike}
+{\small \bibliography{references}}
+
+\clearpage
+\section*{Extended Data}
+
+\begin{figure}[!htbp]
+    \centering
+    \edfigcaption{Constructing task-country exposure measures.}{edfig:task_country_exposure_measures}
+    \includegraphics[width=\linewidth]{fig_task_country_exposure_measures.pdf}
+    \caption*{\footnotesize
+    \textit{Notes:} The figure summarises the task-country labelling pipeline. We combine $18{,}797$ O*NET task statements with $124$ country contexts and classify each task-country pair under a fixed labelling protocol. Each record stores an exposure level, labour margin, dominant technology channel, AI materiality, and AI function. Exposure is coded on a $0$--$3$ scale; levels 2 and 3 define the economically exposed share. Labour margin distinguishes substitution-only, augmentation-only, and balanced-both cases, where both routes are materially plausible. The dominant channel is one of five implementation pathways: physical execution, rule-based workflow, planning/control, information transformation, or inference/scoring. AI materiality records whether AI/ML is central to the automation route; AI function is recorded when AI is material. The resulting $2.33$ million retained records are aggregated to country, occupation, and industry measures.
+    }
+\end{figure}
+
+\clearpage
+\appendix
+
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\makeatletter
+\@addtoreset{figure}{section}
+\@addtoreset{table}{section}
+\makeatother
+\renewcommand{\thefigure}{\Alph{section}.\arabic{figure}}
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+\renewcommand{\thesection}{Supplementary Note \Alph{section}}
+
+\begin{center}
+{\Large\bfseries Supplementary Materials}\\[0.8em]
+{\large Global Automation Atlas}\\[0.4em]
+Prashant Garg, Tommaso Crosta, and Jasmin Baier
+\end{center}
+
+\vspace{1em}
+\noindent The Supplementary Materials are organised in two notes. Supplementary Note A gives the measurement construction, prompt protocols, and validation checks. Supplementary Note B collects results companions, robustness checks, occupation and industry summaries, and employment-linked extensions.
+
+\section{Methodology and Validation Supplement}
+\label{sec:appendix_methodology}
+
+\noindent This note provides additional details related to the validation of the task-country measure used in the main text. It has three parts. First, it defines the data inputs and measures, and the aggregation and linkage rules that turn task labels into country, occupation, and industry summaries. Second, it reports the prompt protocols and output diagnostics needed to interpret the model-produced labels. Third, it reports additional details on the four validity checks: construct validity, convergent validity across model families, reasoning consistency, and face validity. Supporting results are collected in \ref{sec:appendix_results}.
+
+\FloatBarrier
+\subsection{Task aggregation and linkage rules}
+\label{sec:appendix_methods_audit}
+This subsection details how task labels are normalised, compared across context variants, and aggregated into the occupation- and industry-level measures used in the paper.
+
+\paragraph{Task-label normalisation.} Each model return is parsed into the fixed schema defined in Section~\ref{sec:methods_exposure}. Exposure level is stored as a bounded integer on the $0$--$3$ scale; dominant technology channel, labour margin, and dominant AI function are stored as enumerated categorical fields; and AI materiality is stored as a binary flag. For the task-country level dataset, each observation receives one labour-margin label from $\{\text{substitute},\text{augment},\text{balanced-both},\text{unclear}\}$. The \textit{balanced-both} category is reserved for cases in which the task core is reorganised into a shared human--technology workflow. This convention keeps technology contact, economic exposure, and margin composition separate: Level 1 records assistive contact below the economic threshold, while substitution, augmentation, and balanced-both shares describe only the composition of economically exposed work.
+
+\paragraph{Context variants.} The country-conditioned, income-group, and context-free runs use the same task unit, schema, and aggregation rules. Only the context supplied to the classifier changes. The country-conditioned version is the baseline used in the results. The income-group and context-free versions are matched benchmarks used to quantify how much the same task labels change when country information is removed or coarsened to development level.
+
+\paragraph{Occupation linkage details.} Let $T(o)$ denote the O*NET tasks attached to parent SOC occupation $o$ and let $w_{to}$ denote task weights within that occupation, normalised so $\sum_{t\in T(o)} w_{to}=1$. The SOC-level exposure measure is
+\[
+\widehat{E}_{o}=\sum_{t\in T(o)} w_{to}\,E_t.
+\]
+We then map the SOC-level exposure measure to ISCO groups using bridge shares $m_{ok}$:
+\[
+\widehat{E}^{(w)}_{k}=\sum_{o} m^{(w)}_{ok}\widehat{E}_{o}, \qquad
+\widehat{E}^{(m)}_{k}=\sum_{o} m^{(m)}_{ok}\widehat{E}_{o}.
+\]
+We report the task-weighted variant as the baseline and retain the modal variant as a sensitivity check. Analogous measures are produced for channel, margin, and AI composition using the same bridge weights.
+
+\paragraph{Industry linkage details.} For each four-digit ISIC Rev.~4 activity description, embedding similarity generates candidate task links against normalised O*NET task text. Each candidate edge is then passed to a structured LLM voter that decides whether the task is a meaningful component of the activity. The prune pass produces $56{,}904$ completed vote requests over $18{,}968$ candidate edges, with a mean vote-agreement share of $96.6\%$ across repeated prompts. Of the $18{,}968$ candidate edges, $12{,}294$ are retained. The retained graph covers $418$ ISIC4 classes and $88$ two-digit divisions. We use the same weighted sum as in the occupation summary. Two-digit ISIC figures first summarise each country at the retained four-digit class level and then average equally across constituent four-digit classes within each division.
+
+\paragraph{Employment-weighted reaggregation checks.} These checks ask how the constructed exposure measures change when downstream aggregation uses observed employment weights rather than equal task or occupation weights. For the occupation summaries, we reweight the SOC-level measures by U.S. BLS OEWS national employment counts at six-digit SOC \citep{bls_oes} and by the BLS industry--occupation matrix \citep{bls_industry_occ}. For the country-level reweighting exercise, we replace the U.S.-based occupation distribution with country-specific ISCO employment shares from ILOSTAT \citep{ilostat_database,ILOSTATLabourForceStats2026,ILOSTATProfiles2026}. These exercises do not change the underlying task-country labels. They show how much aggregate exposure can move when the same labels are combined with different employment structures, especially at the occupation level \citep{PizzinelliEtAl2023}.
+
+\FloatBarrier
+\subsection{Data inputs, constructed measures, prompt protocols, and output diagnostics}
+\label{sec:appendix_measurement_inventory}
+Supplementary Table~\ref{tab:data_inventory} lists the task and country data, occupation- and industry-level measures, and country covariates used in the paper.
+\input{02_Tables/refresh_country124_20260406/tab1_data_inventory.tex}
+
+\input{03_Appendix/prompt_protocols_slim.tex}
+\input{03_Appendix/generated_prompt_output_descriptives_reverse.tex}
+
+\FloatBarrier
+\subsection{Benchmark conditioning ladder construction}
+\label{sec:appendix_benchmark_ladder_method}
+The benchmark ladder separates variation due to the task itself from variation introduced by country context. A context-free label shows how the task is classified when no country information is supplied. Income-group labels show how the same task changes under broad development contexts. Country-conditioned labels show how it changes under the specific production, institutional, and deployment conditions of each country. To make these comparisons interpretable, the labelling pipeline is held fixed across settings: the same task text, schema, response format, model family, and aggregation rules are used throughout. Only the contextual information supplied to the classifier changes.
+
+The ladder has three levels of contextual detail. First, the context-free benchmark labels each task once without naming any country or income group. Second, the income-group benchmarks label each task once under each of the four World Bank income groups: low, lower-middle, upper-middle, and high income. Third, the country-conditioned dataset labels each task separately for each of the $124$ countries.
+
+The figure uses the ladder in two ways. Panels~(a) and~(b) show how headline exposure and AI materiality change as context moves from no country information to broad development context. Panel~(c) isolates variation within income groups. For each country, we subtract the matched income-group benchmark from the country-conditioned task label, task by task, and then average those differences within country. These mean deviations show how much country-level residual exposure remains after broad income-group context has been absorbed.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Benchmark comparisons across context settings.}
+\includegraphics[width=0.96\textwidth]{fig_benchmark_ladder_country_deviation.pdf}
+\caption*{\scriptsize Notes: Panel~(a) reports mean exposure and exposed share across the context-free and four income-group benchmark prompts. Panel~(b) reports AI-material share among exposed tasks for the same benchmark contexts. Panel~(c) reports each country's mean task-level deviation from its matched income-group benchmark, using the full country-conditioned dataset.}
+\label{fig:appendix_benchmark_ladder_country_deviation}
+\end{figure}
+
+\clearpage
+\FloatBarrier
+\subsection{Construct validity findings}
+\label{sec:validation_construct}
+Construct validity asks whether our task-level and occupation-level aggregates move with external measures that should capture related constructs. Existing approaches capture different sub-constructs of exposure, so we conduct aligned checks across four surfaces: task- and occupation-level exposure scores from the established literature, observed U.S. ChatGPT use across O*NET work activities, a country-level AI readiness composite, and firm-reported AI adoption from official statistics.
+
+We retain four external sources that together capture different notions of automation or AI relevance at different levels and vintages: \citet{frey2017future}, \citet{felten2021occupational}, \citet{Webb2020}, and \citet{EloundouEtAl2024}. Supplementary Table~\ref{tab:appendix_comparator_coverage} makes explicit which external variable is compared with which paper variable. Supplementary Tables~\ref{tab:appendix_task_external} and~\ref{tab:appendix_occ_external} report the task- and occupation-level summaries.
+
+Eloundou et al.\ report task-level exposure ratings for GPT-style systems and occupation-level aggregates under alpha, beta, and gamma definitions. We use their task-level ratings for the task-level comparison. At the occupation level, we treat the gamma series as a comparator for foundation-model-era AI systems because it is the broadest reported Eloundou aggregate and allows exposure through complementary foundation-model-powered software. In our schema, the closest construct-aligned variable is the foundation-model-like channel share: exposed work whose dominant route is inference/scoring or informational transformation. This is narrower than overall AI-material exposure, which also includes other AI functions such as adaptive control or recommendation. We therefore report AI-material exposure as a broad AI comparison, while reading the foundation-model-like channel comparison as the closest match to Eloundou gamma.
+
+Aggregation scope changes the comparison, so we use four summaries where useful: (i) US-only, matching the native context of several occupation-level comparators; (ii) GDP-weighted, emphasizing output-weighted production environments; (iii) population-weighted, giving more weight to where workers live and therefore central for the development interpretation; and (iv) unweighted, treating national settings symmetrically.
+
+\input{02_Tables/refresh_country124_20260406/tabS1_comparator_coverage.tex}
+
+\input{02_Tables/refresh_country124_20260406/tabS2_task_external_summary.tex}
+
+\input{02_Tables/refresh_country124_20260406/tabS3_occupation_external_summary.tex}
+
+The test we use at each surface is \emph{sub-construct alignment}. Some external measures map cleanly to one measurement dimension in our schema: AI-focused measures to AI-material share, foundation-model measures to inference and informational-transformation channels, and robotics measures to physical execution. Other measures combine several mechanisms. Frey--Osborne is a computerisation probability, so its matched comparison is overall exposure. Webb's software-patent score remains in the full matrix as a mixed construct, since software patents can describe workflow software, industrial-control software, and software embedded in physical automation. Our measure differs from every external measure on at least one construct margin: it is country-conditioned, it distinguishes substitution from augmentation, it separates the AI materiality from legacy automation in the same schema, and it uses a four-level ordinal scale. The comparators also differ in native unit: Eloundou's task ratings are task-native and are compared directly with our task-level summaries, while Eloundou's gamma series, Frey--Osborne, Webb, and Felten are occupation-level comparators and are compared with our occupation summaries. We treat Eloundou et al.\ as an important foundation-model-era exposure comparator. Recent evidence shows that LLM-generated occupational exposure scores can shift substantially when the same scoring scheme is applied by different rating models \citep{YinVuPersico2026LLMExposureStability}. For this reason, the construct-validity exercise focuses on whether agreement is strongest along matched dimensions, without requiring exact agreement with any single external score.
+
+\paragraph{Task- and occupation-level exposure scores.} At the task level, Eloundou's task-native scores are the only like-for-like external comparator. Against our reported output-weighted global task summary, Eloundou's GPT-4 task scores correlate at Pearson $0.533$, Spearman $0.575$ across $23{,}743$ comparable tasks, and the Eloundou human-labelled subset correlates at Pearson $0.764$, Spearman $0.832$ across the $116$ tasks their human labelling covers. These correlations are high for independently constructed foundation-model exposure measures and are consistent with the two measures capturing related task-level constructs. At the occupation level, our reported output-weighted summary correlates with \citet{EloundouEtAl2024} GPT-4 gamma scores at Pearson $0.406$, Spearman $0.405$ across $923$ occupations; with Eloundou human-labelled gamma at Pearson $0.387$, Spearman $0.359$; with \citet{felten2021occupational} AIOE at Pearson $0.313$, Spearman $0.261$; and with \citet{frey2017future} computerisation probability at Pearson $0.292$, Spearman $0.358$. \citet{Webb2020}'s AI sub-score correlates at Pearson $0.138$, the lowest of the group. Agreement is strongest with the Eloundou task-level comparator, moderate with the capability-based occupation measures (Felten, Frey--Osborne), and weakest with Webb's patent-text AI measure. This ordering is expected: Webb AI captures patented AI applications, whereas much of the current foundation-model deployment margin runs through general-purpose models, APIs, and open-source systems rather than firm-held AI patents. We retain Webb AI in the table for completeness. Webb robotics gives the cleanest Webb channel comparison; Webb software is reported as a mixed patent comparator.
+
+The matched comparisons are sharper than overall exposure where the external construct is narrow. Figure~\ref{fig:validation_channel_alignment} panel~(a) reports the full feature-by-comparator Pearson matrix on the US occupation universe; panel~(b) contrasts overall exposure with the pre-specified feature for each clean match. Frey--Osborne is broad, so its matched feature is overall exposure (Pearson $0.45$). For the narrower comparators, the matched feature is much closer than overall exposure: foundation-model-like share correlates with Eloundou GPT-4 gamma at Pearson $0.78$, compared to $0.22$ for overall exposure; AI-material share correlates with Felten AIOE at $0.61$, compared to $0.10$; and physical-execution share correlates with Webb robotics at $0.72$, compared to $0.05$. The off-diagonal cells clarify the mixed cases. Webb software correlates negatively with rule-based workflow share ($-0.14$) and software-like share ($-0.33$), but positively with physical-execution share ($0.37$), consistent with software patents often describing industrial-control and process-automation systems. The Webb robotics $0.72$ correlation is the strongest clean channel correspondence in the matrix: Webb robotics measures patented industrial and service robotics, and our physical-execution channel captures the same underlying construct in its task-level labels.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Construct-matched validity: paper sub-constructs against external sub-scores.}
+\includegraphics[width=\textwidth]{fig_validation_channel_alignment.pdf}
+\caption*{\scriptsize Notes: Correlations are computed across $923$ US six-digit O*NET-SOC occupations. Paper measures come from the US context-conditioned task labels; external measures are Frey--Osborne computerisation probability, Felten AIOE, Eloundou GPT-4 gamma, and Webb's AI, software, and robotics sub-scores. Panel~(a) reports the Pearson-correlation matrix. Outlined cells mark the pre-specified construct matches shown in panel~(b). Webb Software is unoutlined because its patent construct mixes software-only and software-enabled physical automation.}
+\label{fig:validation_channel_alignment}
+\end{figure}
+
+\paragraph{Observed use at the work-activity level.}
+The previous checks compare the atlas with external exposure scores. We also compare the atlas labels for the United States with observed ChatGPT use in the same work-activity taxonomy.
+
+The unit of the comparison is an O*NET intermediate work activity (IWA). For each IWA, the OpenAI measure is its share of U.S. work-related consumer ChatGPT messages, not an adoption rate, task frequency, or measure of employment exposure. Public OpenAI observed-use data report monthly shares of U.S. consumer ChatGPT messages by IWA, separately for all messages and for messages classified as work-related \citep{ChatterjiEtAl2025HowPeopleUseChatGPT}. The IWA files are U.S.-only and include an `Other IWA' residual category for rare activities. We use the work-related series as the primary outcome, average January--March 2026, drop `Other IWA', and match the 164 named IWA categories to the O*NET task hierarchy. These categories account for 98.1\% of work-related U.S. messages in 2026 Q1. We then aggregate atlas task labels for the United States to the IWA level by averaging over task--IWA edges. For each IWA, broad exposure is the share of linked U.S.-conditioned task edges at exposure levels 2 or 3. Channel measures are the corresponding exposed shares whose dominant channel is the named channel. AI-function measures are defined analogously for exposed task edges whose dominant AI function is the named function, and AI-material share is the exposed share for which AI is material to the automation channel.
+
+The observed-use correlations follow the expected ordering. In the channel panel, work-related message shares correlate most strongly with information transformation (Spearman $\rho=0.417$). Rule-based workflow ($0.122$) and planning/control ($0.090$) are positive but much smaller, inference/scoring is close to zero ($-0.066$), and physical execution is negative ($-0.279$). Broad economic exposure is positive but smaller ($0.182$). In the AI panel, content transformation has the strongest correlation ($0.435$), while AI-material exposed share is positive but broader ($0.226$). Recommendation/decision is also positive ($0.216$), whereas state inference ($-0.264$) and adaptive control ($-0.275$) are negative. The exercise therefore supports a narrow interpretation: public OpenAI observed-use data line up with the information and content-transformation parts of the taxonomy, rather than with AI exposure in general.
+
+
+\begin{figure}[!htbp]
+\centering
+\caption{Observed ChatGPT work use and Atlas exposure across U.S. work activities.}
+\includegraphics[width=\textwidth]{01_Figures/refresh_country124_20260406/fig_openai_observed_use_iwa_alignment.pdf}
+\caption*{\scriptsize Notes: The unit of observation is an O*NET intermediate work activity (IWA). OpenAI observed-use data are monthly shares, released with differential privacy protections, of U.S. consumer ChatGPT messages by IWA. The main outcome is the average share among messages classified as work-related in January--March 2026. The figure drops `Other IWA', leaving 164 named IWA categories. Atlas measures use U.S.-conditioned task labels aggregated to IWA categories by averaging over task--IWA edges. Panel~(a) reports Spearman rank correlations between work-related message share and Atlas channel measures; broad exposure is separated as an aggregate measure. Panel~(b) reports correlations for AI-material share and AI-function measures. Panel~(c) plots work-related message share against information-transformation exposure. Panel~(d) compares selected correlations for all messages and work-related messages.}
+\label{fig:validation_openai_observed_use_iwa_alignment}
+\end{figure}
+
+The information and content-transformation pattern is stable across work-related alternatives. It appears when we use March 2026 alone, average over the full July 2024--March 2026 public period, divide message shares by the number of atlas task edges in the IWA, or residualise log message share on log task-edge count (Supplementary Table~\ref{tab:appendix_openai_observed_use_iwa_robustness}). The correlations are much smaller for the all-message IWA series, which suggests that the check is picking up work-related use rather than general consumer activity. The scope of the check is limited. OpenAI releases IWA shares only for the United States, and the public sample covers consumer ChatGPT rather than enterprise messages or Codex. We therefore read the exercise as a U.S. observed-use construct-validity check, not as evidence on adoption outside the United States or on labour-market effects.
+
+\input{02_Tables/refresh_country124_20260406/tab_appendix_openai_observed_use_iwa_robustness}
+
+
+\paragraph{Country-level AI readiness.} A further external anchor asks whether our country-level AI-material pattern agrees with an independently constructed country-level readiness measure. The IMF AI Preparedness Index (AIPI) reported by \citet{CazzanigaEtAl2024GenAI} is the closest comparator: it scores economies on digital infrastructure, human capital and labour-market policies, innovation and economic integration, and regulation and ethics. We compare the AIPI composite and its sub-components with country-level AI-material share, foundation-model-like share, and overall mean exposure across the countries with both paper and IMF coverage. Figure~\ref{fig:validation_imf_aipi} reports the main comparison; Table~\ref{tab:appendix_aipi_stress_tests} reports the raw, partial, within-income, rank, and leave-one-out checks.
+
+The raw relationship is strong. AI-material share correlates with the AIPI composite at Pearson $0.90$ (Spearman $0.93$); overall mean exposure correlates at Pearson $0.88$ (Spearman $0.95$). The comparison is deliberately demanding because both variables are closely related to development: AI-material share correlates with log GDP per capita at Pearson $0.92$, and AIPI correlates with log GDP per capita at Pearson $0.91$. We therefore report the log-GDP-residual association as a stricter check on whether the two measures align beyond their common development gradient. After residualising both variables on log GDP per capita, the AI-material--AIPI partial Pearson remains positive at $0.42$.
+
+
+Within-income comparisons give the same reading. AI-material share still correlates with AIPI at Pearson $0.72$ in low-income countries, $0.84$ in lower-middle-income countries, and $0.90$ in upper-middle-income countries; the high-income correlation is lower ($0.50$), where the AIPI approaches its ceiling. The residual disagreements are interpretable: our task-level country conditioning gives relatively more AI-material exposure to economies with specific sectoral technology deployment, and less to economies where composite readiness scores run ahead of task-level deployment conditions. The AIPI check therefore supports the country-level ordering while making clear that the raw $0.90$ correlation partly reflects shared development-stage information.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Country-level AI-material share against the IMF AI Preparedness Index (AIPI).}
+\includegraphics[width=0.75\textwidth]{fig_validation_imf_aipi.pdf}
+\caption*{\scriptsize Notes: Points are the 117 countries with coverage in both the atlas and the IMF AIPI composite. The x-axis is the IMF AIPI composite for 2023; the y-axis is country-level AI-material share. The dotted line is a linear fit. Pearson correlation is $0.90$ and Spearman correlation is $0.93$. Colours mark World Bank income groups; Table~\ref{tab:appendix_aipi_stress_tests} reports robustness checks.}
+\label{fig:validation_imf_aipi}
+\end{figure}
+
+Table~\ref{tab:appendix_aipi_stress_tests} compiles the raw and partial Pearson correlations, the within-income-group Pearson correlations, the rank-robustness check, and a leave-one-out stability check into one reference panel. Leave-one-out robustness is tight: dropping any single country of the $117$ changes the Pearson within $[0.897, 0.905]$ (SD $0.001$), and dropping the US and China jointly moves the coefficient from $0.899$ to $0.898$. No single country shifts the correlation materially.
+
+\input{02_Tables/refresh_country124_20260406/tabS_aipi_stress_tests.tex}
+
+\paragraph{Firm-level AI adoption.} The construct-validity correlations above use comparators that are language-model-produced (Eloundou) or derived from occupation-text or patent-text procedures (Frey--Osborne, Felten, Webb). Eurostat firm reports provide a different check: whether industries with higher AI-material exposure also report more AI use. This comparison helps separate agreement with other model- or text-based measures from agreement with observed firm behaviour. We use the Eurostat ICT Usage in Enterprises AI module, which asks a representative sample of enterprises with $10$ or more employees across $36$ European countries whether they use any AI technology, broken out by reported NACE cells. We extract the headline indicator (the share of enterprises reporting any AI use) for $2024$ (with $2023$ fallback), map NACE codes to ISIC-$2$ divisions using the standard harmonisation, and correlate against the country $\times$ ISIC-$2$ industry-level features constructed from the bottom-up retained task-to-ISIC-$4$ graph and the task-country level dataset. Figure~\ref{fig:validation_eurostat_adoption} reports both the pooled country--NACE cells and the NACE-cell means on common axes. The relationship has the expected sign. AI-material share correlates with observed AI adoption at Pearson $0.41$ pooled across $963$ reported country--NACE cells ($23$ countries, $46$ NACE cells), and at Pearson $0.52$ across reported NACE-cell means. The pooled rank correlation is also positive (Spearman $0.41$); the NACE-cell mean rank correlation is $0.49$. Within-country correlations (AI-material ranking versus AI-adoption ranking across reported NACE cells within each country) have mean Pearson $0.42$, median $0.43$, with $23$ countries contributing sufficient overlap for the test. Dropping one country at a time leaves the pooled Pearson in $[0.40,0.42]$, and dropping one NACE cell at a time leaves it in $[0.36,0.44]$. Physical-execution share is negatively correlated with AI adoption at Pearson $-0.52$ across reported NACE-cell means, consistent with physical-heavy industries being less AI-adopting and more robotics-oriented in this survey frame. Overall exposure, which combines all five channels, correlates only at Pearson $0.13$ pooled. A stricter country-conditioning comparison uses non-overlapping Eurostat sectors and keeps the Atlas schema fixed while removing country context from the industry score. In broad non-overlapping sectors, the country-conditioned AI-material score improves leave-country-out prediction of firm AI adoption relative to the context-free Atlas AI-material industry score ($R^2=0.330$ versus $0.154$). Adding the country-conditioned score to a context-free-score-by-AIPI baseline also raises leave-country-out $R^2$ from $0.385$ to $0.475$; the same comparison in detailed non-overlapping NACE cells is positive but smaller ($0.119$ versus $0.058$, and $0.269$ versus $0.250$). The comparison therefore supports the AI-material distinction: the AI-specific component of exposure lines up more closely with reported AI use than the broad exposure aggregate. The relationship should still be read as an industry-level cross-check, since realised adoption also depends on firm scale, deployment costs, managerial capacity, regulation, and survey timing.\footnote{A second, coarser observational anchor is the Stanford AI Index / McKinsey compiled AI-adoption-by-sector dataset, which pools McKinsey State of AI, IBM AI Adoption Index, PwC, and Stanford AI Index figures into sector-level annual adoption rates across $17$ industry groupings. Mapping those groupings to ISIC-$2$ divisions, $2024$--$2025$ sector adoption correlates with AI-material share at Pearson $0.34$ across $15$ matched sectors. The weaker correlation relative to the Eurostat reading reflects the much coarser industry aggregation (a single ``Manufacturing'' bucket spans $24$ ISIC-$2$ divisions) and the mixed consulting-survey methodology. The positive correlation across a different reporting mode and industry taxonomy provides a cross-source robustness check on the sign of the relationship.}
+
+
+\begin{figure}[!htbp]
+\centering
+\caption{Industry AI-material share against observed Eurostat firm-level AI adoption.}
+\includegraphics[width=0.9\textwidth]{fig_validation_eurostat_adoption.pdf}
+\caption*{\scriptsize Notes: Both panels use common axes. Panel~(a) plots $963$ matched country $\times$ reported NACE cells; panel~(b) plots $46$ reported NACE-cell means. Reported NACE cells include Eurostat aggregates and sub-aggregates, so they should be read as survey reporting cells rather than mutually exclusive industries. The vertical axis is the Eurostat share of enterprises using any AI technology, using 2024 values with 2023 fallback. AI-material share correlates positively with firm-reported AI adoption in both panels.}
+
+\label{fig:validation_eurostat_adoption}
+\end{figure}
+
+Construct validity here rests on agreement across measures with different constructs and vintages. The evidence is strongest in two places: (i) at the task level, our task summary aligns with Eloundou's task ratings (Pearson $0.533$); at the occupation level, our foundation-model-like channel share aligns with Eloundou GPT-4 gamma (Pearson $0.78$), our AI-material share aligns with Felten AIOE ($0.61$), and our physical-execution share aligns with Webb robotics ($0.72$); and (ii) the observational checks point in the expected direction at both the U.S. work-activity level and the European industry-adoption level. These checks support external alignment without treating any single comparator as a ground truth. The country-conditioning check that follows asks what information is lost when country context is removed, or when country variation is represented only through US-centric scores, employment weights, or country-level scalars.
+
+\FloatBarrier
+\subsection{Internal validity and model-robustness checks}
+\label{sec:appendix_validation}
+
+\noindent This subsection reports the checks that operate directly on the model-produced labels and prompt outputs. It begins with cross-model convergence, then turns to rationale and prompt consistency, and closes with direct inspection of label distributions and anchor occupations.
+
+\subsubsection{Convergent validity across model families}
+\label{sec:validation_convergent}
+Convergent validity asks whether the broad classification structure is reproduced across model families when the schema and prompt are held fixed. Of the $18{,}797$ tasks submitted to the main context-free run, $18{,}177$ yielded usable labels. We re-label these tasks with OpenAI's \texttt{gpt-5.4-mini} under the same context-free system prompt and JSON response schema. Figure~\ref{fig:validation_cross_model_validity} reports results for the $18{,}169$ tasks with valid exposure predictions from both models. Of these paired classifications, $95.0\%$ differ by no more than one exposure level, $75.1\%$ agree on exposed versus non-exposed status, and $48.1\%$ agree on the exact four-level label.
+
+The disagreement pattern is systematic. GPT compresses labels toward the middle of the four-level scale, rating many original level-0 tasks as level~1 or 2 and many original level-3 tasks as level~2. This compression reduces exact and binary agreement while leaving $95.0\%$ of paired classifications within one level. Exact agreement for the other fields is $61.8\%$ for dominant channel, $72.3\%$ for AI materiality, and $48.5\%$ for labour margin among exposed tasks.
+
+Taken together, the independent model reproduces the broad classification structure, while exact levels and the exposed-versus-non-exposed boundary carry greater model-family sensitivity. Using context-free tasks isolates model-family sensitivity from country conditioning; the exercise therefore evaluates the baseline task classification rather than the full country-conditioned label set.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Cross-model convergent validity: main labels vs.\ \texttt{gpt-5.4-mini} over the full context-free task universe.}
+\includegraphics[width=0.98\textwidth]{fig_validation_cross_model_validity.pdf}
+\caption*{\scriptsize Notes: Both models receive the same context-free prompt, task text, and JSON response schema. The comparison includes 18,169 tasks with valid paired exposure labels, covering 96.7\% of the original task universe. Each statistic uses tasks with valid paired labels for the relevant field. Panel~(a) reports agreement by label field. Panel~(b) shows the exposure-level confusion matrix, panel~(c) reports agreement by original exposure level, and panel~(d) compares categorical-field agreement with chance agreement under equally likely categories.}
+\label{fig:validation_cross_model_validity}
+\end{figure}
+
+
+
+\FloatBarrier
+
+\subsubsection{Reasoning consistency}
+\label{sec:validation_reasoning}
+Reasoning consistency asks whether the model's stated rationale supports the label attached to it, and whether superficial prompt rewording changes the classification. This is an internal-coherence check. A rationale is informative only if it contains enough information to recover the label, and a prompt is more credible if superficial wording changes leave the classification largely unchanged. The evidence is strongest for the headline exposed-versus-not-exposed distinction. Agreement is lower for channel and labour-margin fields, as expected for multi-class labels that require finer distinctions.
+
+\paragraph{Rationale-to-label predictability.} We draw a stratified sample of $1{,}000$ country-task observations, with $250$ observations from each exposure level. For each observation, an independent model family receives the task description and the original rationale, with the original label withheld, and predicts the exposure level, dominant technology channel, and labour margin under the paper's schema. The independent model recovers the exposed-versus-not-exposed label on $99.0\%$ of observations; only $10$ of $1{,}000$ predictions cross the exposed threshold. Exposure level is within one step of the original label for all observations, with exact-level agreement at $71.5\%$. Among exposed tasks, exact agreement is $72.8\%$ for dominant channel and $74.8\%$ for labour margin. Disagreements concentrate at adjacent exposure levels, especially around the level-0/level-1 and level-2/level-3 boundaries. The check therefore supports the internal coherence of the headline exposure label, while showing that fine-grained fields should be read with more caution.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Rationale-to-label predictability under an independent model family.}
+\includegraphics[width=0.98\textwidth]{fig_validation_rationale_predictability.pdf}
+\caption*{\scriptsize Notes: The independent model is \texttt{gpt-5.4-mini}. It receives the task description and original rationale, with the original label withheld, for $1{,}000$ country-task observations stratified equally across exposure levels. Panel~(a) reports agreement by label field; panel~(b) reports the exposure-level confusion matrix; panel~(c) reports exposure agreement by original level; panel~(d) compares channel and margin agreement with random baselines.}
+\label{fig:validation_rationale_predictability}
+\end{figure}
+
+\paragraph{Prompt-paraphrase stability.} We next test whether superficial changes to the prompt wording change the labels. An independent model (GPT-5.4, used only for paraphrasing) generates three reworded versions of the context-free system prompt. The paraphrases preserve all schema keys, value spaces, numeric thresholds, and consistency rules, while changing wording, sentence structure, and section order. We apply the three paraphrases to a stratified sample of $1{,}000$ tasks using the same \texttt{gemini-3.1-flash-lite} model and response schema as the original labelling run. Agreement with the original exposed-versus-not-exposed label is $88.7\%$, $87.0\%$, and $84.3\%$ across the three paraphrases; exposure level is within one step of the original label for $96\%$--$98\%$ of tasks. Across the three paraphrases, $99.8\%$ of tasks sit within one exposure level of each other. The remaining disagreements mostly occur at adjacent exposure levels. Large movements across the ordinal scale are uncommon, although exact levels and the exposed threshold are more sensitive.
+\begin{figure}[!htbp]
+\centering
+\caption{Paraphrase stability under three rewordings of the system prompt.}
+\includegraphics[width=0.98\textwidth]{fig_validation_paraphrase_stability.pdf}
+\caption*{\scriptsize Notes: Three paraphrases of the context-free system prompt are applied to $1{,}000$ tasks stratified equally across exposure levels. The model and response schema match the original run. Panel~(a) compares each paraphrase with the original labels; panel~(b) reports pairwise exposure-level agreement across paraphrases; panel~(c) reports joint within-task stability across all three paraphrases.}
+\label{fig:validation_paraphrase_stability}
+\end{figure}
+
+
+\subsubsection{Face validity}
+\label{sec:validation_face}
+Face validity asks whether the task-level labels and accompanying rationales make sense under direct inspection, and whether their distributions across the task-country dataset match the measures defined in Section~\ref{sec:methods_exposure}. The check targets structurally implausible output that direct inspection would catch. We use four diagnostics. First, label-field distributions check for degenerate or mechanically bunched outputs (Figure~\ref{fig:validation_distribution_overview}, Figure~\ref{fig:validation_distribution_by_income}). Second, a rationale--label consistency check scans every observation in the task-country level dataset (Table~\ref{tab:validation_rationale_consistency}). Third, a rationale-divergence test asks whether country conditioning changes the substantive content of the rationale (Figure~\ref{fig:validation_country_conditioning_divergence}, Table~\ref{tab:validation_quadrant_examples}). Fourth, an anchor-occupation table compares our measure with occupations where the existing literature has strong priors (Supplementary Table~\ref{tab:validation_anchor_occupations}). The four diagnostics do not identify a face-validity problem.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Exposure for anchor occupations where the existing literature has strong priors.}
+\label{tab:validation_anchor_occupations}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+& Prior & Mean & High & Low & Sub.\ & Aug.\ \\
+Occupation & direction & exposure & income & income & share & share \\
+\midrule
+Childcare workers & Very low & 0.42 & 0.64 & 0.10 & 0.04 & 0.02 \\
+Elementary school teachers & Very low & 0.68 & 0.93 & 0.25 & 0.04 & 0.03 \\
+Surgeons & Very low & 0.72 & 1.04 & 0.24 & 0.00 & 0.11 \\
+Waiters and waitresses & Medium & 0.94 & 1.40 & 0.32 & 0.19 & 0.00 \\
+Farm labourers (crops) & Medium & 1.04 & 1.59 & 0.33 & 0.13 & 0.01 \\
+Heavy-truck drivers & Medium & 1.36 & 1.86 & 0.62 & 0.30 & 0.01 \\
+Software developers & High & 1.26 & 1.62 & 0.66 & 0.04 & 0.12 \\
+Interpreters and translators & High & 1.50 & 1.70 & 1.07 & 0.13 & 0.03 \\
+Cashiers & High & 1.72 & 2.12 & 0.97 & 0.51 & 0.01 \\
+Accountants and auditors & High & 1.92 & 2.32 & 1.22 & 0.30 & 0.02 \\
+Bookkeeping and audit clerks & High & 2.54 & 2.91 & 1.85 & 0.85 & 0.00 \\
+\bottomrule
+\end{tabular}
+\caption*{\scriptsize Notes: Mean exposure is the cross-country unweighted occupation-level mean on the 0--3 scale. High- and low-income columns report the corresponding World Bank income-group means. Substitution and augmentation shares are task-weighted occupation means averaged across countries. The prior column summarises expectations from the existing exposure literature \citep{frey2017future,Webb2020,felten2021occupational,EloundouEtAl2024}; rows are grouped by prior direction and sorted by mean exposure within group.}
+\end{table}
+
+\paragraph{Distributional check.} We first inspect the marginal distribution of each task-country label field. The exposure labels span all four levels without degeneracy, and the dominant-channel field is not concentrated in a single technology category. Among exposed tasks, the labour-margin split is mostly balanced-both or substitution-only, with a smaller augmentation-only share. AI is material in $27.8\%$ of all task-country observations and $63.9\%$ of exposed observations. It is therefore central to a majority of exposed tasks, while more than one-third of exposure operates through routes in which AI is not central.
+\paragraph{Income-group check.} We then repeat the distributional check by World Bank income group. The label distributions move in the expected direction: level-0 and no-channel shares fall with income, while AI-materiality rises from $6\%$ in low-income countries to $43\%$ in high-income countries. These gradients match the cross-country patterns reported in Sections~\ref{sec:results_global_trends}--\ref{sec:results_channels_ai}, so the raw label distributions are coherent with the paper's main descriptive facts.
+
+\paragraph{Rationale--label consistency.} We next ask whether the rationale text ever directly contradicts the label attached to it. This is the most mechanical internal-coherence check in the appendix because it is applied to the full task-country dataset, covering all $2{,}330{,}776$ unique task-country rationales. We use five targeted rules that correspond to sharp schema conflicts: a level-3 rationale denying automation is possible; a level-0 rationale describing standard automation as already available; an \textit{augment} rationale describing replacement; a \textit{substitute} rationale describing assistive-only technology; and a not-AI-material rationale invoking AI, LLM, or machine-learning capabilities. A sentence-level negation filter suppresses matches in phrases such as ``not widely deployed'' or ``lacks a credible AI-based substitute.''
+
+The screen flags $2{,}654$ observations, or $0.11\%$ of the task-country dataset (Table~\ref{tab:validation_rationale_consistency}). We read this as evidence against widespread mechanical inconsistency between labels and rationales. The number is not an adjudicated error rate: keyword rules can miss subtle contradictions and can also flag benign wording. Its value is that the most direct label-rationale conflicts are rare at full-dataset scale. The rationale-to-label predictability exercise below then tests the same issue with an independent model rather than keyword rules.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Rationale--label consistency check over the task-country level dataset.}
+\label{tab:validation_rationale_consistency}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+ & Eligible rows & Keyword-flagged & Share \\
+\midrule
+Rule: level-3 rationale denies automation & 175{,}802 & 19 & 0.01\% \\
+Rule: level-0 rationale describes automation & 804{,}336 & 549 & 0.07\% \\
+Rule: augment rationale describes replacement & 95{,}375 & 1 & 0.00\% \\
+Rule: substitute rationale describes assistive-only & 357{,}000 & 0 & 0.00\% \\
+Rule: not-AI-material rationale invokes AI/LLM/ML & 1{,}683{,}883 & 2{,}099 & 0.12\% \\
+\midrule
+Unique observations flagged by any rule & 2{,}330{,}776 & 2{,}654 & 0.11\% \\
+\bottomrule
+\end{tabular}
+\caption*{\scriptsize Notes: Each row scans eligible rationales for phrases that would indicate a potential contradiction with the attached label. Eligible rows are observations satisfying the relevant label condition. A sentence-level negation filter suppresses matches in negating clauses, so flagged rows should be read as potential inconsistencies rather than adjudicated errors.}
+\end{table}
+
+\paragraph{Country-paired rationale comparison.} This check asks whether the classifier responds to different country prompts by repeating a common rationale and changing only the country reference. We compare rationales for the same O*NET task under one high-income and one low-income country prompt.
+
+We use two measures because the two rationales can differ in wording while still making the same argument. First, we compute Jaccard overlap on stopword-filtered content tokens, which measures direct word reuse. Second, we embed each rationale using OpenAI \texttt{text-embedding-3-large} and compute cosine similarity, which measures semantic similarity. Low Jaccard overlap with moderate cosine similarity means the rationales discuss the same task but use different reasoning.
+
+Near-verbatim reuse is rare. Only $0.4\%$ of pairs have both high token overlap and high semantic similarity. Most pairs have low token overlap but remain semantically related, indicating that the explanations stay connected to the same task without following fixed wording. Low-income rationales also name the prompted country more often than high-income rationales. These similarity measures do not identify which contextual conditions account for the differences. The heldout same-task concept analysis in Figure~\ref{fig:country_covariate_feature_importance} addresses that question by testing whether recurring production conditions differ systematically between exposed and non-exposed country labels.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Country-paired rationales are rarely near-verbatim.}
+\includegraphics[width=0.98\textwidth]{fig_validation_country_conditioning_divergence.pdf}
+\caption*{\scriptsize Notes: The analysis uses 18,797 same-task high-income/low-income rationale pairs. Each task contributes one randomly drawn high-income rationale and one randomly drawn low-income rationale, so measurements are paired within task. Panel~(a) reports Jaccard similarity on stopword-filtered content tokens; panel~(b) reports cosine similarity using OpenAI \texttt{text-embedding-3-large} embeddings; panel~(c) reports whether the rationale names the prompted country. Low word overlap with moderate semantic similarity indicates that rationales remain on-task while changing their country-level reasoning.}
+\label{fig:validation_country_conditioning_divergence}
+\end{figure}
+
+\begin{table}[!p]
+\centering
+\scriptsize
+\caption{Illustrative rationale pairs from the country-conditioning divergence check.}
+\label{tab:validation_quadrant_examples}
+\begin{tabular}{L{3.0cm} L{11.5cm}}
+\toprule
+Similarity pattern & Example task pair \\
+\midrule
+\textbf{Low Jaccard} \newline
+\textbf{Low cosine} \newline
+\textit{Substantively different} \newline
+$24.7\%$ of pairs &
+\textbf{Task:} Buy or sell stocks, bonds, commodity futures, or other securities on behalf of investment dealers. \newline
+\textit{Australia (high income):} Trading is highly automatable through algorithmic execution and AI-based predictive systems, which have largely displaced manual human order entry and routine portfolio management in the Australian financial sector. \newline
+\textit{Burundi (low income):} Burundi's current financial infrastructure lacks the digital market integration and high-volume electronic trading systems required for credible task-level automation of securities trading. \newline
+Jaccard $=0.09$, cosine $=0.36$. \\
+\midrule
+\textbf{Low Jaccard} \newline
+\textbf{High cosine} \newline
+\textit{Same task, different reasoning} \newline
+$74.9\%$ of pairs &
+\textbf{Task:} Calculate costs for billings or commissions. \newline
+\textit{Saudi Arabia (high income):} Calculating costs, billings, and commissions is a deterministic, rule-based process involving structured financial data that is routinely and reliably automated by standard enterprise resource planning software. \newline
+\textit{Burundi (low income):} Calculating costs is inherently deterministic and standard business software in Burundi is already capable of automating these calculations, reducing the reliance on manual human arithmetic. \newline
+Jaccard $=0.12$, cosine $=0.60$. \\
+\midrule
+\textbf{High Jaccard} \newline
+\textbf{Low cosine} \newline
+\textit{Rare edge} \newline
+$0.0\%$ of pairs &
+No observations fall in this region. A rationale cannot share a high share of content tokens with another rationale while being semantically unrelated, so the quadrant is empty by construction once both metrics are read together. \\
+\midrule
+\textbf{High Jaccard} \newline
+\textbf{High cosine} \newline
+\textit{Near-identical rationales} \newline
+$0.4\%$ of pairs &
+\textbf{Task:} Perform therapeutic wound care. \newline
+\textit{Greece (high income):} Therapeutic wound care requires patient-specific manual dexterity, clinical judgment, and direct physical interaction that cannot be reliably automated or meaningfully substituted by current technology. \newline
+\textit{Somalia (low income):} Therapeutic wound care requires high-level physical dexterity, clinical judgment, and patient interaction that cannot be reliably or safely automated in typical Somali clinical settings by 2026. \newline
+Jaccard $=0.52$, cosine $=0.79$. \\
+\bottomrule
+\end{tabular}
+\caption*{\scriptsize Notes: The table shows illustrative high-income/low-income rationale pairs selected to span low and high token overlap and low and high semantic similarity. Rationales are classifier justifications under country-conditioned prompts. Token overlap is measured with Jaccard similarity on content tokens; semantic similarity is measured with cosine similarity under OpenAI \texttt{text-embedding-3-large} embeddings.}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Distributional check of the task-level labels.}
+\includegraphics[width=0.92\textwidth]{fig_validation_distribution_overview.pdf}
+\caption*{\scriptsize Notes: Panels report marginal distributions across the full $2{,}330{,}776$-observation task-country dataset. Panel~(a) reports exposure levels; panel~(b) reports dominant technology channels; panel~(c) reports labour margins among exposed tasks; panel~(d) reports AI materiality. Exposure means level 2 or 3.}
+\label{fig:validation_distribution_overview}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Label distributions by World Bank income group.}
+\includegraphics[width=0.98\textwidth]{fig_validation_distribution_by_income.pdf}
+\caption*{\scriptsize Notes: Panels report the same four label fields as Figure~\ref{fig:validation_distribution_overview}, split by World Bank income group. Panel~(a) reports exposure levels; panel~(b) reports dominant technology channels; panel~(c) reports labour margins among exposed tasks; panel~(d) reports AI materiality. Exposure means level 2 or 3.}
+\label{fig:validation_distribution_by_income}
+\end{figure}
+
+\subsection{Rationale-concept hypothesis generation}
+\label{sec:appendix_rationale_concept_analysis}
+
+\paragraph{Analysis goal.}
+
+Each task-country label includes a short rationale explaining the classifier's assignment. We use these rationales as a text corpus for hypothesis generation about the production conditions that recur in country-conditioned exposure and labour-margin labels. The paper-facing analysis is restricted to the three contrasts used in Figure~\ref{fig:country_covariate_feature_importance}: exposed versus non-exposed labels for the same task across countries, substitution-only versus other exposed labels, and augmentation-only versus other exposed labels. The exercise is descriptive. It identifies recurring explanation concepts associated with these labels; it does not estimate the causal effect of any production condition on realised automation.
+
+\paragraph{Target contrasts.}
+
+For each target contrast, we fixed 20 child concepts before heldout evaluation. Forty-five of the 60 fixed concepts pass the Bonferroni-adjusted significance screen in the heldout samples.
+
+\begin{table}[!htbp]
+\centering
+\caption{Rationale-concept contrasts.}
+\label{tab:appendix_rationale_concept_target_families}
+\begin{tabular}{L{6.0cm} C{2.0cm} C{2.2cm} C{2.6cm} C{1.5cm}}
+\toprule
+Target contrast & Fixed child concepts & Bonferroni significant & Heldout comparison size & Main panel \\
+\midrule
+Exposure: exposed versus non-exposed labels for the same task across countries & 20 & 20 & 2,000 same-task pairs & d \\
+Substitution-only: substitution-only versus other exposed labels & 20 & 13 & 2,000 same-task pairs & e \\
+Augmentation-only: augmentation-only versus other exposed labels & 20 & 12 & 2,000 same-task pairs & f \\
+\midrule
+Total displayed contrasts & 60 & 45 & -- & -- \\
+\bottomrule
+\end{tabular}
+\caption*{\footnotesize Notes: The table reports the concept inventory used for the paper-facing rationale-concept analysis. ``Fixed child concepts'' are concepts selected before heldout coding. ``Bonferroni significant'' counts concepts whose heldout differences remain significant after adjustment within contrast.}
+\end{table}
+
+\paragraph{Text inputs and masking.}
+
+The unit of text is the rationale attached to a task-country label. For the exposure contrast, we compare rationales for the same standardized task when it is labelled exposed in one country and non-exposed in another. For the labour-margin contrasts, we compare rationales among exposed task-country labels, separating substitution-only and augmentation-only assignments from the remaining exposed labels. Before concept discovery, country names and direct place identifiers are masked so that concepts reflect production-condition language rather than explicit country mentions.
+
+\paragraph{Concept discovery and interpretation.}
+
+Within each target contrast, we embed rationale text and train a sparse-autoencoder concept model on a discovery split. Candidate features are interpreted using high-activation text examples, contrastive examples, and model-assisted summaries. We then retain a fixed set of interpretable child concepts for each contrast before evaluating them in heldout data. This procedure follows recent work using language-model representations for hypothesis generation from high-dimensional text \citep{LudwigMullainathan2024HypothesisGeneration,MovvaEtAl2025HypotheSAEs}.
+
+\paragraph{Heldout evaluation and family display.}
+
+No rationale used to discover or name a concept is reused for its heldout estimate. In the heldout samples, each fixed child concept is coded as present or absent in the relevant rationale text. We report first-group-minus-second-group differences, with paired standard errors for same-task comparisons and Bonferroni adjustment within each contrast. For the compact main-text display, child concepts are grouped into parent families and shown in panels~(d)--(f) of Figure~\ref{fig:country_covariate_feature_importance}. The appendix figures below report the corresponding child-concept evidence.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Child concepts for the exposure contrast.}
+\includegraphics[width=0.95\textwidth]{fig_appendix_hypothesaes_exposure_20_concepts.pdf}
+\caption*{\footnotesize Notes: The figure reports heldout differences in concept presence for exposed versus non-exposed labels for the same standardized task across countries.}
+\label{fig:appendix_hypothesaes_exposure_20_concepts}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Child concepts for the substitution-only contrast.}
+\includegraphics[width=0.95\textwidth]{fig_appendix_hypothesaes_substitution_20_concepts.pdf}
+\caption*{\footnotesize Notes: The figure reports heldout differences in concept presence for substitution-only versus other exposed labels.}
+\label{fig:appendix_hypothesaes_substitution_20_concepts}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Child concepts for the augmentation-only contrast.}
+\includegraphics[width=0.95\textwidth]{fig_appendix_hypothesaes_augmentation_20_concepts.pdf}
+\caption*{\footnotesize Notes: The figure reports heldout differences in concept presence for augmentation-only versus other exposed labels.}
+\label{fig:appendix_hypothesaes_augmentation_20_concepts}
+\end{figure}
+
+\paragraph{Illustrative paired rationales.}
+The table below reports illustrative same-task rationale pairs from the exposure contrast and shows the rationale texts used in the concept-coding analysis.
+\input{02_Tables/refresh_country124_20260406/tab_appendix_country_context_rationale_examples}
+
+\FloatBarrier
+\subsection{What country conditioning adds}
+\label{sec:validation_country_contribution}
+The construct-validity checks above show that the labels move with related external evidence. We now ask what country conditioning contributes beyond fixed-score alternatives: context-free Atlas scores, US-centric occupation scores, employment-weighted external scores, and country-level scaling. This comparison matters because exposure measures are often used to identify which occupations or sectors require policy attention, so changes in rankings are substantively important. Employment weighting explains part of the country ordering: an employment-weighted Felten AIOE score, built by weighting US-centric Felten occupation scores with country-specific ILOSTAT occupation shares, correlates with our country-conditioned AI-material share at Pearson $0.74$ (Spearman $0.74$) across $91$ countries. %But this still leaves about half of the variance outside the US-centric occupation-score-plus-employment-weight construction.
+
+\paragraph{US-conditioned and cross-country mean benchmarks.} Figure~\ref{fig:validation_us_vs_external} compares our US-conditioned labels and our cross-country mean labels against external occupation scores. The US-conditioned version is closest to Frey--Osborne: the correlation is $0.427$ using US labels and $0.393$ using the cross-country mean. For Felten AIOE and both Eloundou occupation-level gamma variants, the cross-country mean is closer: Eloundou GPT-4 gamma rises from $0.237$ under US conditioning to $0.312$ under the cross-country mean, and Felten AIOE rises from $0.139$ to $0.219$. The cross-country mean summarises the $124$ country-conditioned estimates, while the individual country estimates retain institution-, industry-, and regulation-specific variation. Panel~(b) shows the size of that variation: the correlation between each country's occupation-level exposure and Eloundou GPT-4 gamma ranges from $0.08$ (Japan) to $0.59$ (Rwanda), with a cross-country median of $0.29$ and a USA value of $0.24$. Low-income countries cluster at the top of the Eloundou-agreement ranking, while several large high-income economies cluster at the bottom.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Country conditioning relative to external occupation benchmarks.}
+\includegraphics[width=\textwidth]{fig_validation_us_vs_external.pdf}
+\caption*{\scriptsize Notes: Panel~(a) compares occupation-level exposure correlations under US-conditioned labels and the unweighted cross-country mean. External measures are Frey--Osborne, Eloundou GPT-4 gamma and human gamma, Felten AIOE, and Webb AI exposure. Panel~(b) reports each country's Pearson correlation with Eloundou GPT-4 gamma for the top and bottom $15$ countries by alignment.}
+\label{fig:validation_us_vs_external}
+\end{figure}
+
+\paragraph{Country-conditioned occupation rankings.} Figure~\ref{fig:validation_country_contribution} quantifies the country-conditioned component directly. Panel~(a) decomposes the $114{,}452$ country--occupation observations into between-occupation, between-country, and country--occupation interaction variance. Occupations explain $48.8\%$ of total variance and countries explain $43.9\%$. The remaining $7.3\%$ is the non-additive country--occupation component, which cannot be reproduced by combining fixed occupation effects with an additive country shift.  Panels~(b) and~(c) show where this component matters. The Spearman correlation between each country's occupation ranking and the US-conditioned ranking falls from $0.95$ in high-income countries to $0.76$ in low-income countries. Top-$10$ overlap falls in the same direction: high-income countries share $7.0$ of the $10$ occupations on average with the US-conditioned top-$10$ list, while low-income countries share only $4.6$. Country conditioning therefore changes which occupations rise to the top of the exposure ranking, especially far from the US reference setting.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Country conditioning beyond additive exposure scaling.}
+\includegraphics[width=\textwidth]{fig_validation_country_contribution.pdf}
+\caption*{\scriptsize Notes: Panel~(a) decomposes variance in the $124$ country $\times$ $923$ occupation exposure matrix into occupation, country, and country--occupation components. Panel~(b) reports each country's Spearman rank correlation with the US-conditioned occupation ranking. Panel~(c) reports overlap between each country's top-$10$ exposed occupations and the US-conditioned top-$10$ list.}
+\label{fig:validation_country_contribution}
+\end{figure}
+
+Employment weights explain part of the cross-country variation, but they do not reproduce the country-conditioned occupation rankings. Because a country-wide scalar adjustment cannot reorder occupations, the rank and top-$10$ results show that country conditioning changes which occupations appear most exposed, especially in lower-income settings. This finding aligns with cross-country heterogeneity in technology adoption and skill demand documented in \citet{CominHobijn2010}, \citet{alabdulkareem2018_skill_polarization}, \citet{LewandowskiMadonPark2025DevelopmentStages}, and \citet{AutorSalomons2018}, and with evidence that the same occupation label can carry different task and skill content across economies and over time \citep{DasHilgenstock2022,Deming2017social}.
+
+\section{Results Supplement}
+\label{sec:appendix_results}
+
+\noindent This note collects the figures and tables behind the Results: country exposure and within-income heterogeneity, margin and pathway companions, channel and AI-function companions, occupation and industry summaries, country-predictor robustness, and ILOSTAT employment-composition checks.
+
+\FloatBarrier
+\subsection{Country exposure and within-income heterogeneity}
+\label{sec:appendix_country_heterogeneity}
+\begin{figure}[!htbp]
+\centering
+\caption{Within-income-group variability across country-level summary metrics.}
+\includegraphics[width=0.98\textwidth]{fig_within_income_variability.pdf}
+\caption*{\scriptsize Notes: Each panel reports one country-level metric: exposed share (level $\geq 2$, share of all tasks); high-exposure share (level $= 3$, share of all tasks); substitution-only share, balanced-both share, and augmentation-only share (each within exposed tasks). Box and whiskers report the within-income-group distribution across the 122-country sample: boxes show medians and interquartile ranges, and whiskers extend to 1.5 times the interquartile range. Coloured points are countries; the highest and lowest country within each income group is labelled by ISO3 code. At fixed income tier, countries differ on all five metrics, with the widest within-tier spread in the lower-middle and upper-middle tiers.}
+\label{fig:appendix_within_income_variability}
+\end{figure}
+
+\input{02_Tables/refresh_country124_20260406/tab3_country_opening_summary.tex}
+
+Supplementary Table~\ref{tab:country_opening_summary} reports the country-level exposure and margin summaries by region and income group. Read with Figure~\ref{fig:appendix_within_income_variability}, it shows that exposure rises strongly with income, while meaningful within-tier dispersion remains.
+
+\clearpage
+\subsection{Margin and pathway companions}
+\label{sec:appendix_pathway_findings}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Adjacent income-group transition matrices for all-task pathway states.}
+\includegraphics[width=0.94\textwidth]{fig_income_group_pathway_transition_heatmaps_triptych_appendix.pdf}
+\caption*{\scriptsize Notes: Each panel reports one adjacent income-group step, and rows sum to $100\%$ within the source state. The sample is the same $18{,}797$-task universe used in Figure~\ref{fig:income_group_pathway_flow_main}. Off-diagonal cells are tasks whose modal pathway state changes between adjacent income groups.}
+\label{fig:appendix_income_group_pathway_heatmaps}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Polarisation index as an alternative within-exposed summary}
+\label{sec:appendix_polarisation_p}
+Within exposed work, each country has three mutually exclusive margin shares: substitution-only, balanced-both, and augmentation-only. We summarise the mass outside the balanced-both category with a polarisation index, $P_c = \mathrm{sub}_c + \mathrm{aug}_c = 1 - \mathrm{bal}_c$. This adapts the idea of mass at the extremes from the labour-economics polarisation literature \citep{goos2007_lousy,AutorDorn2013}. Here, the extremes are substitution and augmentation. The complementary tilt index $T_c = \mathrm{sub}_c / (\mathrm{sub}_c + \mathrm{aug}_c)$ records which extreme dominates within the polarised mass. Because substitution dominates that mass in most countries, $P$ is the more useful one-number summary.
+
+Figure~\ref{fig:appendix_polarisation_p} reports both the development gradient in polarisation $P$ and its within-tier dispersion. The relationship is non-monotone: $P$ is highest at the low-income end of the gradient ($\approx 0.50$), falls through lower-middle ($\approx 0.43$, the trough), and then rises gradually back to $\approx 0.46$ across upper-middle and high-income countries. Low-income countries span roughly $0.40$--$0.60$ on $P$ (the widest spread); high-income countries span only $0.45$--$0.49$ (the narrowest). Read together, the panels show that within-tier dispersion narrows as income rises, so margin polarisation is more stable among richer economies, where the balanced-both category absorbs a steadier share of exposed work.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Polarisation $P$ by development level and income tier.}
+\begin{subfigure}[t]{0.76\textwidth}
+    \centering
+    \caption{Development gradient.}
+    \includegraphics[width=\textwidth]{fig_polarisation_p_loess.pdf}
+\end{subfigure}
+
+\vspace{0.35em}
+
+\begin{subfigure}[t]{0.76\textwidth}
+    \centering
+    \caption{Within-tier dispersion.}
+    \includegraphics[width=\textwidth]{fig_polarisation_p_boxplot.pdf}
+\end{subfigure}
+\caption*{\scriptsize Notes: Polarisation is $P_c = \mathrm{sub}_c + \mathrm{aug}_c = 1 - \mathrm{bal}_c$, where $\mathrm{bal}_c$ is the balanced-both share within exposed tasks. Panel~(a) plots $P$ against log GDP per capita with a LOESS smooth and $95\%$ bootstrap interval from $200$ country-level resamples. Panel~(b) reports boxplots by World Bank income group, with country dots and labelled within-tier extremes.}
+\label{fig:appendix_polarisation_p}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Mutually exclusive pathway decomposition across country, occupation, and industry summaries.}
+\includegraphics[width=0.96\textwidth]{fig_appendix_joint_pathway_decomposition.pdf}
+\caption*{\scriptsize Notes: Panel a reports regional country summaries, panel b reports the weighted occupation summaries by income group, and panel c reports the bottom-up industry summaries by income group. Bars partition exposed observations into substitution-only, balanced-both, and augmentation-only shares under the same mutually exclusive pathway definition used in the main text. Balanced-both exposure remains a large part of exposed work at all three reporting levels.}
+\label{fig:joint_pathway_decomposition}
+\end{figure}
+
+\clearpage
+\subsection{Channel and AI-function companions}
+\label{sec:appendix_benchmark_heterogeneity_support}
+\begin{figure}[!htbp]
+\centering
+\caption{Channel exposure as a share of all tasks across country development.}
+\includegraphics[width=0.92\textwidth]{fig_channel_rotation_loess_all_tasks.pdf}
+\caption*{\scriptsize Notes: Lines report the country-level share of all tasks exposed through each dominant channel. Each line is a LOESS smooth against log GDP per capita over the $122$-country sample with complete channel and GDP data. Shaded bands are $95\%$ percentile bootstrap intervals from $200$ country-level resamples; faded points are country observations.}
+\label{fig:appendix_channel_rotation_all_tasks}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Channel composition of exposed work, broken out by World Bank income group.}
+\includegraphics[width=0.97\textwidth]{fig_channel_composition_income_function.pdf}
+\caption*{\scriptsize Notes: Each panel reports one World Bank income group. Within each dominant channel, coloured segments show substitution-only, balanced-both, and augmentation-only shares; the grey segment is non-exposed task mass. Bars sum to $100\%$ of tasks within each income group.}
+\label{fig:appendix_channel_composition_income}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\caption{AI-function mix within AI-material exposed tasks by income group.}
+\includegraphics[width=0.88\textwidth]{fig_ai_function_mix_income_taskid.pdf}
+\caption*{\scriptsize Notes: Rows are World Bank income groups. Stacked bars decompose AI-material exposed task-country observations into four dominant AI functions. Labels at right report the AI-material share among exposed observations in the same income group. The sample covers the $122$ countries with classified income groups.}
+\label{fig:appendix_ai_function_income_mix}
+\end{figure}
+
+\clearpage
+\subsection{Occupation and industry companions}
+\label{sec:appendix_occupation_industry_companions}
+
+This subsection aggregates the task-country labels into the ISCO and ISIC units referenced in Section~\ref{sec:results_occupation_industry}. Supplementary Table~\ref{tab:appendix_country_conditioning_isco_isic} first compares context-free and country-conditioned labels while holding the aggregation mappings fixed. The figures then report the income-group occupation and industry patterns discussed in the main text.
+
+\input{02_Tables/refresh_country124_20260406/tabS_country_conditioning_isco_isic.tex}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Weighted two-digit ISCO exposed shares by income group.}
+\includegraphics[width=0.72\textwidth]{fig_isco_income_rotation_top_tier.pdf}
+\vspace{-0.6em}
+\caption*{\scriptsize Notes: Columns are World Bank income groups. Rows are weighted two-digit ISCO occupation groups after SOC$\to$ISCO linkage. Left tags mark one-digit ISCO major groups; outlined blocks show their constituent two-digit rows. Cells report exposed shares (the share of linked tasks at exposure levels 2 or 3 after linkage).}
+\label{fig:isco_income_rotation}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Detailed two-digit ISIC task exposure by income group.}
+\includegraphics[width=0.97\textwidth,height=0.84\textheight,keepaspectratio]{fig11_isic_income_rotation_main.pdf}
+\caption*{\scriptsize Notes: Rows are the $88$ supported two-digit ISIC divisions, grouped by official section. Within each country, exposure is computed at the retained four-digit class level, averaged equally to two-digit divisions, and then averaged equally across countries within each income group. Cells report exposed shares at exposure levels 2 or 3.}
+\label{fig:industry_isic_income_main}
+\end{figure}
+
+\clearpage
+\subsection{Top substitution and augmentation occupations and industries by income group}
+\label{sec:appendix_aggregation_route}
+This subsection lists the occupation and industry rankings behind the main-text discussion of substitution-only and augmentation-only exposure. For each income group, the tables report the top entries selected by exposed share multiplied by the relevant labour-margin share among exposed tasks. The occupation table uses the weighted ISCO route; the industry table uses the bottom-up ISIC route used for the sector results. The purpose is descriptive: to show which occupations and sectors drive the substitution and augmentation patterns discussed in the main text.
+
+\input{02_Tables/refresh_country124_20260406/tab9_isco_income_pockets_joint.tex}
+
+\input{02_Tables/refresh_country124_20260406/tab10_isic_income_pockets_joint.tex}
+
+\clearpage
+\subsection{Country-predictor robustness}
+\label{sec:appendix_residual_country_explanations}
+These checks ask whether the country-predictor ranking changes with sample size, denominator, attribution rule, or correlated covariates. The appendix reports a residual-fit check in text and two figure companions: the earlier random-forest permutation-importance version and a linear Shapley $R^2$ companion for the 68-country predictor sample. Additional checks show that the wider-coverage $90$-country specification preserves the same broad capability cluster, that adding the balanced-both margin to the within-exposed composition gives the same qualitative reading, and that winsorising the country covariates at the 1st/99th and 5th/95th percentiles leaves the leading capability cluster unchanged. For the augmentation-only outcome, the leading capital-intensity result is also unchanged in leave-one-country-out refits. These analyses describe country-level patterns and do not change the task labels. \ref{tab:appendix_country_covariate_dictionary} defines the country covariates used in the main and appendix screens.
+
+\input{02_Tables/refresh_country124_20260406/tabS_country_covariate_dictionary.tex}
+
+Before imposing the full complete-case restriction, government effectiveness and regulatory quality are each available for 118 countries. In the 68-country main sample they correlate at \(0.96\), with variance-inflation factors of \(22.1\) and \(19.2\), respectively. We retain both because they measure different institutional concepts, but interpret them as part of a common governance and development cluster rather than as separate marginal effects.
+
+As a residual-fit check, we regress raw country exposure and substitution-only share, and their GDP- or income-group residuals, on the same broad capability covariates. The structural covariate set explains the raw cross-country gradient well, with adjusted $R^2$ of about $0.93$ for mean exposure and $0.92$ for substitution-only share. Fit falls after conditioning on development stage: after removing income-group means, the same covariates explain about $0.11$ of exposure residuals and $0.19$ of substitution-only residuals. This supports the interpretation that the capability cluster captures much of the rich-poor gradient, while leaving substantial within-income country variation.
+
+The wider-coverage $90$-country specification addresses sample composition. The richer main-text specification retains more structural content, but its complete-case sample is smaller. Dropping the lowest-coverage structural variables expands country coverage and leaves GDP, digital connectivity, governance, and schooling as the dominant available cluster. A within-exposed version that adds the balanced-both margin gives the same qualitative reading: substitution-only and balanced-both shares track the development-capability cluster, while augmentation-only exposure is more closely associated with capital intensity.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Permutation-importance companion for country predictors.}
+\includegraphics[width=0.96\textwidth]{fig_country_covariate_feature_importance_main68.pdf}
+\caption*{\scriptsize Notes: Bars report the earlier random-forest permutation-importance ranking in the same 68-country complete-case sample as Figure~\ref{fig:country_covariate_feature_importance}. Outcomes are exposed share among all tasks and substitution-only or augmentation-only shares within exposed tasks. Colours use the same five-forest accumulated-local-effect direction rule as Figure~\ref{fig:country_covariate_feature_importance}: positive or negative requires sign agreement in at least four of five forests; otherwise the direction is mixed. This companion is reported because unconditional permutation importance can be sensitive when predictors are correlated.}
+\label{fig:appendix_country_covariate_permutation_importance}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Linear Shapley companion for the country-predictor specification.}
+\includegraphics[width=0.96\textwidth]{fig_country_predictor_linear_shapley_r2.pdf}
+\caption*{\scriptsize Notes: Cells report exact dominance-analysis contributions from linear models on the same 68-country complete-case sample as the main country-predictor figure. Contributions average each covariate's incremental $R^2$ over all possible orderings. The outcomes are exposed share, substitution-only share within exposed tasks, and augmentation-only share within exposed tasks. This is a linear variance-decomposition companion, distinct from the TreeSHAP attribution used for the random-forest figures.}
+\label{fig:appendix_country_predictor_linear_shapley}
+\end{figure}
+
+\clearpage
+\subsection{Observed employment composition from ILOSTAT}
+\label{sec:appendix_ilostat_employment}
+This subsection reports two employment-composition exercises. The first reweights occupation exposure using total employment across ISCO-08 major groups. For this exercise, we collapse the weighted SOC$\rightarrow$ISCO bridge to the same level. The second uses sex-specific employment data at the two-digit ISCO-08 occupation and ISIC Rev.~4 industry levels to compare female and male exposure.
+
+Supplementary Table~\ref{tab:appendix_ilostat_coverage} reports the data level, country-year selection rule, and final sample for each exercise. The broad occupation reweighting and the sex-specific analyses use separate ILOSTAT extracts and coverage rules.
+
+\input{02_Tables/refresh_country124_20260406/tabS18_ilostat_coverage.tex}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Employment-weighted versus linkage-weighted occupation exposure by country.}
+\includegraphics[width=0.83\textwidth]{figS28_ilostat_country_weighting_scatter.png}
+\caption*{\scriptsize Notes: Each point is one of the 91 countries in the atlas--ILOSTAT overlap sample with usable total-employment occupation weights. The x-axis reports linkage-weighted exposed share from the task$\to$SOC$\to$ISCO bridge; the y-axis reports the same summary reweighted by observed ISCO-08 major-group employment shares. The 45-degree line marks equality.}
+\label{fig:appendix_ilostat_country_weighting}
+\end{figure}
+
+Employment weighting preserves the broad occupation-layer gradient. High-income countries remain higher-exposure and low-income countries remain lower-exposure on average. But employment composition still moves some country summaries meaningfully because exposed major groups do not account for the same share of workers everywhere. Supplementary Table~\ref{tab:appendix_ilostat_country_adjustment} lists the countries where observed employment shares most raise or lower the occupation-layer exposed share relative to the linkage-weighted baseline.
+
+\input{02_Tables/refresh_country124_20260406/tabS19_ilostat_country_adjustment.tex}
+
+The gender analysis uses separate, more detailed ILOSTAT extracts than the major-group exercise above. Figure~\ref{fig:gender_informality_margin_applications} uses two-digit female and male employment shares for 88 countries in the occupation analysis and 72 countries in the industry analysis. For Figure~\ref{fig:gender_informality_margin_applications} and the decomposition, female and male shares are normalised separately over the cells observed for each sex. The fixed-effect companion uses the same country samples and renormalises both employment distributions over cells observed for both sexes. We next give the aggregation formula and fixed-effect specification.
+
+For country $c$, sex $s$, cell $j$, and margin $m$, the employment-weighted contribution is
+\[
+E_{csm}=\sum_j s_{cjs}x_{cjm},
+\]
+where $s_{cjs}$ is the employment share of sex $s$ in occupation or industry cell $j$, and $x_{cjm}$ is the corresponding country-conditioned share of linked task mass assigned to margin $m$. The plotted gap is $E_{cFm}-E_{cMm}$, so positive values indicate higher female employment-weighted exposure and negative values indicate higher male employment-weighted exposure.
+% The occupation and industry readings differ. In two-digit occupations, substitution-only exposure is more female-weighted in the median country, while augmentation-only gaps are small. In two-digit industries, augmentation-only exposure is more male-weighted. This difference is informative: the same task-country labels can produce different gender gaps depending on whether employment is organised by occupations or industries.
+The country-level gap is \(D_{cm}=E_{cFm}-E_{cMm}\). To separate differences in employment profiles from country-specific differences in exposure, define \(g_{cj}=s_{cjF}-s_{cjM}\), and let \(\bar{x}_{jm}\) denote the simple mean exposure of cell \(j\) across countries. The country-level gap can then be written as
+\[
+D_{cm}
+=
+\underbrace{\sum_j g_{cj}\bar{x}_{jm}}_{\text{reference cell profile}}
++
+\underbrace{\sum_j g_{cj}(x_{cjm}-\bar{x}_{jm})}_{\text{country-specific exposure}}.
+\]
+The first component applies each country's female--male employment profile to a common exposure profile for occupations or industries. The second captures the contribution of country-specific exposure differences. The two components sum exactly to the country-level gap.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Gender exposure gaps reflect employment profiles and country-specific exposure differences.}
+\includegraphics[width=0.96\textwidth]{fig_gender_gap_decomposition.pdf}
+\caption*{\scriptsize Notes: Bars report income-group means in percentage points. Blue segments show the reference cell-profile component, and orange segments show the country-specific component. Diamonds report the total gap and horizontal lines show country-bootstrap 95\% confidence intervals. The components are reported as means because they add exactly. Figure~\ref{fig:gender_informality_margin_applications} reports medians and interquartile ranges. The low-income industry group contains four countries.}
+\label{fig:appendix_gender_gap_decomposition}
+\end{figure}
+
+For occupations, the mean substitution gap is \(1.77\) percentage points. The reference occupation profile contributes \(1.97\) points, while country-specific exposure differences contribute \(-0.20\) points. The occupation result therefore mainly reflects where female and male workers are employed across occupations with different average substitution exposure.
+
+The industry result varies with income. Substitution exposure is female-weighted in low- and middle-income economies but male-weighted in high-income economies. In high-income economies, the mean industry gap is \(-2.59\) percentage points, comprising a \(-1.77\)-point reference-profile component and a \(-0.82\)-point country-specific component. Augmentation gaps are small across occupations and male-weighted across industries. The low-income industry estimates cover four countries and should be interpreted cautiously.
+
+% To separate country-level accounting gaps from within-country sorting across cells, we also estimate cell-level fixed-effect regressions:
+To examine a separate dimension of employment composition, we compare the same two-digit occupation or industry cell across countries. The outcome is the percentage-point difference between the share of female employment and the share of male employment located in the cell, with both distributions normalised over cells observed for both sexes. We estimate:
+\[
+y_{cj}=\beta_m x_{cjm}+\alpha_c+\gamma_j+\varepsilon_{cj},
+\]
+% where \(y_{cj}\) is the female-minus-male employment share in occupation or industry cell \(j\) of country \(c\), measured in percentage points; \(x_{cjm}\) is the corresponding exposure-margin share; \(\alpha_c\) are country fixed effects; and \(\gamma_j\) are cell fixed effects. Each margin is estimated in a separate regression, and standard errors are clustered by country.
+where \(y_{cj}\) is the percentage-point difference between the share of country \(c\)'s female employment and the share of its male employment located in cell \(j\); \(x_{cjm}\) is the corresponding exposure-margin share; \(\alpha_c\) are country fixed effects; and \(\gamma_j\) are exact two-digit cell fixed effects. Each margin is estimated separately, and standard errors are clustered by country. The sign describes relative employment shares across cells rather than the female--male headcount within a cell.
+
+
+% \begin{table}[!htbp]
+% \centering
+% \caption{Cell-level gender sorting and automation margins.}
+% \label{tab:appendix_ilostat_gender_fe_baseline}
+% \small
+% \begin{tabular}{lcccc}
+% \toprule
+%  & (1) & (2) & (3) & (4) \\
+%  & Occupation sub. & Occupation aug. & Industry sub. & Industry aug. \\
+% \midrule
+% Exposure margin (10 pp) & -0.351*** & 0.273 & -0.219*** & 0.008 \\
+%  & (0.119) & (0.393) & (0.041) & (0.074) \\
+%  $t$-statistic & -2.96 & 0.70 & -5.29 & 0.11 \\
+% $p$-value & 0.004 & 0.488 & $<0.001$ & 0.917 \\
+% \midrule
+% Observations & 3,084 & 3,084 & 4,837 & 4,837 \\
+% Countries & 89 & 89 & 73 & 73 \\
+% Cells & 42 & 42 & 88 & 88 \\
+% Country fixed effects & Yes & Yes & Yes & Yes \\
+% Cell fixed effects & Yes & Yes & Yes & Yes \\
+% \bottomrule
+% \end{tabular}
+% \caption*{\scriptsize Notes: The outcome is the female-minus-male employment share in a country--cell, measured in percentage points. Each column is a separate regression. Exposure margins are scaled so coefficients correspond to a 10 percentage point increase. Occupation cells are two-digit ISCO-08 sub-major groups; industry cells are two-digit ISIC Rev.~4 divisions. Standard errors, clustered by country, are in parentheses. Test statistics and p-values are two-sided and use country-clustered standard errors with degrees of freedom equal to the number of countries minus one. \(^{*}p<0.10\), \(^{**}p<0.05\), \(^{***}p<0.01\).}
+% \end{table}
+\begin{table}[!htbp]
+\centering
+\caption{Within-cell associations between sex-specific employment composition and automation margins.}
+\label{tab:appendix_ilostat_gender_fe_baseline}
+\small
+\begin{tabular}{lcccc}
+\toprule
+ & (1) & (2) & (3) & (4) \\
+ & Occupation sub. & Occupation aug. & Industry sub. & Industry aug. \\
+\midrule
+Exposure margin (10 pp) & -0.338*** & 0.140 & -0.227*** & 0.015 \\
+ & (0.123) & (0.429) & (0.042) & (0.076) \\
+$t$-statistic & -2.74 & 0.33 & -5.46 & 0.20 \\
+$p$-value & 0.007 & 0.744 & $<0.001$ & 0.842 \\
+\midrule
+Observations & 3,042 & 3,042 & 4,760 & 4,760 \\
+Countries & 88 & 88 & 72 & 72 \\
+Cells & 42 & 42 & 88 & 88 \\
+Country fixed effects & Yes & Yes & Yes & Yes \\
+Cell fixed effects & Yes & Yes & Yes & Yes \\
+\bottomrule
+\end{tabular}
+\caption*{\scriptsize Notes: The outcome is the percentage-point difference between the share of female employment and the share of male employment located in a country--cell. Female and male shares are normalised over cells observed for both sexes within each country. Each column is a separate regression with country and exact two-digit occupation or industry cell fixed effects. Exposure margins are scaled so that coefficients correspond to a 10 percentage point increase. Negative coefficients indicate that a cell accounts for a relatively larger share of male employment; they do not imply that men constitute a majority of workers in that cell. The sample is restricted to countries classified in the four World Bank income groups, matching Figure~\ref{fig:gender_informality_margin_applications}. Standard errors, clustered by country, are in parentheses. Tests are two-sided. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.}
+\end{table}
+
+
+This exercise links the task-country labels to observed employment shares. It asks whether female and male workers are concentrated in different parts of the exposure distribution, and whether that answer changes when employment is read through occupations rather than industries. Occupation weighting reflects where women and men are employed across ISCO sub-major groups; industry weighting reflects where they are employed across ISIC divisions. The direction of the gap can therefore differ across the two views, especially for augmentation-only exposure.
+
+These coefficients use residual country--cell variation after removing country and cell averages. They therefore answer a different question from the aggregate gaps in Figure~\ref{fig:gender_informality_margin_applications}. For occupations, the difference in variation used explains how the positive aggregate gap can coexist with a negative fixed-effect coefficient.
+
+% The fixed-effect table asks a narrower sorting question. Conditional on country averages and on the average gender composition of each occupation or industry cell, are more exposed cells more female- or male-intensive? Substitution-intensive cells employ relatively more men in both occupation and industry specifications. The augmentation coefficients are smaller and statistically imprecise, so the evidence is strongest for gender sorting along the substitution margin.
+Supplementary Table~\ref{tab:appendix_ilostat_gender_fe_baseline} asks whether the same two-digit cell is relatively more female- or male-weighted in countries where its exposure composition differs from the country and cell averages. A 10 percentage point higher substitution-only share is associated with a 0.34 percentage point lower female-minus-male employment share in occupations and a 0.23 percentage point lower share in industries. The augmentation estimates are small and imprecise.
+
+This reading is consistent with the broader gender-exposure literature in a more limited sense: headline AI exposure can be gender-neutral or female-tilted in occupation-based data \citep{PizzinelliEtAl2023,CazzanigaPantonLiPizzinelliTavares2025GenderLens,GmyrekBergBescond2023,GmyrekEtAl2025}, while older automation and robotics evidence often emphasizes male-intensive routine and production work \citep{AcemogluRestrepo2018,brussevich2019_gender,imf2019_genderautomation}. Our contribution here is not a new gender theory; it is to show that the task-country labels can be reweighted through observed employment shares and decomposed by labour margin.
+
+
+\end{document}

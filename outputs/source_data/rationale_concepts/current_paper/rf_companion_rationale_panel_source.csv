@@ -1,0 +1,36 @@
+panel,target_name,family_id,family_label,display_label,condition_class,family_effect_pp,family_ci_low_pp,family_ci_high_pp,family_se_pp,family_p_bonf,n_pairs_or_rows
+d,same_task_exposed_vs_non_exposed,local_context_institutions,"Local context, regulation and institutional fit","Localized knowledge and
+fragmented information",Country/task interaction,-39.15,-41.856711245198206,-36.44328875480179,1.3809751251011273,5.9371611670781765e-176,2000.0
+d,same_task_exposed_vs_non_exposed,digital_data_readiness,Digital infrastructure and data readiness,"Missing digital and
+data complements",Country context,-35.65,-37.97137167321879,-33.32862832678121,1.1843733026626486,3.3605032058938155e-198,2000.0
+d,same_task_exposed_vs_non_exposed,interpersonal_trust_stakeholders,"Interpersonal trust, negotiation and stakeholder work","Relational and
+trust-based markets",Country/task interaction,-16.950000000000003,-19.222688257099286,-14.67731174290072,1.159534825050655,1.5110283094096276e-47,2000.0
+d,same_task_exposed_vs_non_exposed,computer_vision_anomaly_detection,Computer vision and anomaly detection,"Sensorized monitoring
+capacity",Mixed/unclear,13.55,11.64852790815694,15.451472091843062,0.9701388223689091,1.733158469940146e-43,2000.0
+d,same_task_exposed_vs_non_exposed,admin_records_erp_workflows,Administrative records and ERP workflows,"Formal administrative
+workflow systems",Country context,36.65,34.055856786623806,39.24414321337619,1.323542455804179,6.301279207372029e-168,2000.0
+d,same_task_exposed_vs_non_exposed,physical_automation_robotics,Physical automation and robotics,"Capital-intensive
+physical automation",Country context,42.55,40.13513383656699,44.964866163433,1.2320745731801053,1.66158993329215e-260,2000.0
+d,same_task_exposed_vs_non_exposed,document_content_generation,Document drafting and content generation,"Structured document-
+production workflows",Mixed/unclear,47.8,45.253188178677775,50.34681182132222,1.2993937863888885,2.1335724049053243e-295,2000.0
+e,same_task_substitution_vs_other_exposed,human_final_judgment_accountability,Human final judgment and accountability,"Authority and
+liability constraints",Task-specific,-30.9,-33.746153060821364,-28.053846939178637,1.4521189085823278,1.4140022891595112e-99,2000.0
+e,same_task_substitution_vs_other_exposed,hands_on_repair_dexterity,"Hands-on repair, calibration and dexterity","Tacit repair and manual
+exception-handling",Task-specific,-9.55,-11.82526584278138,-7.274734157218621,1.1608499197864182,1.5391351205948454e-15,2000.0
+e,same_task_substitution_vs_other_exposed,conversational_service_automation,Conversational service automation,"Routinized
+conversational services",Country context,-8.649999999999999,-11.3057868031474,-5.9942131968525985,1.3549932669119389,1.3820135052616931e-09,2000.0
+e,same_task_substitution_vs_other_exposed,document_content_generation,Document drafting and content generation,"Document drafting and
+synthesis support",Mixed/unclear,-7.35,-10.09852665648174,-4.6014733435182595,1.402309518613133,1.2752235704762915e-06,2000.0
+e,same_task_substitution_vs_other_exposed,digital_data_readiness,Digital infrastructure and data readiness,Data-system limits,Country context,-6.3,-8.487642644073542,-4.112357355926457,1.1161442061599711,1.3258202388802888e-07,2000.0
+e,same_task_substitution_vs_other_exposed,interpersonal_trust_stakeholders,"Interpersonal trust, negotiation and stakeholder work","Relational and
+trust-based markets",Country/task interaction,-5.4,-7.181156852123342,-3.6188431478766585,0.9087534959812968,2.2497008939560857e-08,2000.0
+e,same_task_substitution_vs_other_exposed,physical_automation_robotics,Physical automation and robotics,"Capital-intensive
+physical automation",Country context,4.25,2.2330102444888524,6.266989755511148,1.0290764058730344,0.0002903155538132,2000.0
+f,same_task_augmentation_vs_other_exposed,clinical_decision_support,Clinical decision support and patient-context judgment,"Final human decision
+and accountability",Task-specific,10.85,8.15931114298538,13.54068885701462,1.372800437252356,1.3553271507086644e-14,2000.0
+f,same_task_augmentation_vs_other_exposed,safety_certification_signoff,Safety-critical oversight and certification,"Safety-critical
+regulatory compliance",Task-specific,11.0,8.388423969193632,13.611576030806368,1.332436750411412,7.560130600349471e-16,2000.0
+f,same_task_augmentation_vs_other_exposed,interpersonal_trust_stakeholders,"Interpersonal trust, negotiation and stakeholder work","Relational and
+trust-based markets",Country/task interaction,12.7,9.825788331671244,15.574211668328756,1.466434524657529,2.3492869596394665e-17,2000.0
+f,same_task_augmentation_vs_other_exposed,local_context_institutions,"Local context, regulation and institutional fit","Local cultural, contextual
+and institutional knowledge",Country/task interaction,15.2,12.275989520086611,18.124010479913387,1.4918420815884632,1.1130860747483605e-23,2000.0

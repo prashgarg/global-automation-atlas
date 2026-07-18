@@ -1,8 +1,0 @@
-concept_family,side,n_hypotheses,score_exposed_mean,score_non_exposed_mean,score_paired_difference,score_paired_se,diff_pp,ci95_pp,concept_family_label
-AI and digital information processing,Exposed,2,0.72725,0.27775,0.4495,0.0098690716020881,44.95,1.9343380340092675,AI and digital information processing
-Digital administrative and platform workflows,Exposed,4,0.64225,0.302,0.34025,0.0083156204532049,34.025,1.6298616088281603,Digital administrative and platform workflows
-"Sensor, vision and industrial automation",Exposed,1,0.314,0.202,0.112,0.0129349006887534,11.200000000000001,2.5352405349956664,Computer-vision inspection systems
-Local institutional and professional judgment,Non-exposed,3,0.4918333333333333,0.6914999999999999,-0.1996666666666667,0.0090336822402894,-19.96666666666667,1.7706017190967225,Local institutional judgement
-"Interpersonal, care and trust-based work",Non-exposed,4,0.241375,0.444,-0.202625,0.0081387375686961,-20.2625,1.5951925634644357,Trust-based interpersonal work
-Manual physical presence and dexterity,Non-exposed,2,0.19825,0.42275,-0.2245,0.0094852443263189,-22.45,1.8591078879585043,Manual presence and dexterity
-"Paper, basic-software and infrastructure constraints",Non-exposed,4,0.449375,0.801625,-0.35225,0.0085529407309751,-35.225,1.6763763832711196,"Paper-based, infrastructure-limited work"

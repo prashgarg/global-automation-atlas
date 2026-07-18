@@ -7,6 +7,10 @@ suppressPackageStartupMessages({
   library(scales)
 })
 
+font_cache <- file.path(tempdir(), "fontconfig")
+dir.create(font_cache, recursive = TRUE, showWarnings = FALSE)
+Sys.setenv(XDG_CACHE_HOME = font_cache)
+
 pkg_root <- normalizePath(getwd(), mustWork = TRUE)
 dir.create(file.path(pkg_root, "reproduced/figures"), recursive = TRUE, showWarnings = FALSE)
 dir.create(file.path(pkg_root, "reproduced/tables"), recursive = TRUE, showWarnings = FALSE)

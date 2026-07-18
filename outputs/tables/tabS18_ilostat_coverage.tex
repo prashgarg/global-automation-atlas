@@ -3,15 +3,27 @@
 \scriptsize
 \setlength{\tabcolsep}{2pt}
 \renewcommand{\arraystretch}{1.08}
-\caption{ILOSTAT sources, sample rules, and overlap with the task-country dataset in the employment-composition appendix.}
-\begin{tabularx}{\textwidth}{@{}L{0.12\textwidth}L{0.20\textwidth}X C{0.09\textwidth} C{0.09\textwidth}@{}}
+\caption{ILOSTAT samples used in the employment-composition analyses.}
+\begin{tabularx}{\textwidth}{@{}L{0.16\textwidth}L{0.23\textwidth}X C{0.08\textwidth} C{0.08\textwidth}@{}}
 \toprule
-Source & Appendix object & Coverage rule & Usable countries & Paper overlap \\
+Analysis & ILOSTAT breakdown & Coverage rule & Usable countries & Paper sample \\
 \midrule
-SEX\_OCU & Total occupation weights & Latest 2015--2025 year with total employment, at least 8 ISCO major groups, and positive counts; shares renormalized within country-year. & 152 & 91 \\
-SEX\_OCU & Female and male weights & Latest common 2015--2025 year with separate female and male counts, at least 8 ISCO major groups in each; shares renormalized within sex-country-year. & 149 & 91 \\
+Broad occupation reweighting
+& Total employment by ISCO-08 major group
+& Latest 2015--2025 year with at least eight major groups and positive employment; shares normalised within country-year.
+& 152 & 91 \\
+
+Gender: occupations
+& Female and male employment by two-digit ISCO-08 group
+& Latest common female--male year in 2018--2024; shares normalised within sex and country.
+& 135 & 88 \\
+
+Gender: industries
+& Female and male employment by two-digit ISIC Rev.~4 division
+& Latest common female--male year in 2018--2024; shares normalised within sex and country.
+& 105 & 72 \\
 \bottomrule
 \end{tabularx}
-\caption*{\scriptsize Note: `Usable countries' reports how many countries satisfy the public ILOSTAT coverage rule for each source. `Paper overlap' reports how many of those countries also appear in the task-country dataset used in the paper. The appendix figures use this overlap sample.}
+\caption*{\scriptsize Note: `Usable countries' reports the countries satisfying each source-specific coverage rule before matching to the atlas and applying the paper sample restrictions. `Paper sample' reports the countries used in the corresponding analysis. The fixed-effect gender analysis further normalises female and male shares over cells observed for both sexes within each country.}
 \label{tab:appendix_ilostat_coverage}
 \end{table}

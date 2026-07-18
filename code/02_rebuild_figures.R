@@ -1,3 +1,7 @@
+if (!exists("read_csv_here", inherits = FALSE)) {
+  source("code/00_setup.R")
+}
+
 message("Rebuilding selected figures from source data...")
 
 country <- read_csv_here("outputs/source_data/country_map/scatter_exposed_share_vs_log_gdp_pc.csv") %>%
@@ -186,40 +190,22 @@ print(p_ai_sub)
 print(p_ai_aug)
 dev.off()
 
-shap <- read_csv_here("outputs/source_data/country_predictors/country_covariate_rf_mean_abs_shap.csv") %>%
-  filter(spec == "main68", outcome %in% c("share_exposed", "sub_only_within_exposed", "aug_only_within_exposed")) %>%
-  group_by(outcome) %>%
-  slice_max(mean_abs_shap, n = 8, with_ties = FALSE) %>%
-  ungroup() %>%
-  mutate(variable = gsub("_", " ", variable), outcome = recode(outcome,
-    share_exposed = "Exposed share",
-    sub_only_within_exposed = "Substitution within exposed",
-    aug_only_within_exposed = "Augmentation within exposed"
-  ))
-p_shap <- ggplot(shap, aes(100 * mean_abs_shap, reorder(variable, mean_abs_shap), fill = direction_flag)) +
-  geom_col(width = 0.72) +
-  facet_wrap(~outcome, scales = "free_y") +
-  scale_fill_manual(values = c(negative = "#C95F5A", positive = "#548C90", mixed = "grey60"), na.value = "grey70") +
-  labs(x = "Mean absolute TreeSHAP value (percentage points)", y = NULL) +
-  theme_paper(8)
-save_pdf(p_shap, "fig_country_covariate_mean_abs_shap_main68_bc_common_axis_rebuilt.pdf", 8.8, 5.2)
-
 perm <- read_csv_here("outputs/source_data/country_predictors/country_covariate_rf_permutation_importance.csv") %>%
-  filter(spec == "main68", outcome %in% c("share_exposed", "sub_only_within_exposed", "aug_only_within_exposed")) %>%
+  filter(spec == "main68", outcome %in% c("share_exposed", "substitution_within_exposed", "augmentation_within_exposed")) %>%
   group_by(outcome) %>%
   slice_max(permutation_importance_mean, n = 8, with_ties = FALSE) %>%
   ungroup() %>%
   mutate(variable = gsub("_", " ", variable), outcome = recode(outcome,
     share_exposed = "Exposed share",
-    sub_only_within_exposed = "Substitution within exposed",
-    aug_only_within_exposed = "Augmentation within exposed"
+    substitution_within_exposed = "Substitution within exposed",
+    augmentation_within_exposed = "Augmentation within exposed"
   ))
 p_perm <- ggplot(perm, aes(permutation_importance_mean, reorder(variable, permutation_importance_mean), fill = outcome)) +
   geom_col(width = 0.72, show.legend = FALSE) +
   facet_wrap(~outcome, scales = "free_y") +
   labs(x = "Permutation importance", y = NULL) +
   theme_paper(8)
-save_pdf(p_perm, "fig_country_covariate_feature_importance_main68_rebuilt.pdf", 8.8, 5.2)
+save_pdf(p_perm, "fig_country_covariate_permutation_importance_main68_rebuilt.pdf", 8.8, 5.2)
 
 valid <- read_csv_here("outputs/source_data/construct_validity/channel_aligned_correlations.csv") %>%
   mutate(alignment = if_else(is_aligned, "Matched construct", "Other construct"))
@@ -276,30 +262,3 @@ p_rat <- ggplot(rat, aes(reorder(field, value), 100 * value)) +
   labs(x = NULL, y = "Recovered label agreement (%)") +
   theme_paper()
 save_pdf(p_rat, "fig_validation_rationale_predictability_rebuilt.pdf", 5.8, 3.4)
-
-occ <- read_csv_here("data_analysis/occupation_isco2_gender_gap_country_panel.csv") %>%
-  mutate(domain = "ISCO-2 occupations")
-ind <- read_csv_here("data_analysis/industry_isic2_gender_gap_country_panel.csv") %>%
-  mutate(domain = "ISIC-2 industries")
-gender <- bind_rows(occ, ind) %>%
-  mutate(
-    income_level = factor(income_level, levels = income_order),
-    income_label = as.character(income_level)
-  ) %>%
-  pivot_longer(c(sub_gap_pp, aug_gap_pp), names_to = "margin", values_to = "gap_pp") %>%
-  mutate(margin = recode(margin, sub_gap_pp = "Substitution-only", aug_gap_pp = "Augmentation-only"))
-gender_all <- gender %>% mutate(income_label = "All countries")
-gender_plot <- bind_rows(gender_all, gender) %>%
-  mutate(income_label = factor(income_label, levels = c("All countries", rev(income_order))))
-gender_iqr <- gender_plot %>%
-  group_by(domain, margin, income_label) %>%
-  summarise(median_gap = median(gap_pp, na.rm = TRUE), q25 = quantile(gap_pp, .25, na.rm = TRUE), q75 = quantile(gap_pp, .75, na.rm = TRUE), .groups = "drop")
-p_gender <- ggplot(gender_iqr, aes(median_gap, income_label, color = domain)) +
-  geom_vline(xintercept = 0, linetype = "dashed", color = "grey55") +
-  geom_errorbarh(aes(xmin = q25, xmax = q75), height = 0.15, linewidth = 0.8, position = position_dodge(width = 0.45)) +
-  geom_point(size = 2.3, position = position_dodge(width = 0.45)) +
-  facet_wrap(~margin, scales = "free_x") +
-  scale_color_manual(values = domain_cols) +
-  labs(x = "Median female minus male contribution (percentage points)", y = NULL) +
-  theme_paper()
-save_pdf(p_gender, "fig_gender_gap_2digit_objects_median_iqr_rebuilt.pdf", 8.8, 4.6)

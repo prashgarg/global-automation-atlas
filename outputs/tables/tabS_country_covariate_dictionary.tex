@@ -7,10 +7,10 @@
 \toprule
 Figure label & Construction & Source & Year rule \\
 \midrule
-Log GDP per capita & Natural log of real GDP per capita at PPP. & Penn World Table 10.01 \citep{FeenstraInklaarTimmer2015PWT} & 2019 \\
-Human capital & Human-capital index based on average years of schooling and returns to education. & Penn World Table 10.01 \citep{FeenstraInklaarTimmer2015PWT} & 2019 \\
+Log GDP per capita & Natural log of GDP divided by population, using the country-list GDP and population fields. & World Development Indicators \citep{worldbank_wdi} & 2024 \\
+Human capital & PWT human-capital index, \texttt{hc}, based on schooling and returns to education. & Penn World Table 10.01 \citep{FeenstraInklaarTimmer2015PWT} & 2019 \\
 Years of schooling & Average years of schooling among adults aged 15--64. & Barro--Lee educational-attainment data \citep{BarroLee2013Education} & 2015 \\
-Capital intensity & Natural log of real capital stock per worker. & Penn World Table 10.01 \citep{FeenstraInklaarTimmer2015PWT} & 2019 \\
+Capital intensity & Natural log of real capital stock per worker, \(\log(\texttt{rkna}/\texttt{emp})\), where \texttt{emp} is persons engaged. & Penn World Table 10.01 \citep{FeenstraInklaarTimmer2015PWT} & 2019 \\
 Investment (\% GDP) & Gross fixed capital formation as a percentage of GDP. & World Development Indicators \citep{worldbank_wdi} & Latest non-missing, 2018--2024 \\
 Government effectiveness & Government effectiveness percentile rank. & Worldwide Governance Indicators \citep{worldbank_wgi} & 2024 \\
 Regulatory quality & Regulatory quality percentile rank. & Worldwide Governance Indicators \citep{worldbank_wgi} & 2024 \\
@@ -18,5 +18,5 @@ Internet users (\%) & Individuals using the Internet as a percentage of populati
 Goods trade (\% GDP) & Merchandise-trade value divided by GDP. & CEPII BACI HS22 2023 trade data \citep{GaulierZignago2010BACI} and World Bank GDP \citep{worldbank_wdi} & 2023 trade; latest GDP \\
 \bottomrule
 \end{tabularx}
-\caption*{\scriptsize Notes: The labels match the country-covariate figures. The main 68-country random-forest specification uses all rows in the table. The wider-coverage 90-country specification drops human capital, capital intensity, and investment to reduce complete-case sample loss. PWT variables are constructed national-accounts and education measures rather than survey-question variables.}
+\caption*{\scriptsize Notes: The labels match the country-covariate figures. The main 68-country random-forest specification uses all rows in the table. The wider-coverage 90-country specification drops human capital, capital intensity, and investment to reduce complete-case sample loss. PWT variables are constructed national-accounts and education measures rather than survey-question variables. The PWT rows use 2019 values, the latest year in PWT 10.01 and a pre-COVID baseline. All logarithms are natural logs.}
 \end{table}

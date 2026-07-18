@@ -1,0 +1,24 @@
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\caption{Robustness of observed-use correlations across U.S. work activities.}
+\label{tab:appendix_openai_observed_use_iwa_robustness}
+\begin{tabular}{lrrrrrr}
+\toprule
+Atlas measure & Work Q1 & Work Mar. & Work full & Per edge & Residual & All Q1 \\
+\midrule
+Information transformation & 0.417 & 0.414 & 0.461 & 0.382 & 0.422 & 0.149 \\
+Rule-based workflow & 0.122 & 0.101 & 0.112 & 0.019 & 0.082 & -0.069 \\
+Planning/control & 0.090 & 0.093 & 0.077 & 0.030 & 0.064 & -0.064 \\
+Inference/scoring & -0.066 & -0.038 & -0.035 & -0.135 & -0.103 & -0.032 \\
+Physical execution & -0.279 & -0.284 & -0.283 & -0.408 & -0.347 & -0.146 \\
+Broad economic exposure & 0.182 & 0.158 & 0.195 & 0.148 & 0.172 & -0.014 \\
+AI-material exposed share & 0.226 & 0.217 & 0.257 & 0.248 & 0.244 & -0.003 \\
+Content transformation & 0.435 & 0.427 & 0.467 & 0.390 & 0.439 & 0.148 \\
+Recommendation/decision & 0.216 & 0.216 & 0.195 & 0.115 & 0.178 & 0.029 \\
+State inference & -0.264 & -0.245 & -0.224 & -0.277 & -0.288 & -0.221 \\
+Adaptive control & -0.275 & -0.288 & -0.284 & -0.296 & -0.298 & -0.139 \\
+\bottomrule
+\end{tabular}
+\caption*{\scriptsize Notes: Entries are Spearman rank correlations across 164 named O*NET intermediate work activities. The primary outcome is the OpenAI public work-related U.S. message share averaged over January--March 2026. The March 2026 column uses the latest public month. The full-period column averages July 2024--March 2026. The per-task-edge column divides the 2026 Q1 work-related message share by the number of Atlas task edges in the IWA. The residual column uses residual log message share after projecting log work-related message share on log task-edge count. The all-message column uses the OpenAI public all-message IWA series rather than the work-related series. Atlas measures are built from U.S.-conditioned task labels. Channel rows are exposed task shares whose dominant channel is the named channel. AI-function rows are exposed task shares whose dominant AI function is the named function. Broad economic exposure and AI-material exposed share are aggregate measures rather than channels or AI functions.}
+\end{table}

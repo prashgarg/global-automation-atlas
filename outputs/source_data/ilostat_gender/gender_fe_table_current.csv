@@ -1,0 +1,5 @@
+domain,margin,coefficient,standard_error,t_statistic,p_value,observations,countries,cells,country_fixed_effects,cell_fixed_effects,normalization,sample
+ISCO-2 occupations,Substitution-only,-0.33808843006614586,0.12322813713795841,-2.743597671103666,0.0073792598426707205,3042,88,42,Yes,Yes,Common cells within country and sex,Countries classified in the four World Bank income groups
+ISCO-2 occupations,Augmentation-only,0.140478231775536,0.4292399588941468,0.327272027836017,0.7442483125302416,3042,88,42,Yes,Yes,Common cells within country and sex,Countries classified in the four World Bank income groups
+ISIC-2 industries,Substitution-only,-0.2274518462193116,0.0416739331137122,-5.457892481582735,6.680817748175212e-7,4760,72,88,Yes,Yes,Common cells within country and sex,Countries classified in the four World Bank income groups
+ISIC-2 industries,Augmentation-only,0.01523758716184937,0.07604056490338269,0.20038761128629543,0.8417503366746932,4760,72,88,Yes,Yes,Common cells within country and sex,Countries classified in the four World Bank income groups

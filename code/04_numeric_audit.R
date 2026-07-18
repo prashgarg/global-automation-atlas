@@ -1,3 +1,7 @@
+if (!exists("read_csv_here", inherits = FALSE)) {
+  source("code/00_setup.R")
+}
+
 message("Auditing paper-presented numeric claims against package source data...")
 
 claim_rows <- list()
@@ -22,7 +26,17 @@ add_claim <- function(section, claim, source_value, expected_value, digits = NUL
 labels <- read_parquet_here("data_intermediate/task_country_labels_analysis.parquet")
 country <- read_csv_here("data_analysis/country_map_panel.csv")
 gender_summary <- read_csv_here("data_analysis/gender_gap_isco_isic_summary.csv")
-gender_fe <- read_csv_here("data_analysis/gender_fe_regression_table.csv")
+gender_fe <- read_csv_here("outputs/source_data/ilostat_gender/gender_fe_table_current.csv") %>%
+  transmute(
+    domain,
+    margin,
+    coef = coefficient,
+    se = standard_error,
+    pvalue = p_value
+  )
+gender_decomposition <- read_csv_here(
+  "outputs/source_data/ilostat_gender/gender_gap_decomposition_country_level.csv"
+)
 valid <- read_csv_here("outputs/source_data/construct_validity/channel_aligned_correlations.csv")
 cross <- read_csv_here("outputs/source_data/cross_model_validity/agreement_summary.csv")
 rationale <- read_csv_here("outputs/source_data/rationale_label_predictability/agreement_summary.csv")
@@ -91,23 +105,46 @@ add_claim("Gender gaps", "ISIC-2 substitution median female-minus-male gap, pp",
 add_claim("Gender gaps", "ISIC-2 augmentation median female-minus-male gap, pp", get_gender("ISIC-2 industries", "Augmentation-only", "median_gap_pp"), -0.832, digits = 3)
 add_claim("Gender gaps", "ISIC-2 augmentation female-higher share, percent", get_gender("ISIC-2 industries", "Augmentation-only", "female_higher_share"), 9.7, digits = 1, scale = 100)
 
-fe_base <- gender_fe %>% filter(model == "Baseline", term == "x")
-for (i in seq_len(nrow(fe_base))) {
+for (i in seq_len(nrow(gender_fe))) {
   add_claim(
     "Gender fixed effects",
-    paste(fe_base$domain[[i]], fe_base$margin[[i]], "coefficient"),
-    fe_base$coef[[i]],
-    c(-0.351, 0.273, -0.219, 0.008)[[i]],
+    paste(gender_fe$domain[[i]], gender_fe$margin[[i]], "coefficient"),
+    gender_fe$coef[[i]],
+    c(-0.338, 0.140, -0.227, 0.015)[[i]],
     digits = 3
   )
   add_claim(
     "Gender fixed effects",
-    paste(fe_base$domain[[i]], fe_base$margin[[i]], "standard error"),
-    fe_base$se[[i]],
-    c(0.119, 0.393, 0.041, 0.074)[[i]],
+    paste(gender_fe$domain[[i]], gender_fe$margin[[i]], "standard error"),
+    gender_fe$se[[i]],
+    c(0.123, 0.429, 0.042, 0.076)[[i]],
     digits = 3
   )
 }
+
+get_gender_decomposition <- function(domain, income = NULL) {
+  result <- gender_decomposition %>%
+    filter(
+      support == "Figure 5 sex-specific support",
+      .data$domain == .env$domain,
+      margin == "Substitution-only"
+    )
+  if (!is.null(income)) result <- result %>% filter(income_level == .env$income)
+  result %>%
+    summarise(
+      total = mean(total_gap_pp),
+      reference = mean(reference_profile_pp),
+      country_specific = mean(country_specific_pp)
+    )
+}
+occupation_decomposition <- get_gender_decomposition("Occupation (ISCO-2)")
+industry_high_decomposition <- get_gender_decomposition("Industry (ISIC-2)", "High income")
+add_claim("Gender decomposition", "Occupation substitution mean total gap, pp", occupation_decomposition$total, 1.77, digits = 2)
+add_claim("Gender decomposition", "Occupation substitution reference-profile component, pp", occupation_decomposition$reference, 1.97, digits = 2)
+add_claim("Gender decomposition", "Occupation substitution country-specific component, pp", occupation_decomposition$country_specific, -0.20, digits = 2)
+add_claim("Gender decomposition", "High-income industry substitution mean total gap, pp", industry_high_decomposition$total, -2.59, digits = 2)
+add_claim("Gender decomposition", "High-income industry substitution reference-profile component, pp", industry_high_decomposition$reference, -1.77, digits = 2)
+add_claim("Gender decomposition", "High-income industry substitution country-specific component, pp", industry_high_decomposition$country_specific, -0.82, digits = 2)
 
 add_claim("AIPI validation", "AI-material share vs AIPI raw Pearson", aipi_raw %>% filter(atlas == "ai_material_share", imf == "AI_PI") %>% pull(pearson), 0.90, digits = 2)
 add_claim("AIPI validation", "AI-material share vs AIPI raw Spearman", aipi_raw %>% filter(atlas == "ai_material_share", imf == "AI_PI") %>% pull(spearman), 0.93, digits = 2)

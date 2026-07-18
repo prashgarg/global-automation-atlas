@@ -1,0 +1,16 @@
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\caption{Country conditioning changes occupation and industry exposure with fixed aggregation mappings.}
+\label{tab:appendix_country_conditioning_isco_isic}
+\begin{tabular}{p{0.25\textwidth}rrrrrrrr}
+\toprule
+Aggregation surface & Cells & Groups & Mean $|\Delta|$ & Median $|\Delta|$ & $|\Delta|\geq0.25$ & $|\Delta|\geq0.50$ & Mean $\rho$ & Top-10 overlap \\
+\midrule
+Country $\times$ ISCO-2 occupation & 5,208 & 42 & 0.553 & 0.411 & 65.2\% & 45.1\% & 0.917 & 8.44 \\
+Country $\times$ ISIC-2 industry (common comparison sample) & 2,976 & 24 & 0.497 & 0.376 & 63.5\% & 39.3\% & 0.743 & 7.16 \\
+\bottomrule
+\end{tabular}
+\caption*{\scriptsize Notes: The comparison holds the O*NET$\rightarrow$SOC$\rightarrow$ISCO and task$\rightarrow$ISIC aggregation mappings fixed and changes only the task labels: context-free versus country-conditioned. $\Delta$ is the country-conditioned minus context-free exposure difference on the 0--3 exposure scale, computed within country--aggregation cells. Rank statistics compare, within each country, the country-conditioned ranking to the context-free ranking over the same aggregation surface. Top-10 overlap is the average number of shared entries between the two top-10 lists. Both rows use 124 countries. The ISIC comparison is restricted to the 24 two-digit divisions with both context-free and country-conditioned aggregates; Figure~\ref{fig:industry_isic_income_main} reports the full supported surface of 88 divisions.}
+\end{table}

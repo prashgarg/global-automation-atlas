@@ -1,0 +1,4 @@
+model,outcome,controls,fixed_effects,se_type,coefficient,se,statistic,p_value,n,r2
+Overall exposure,share_exposed_pp,Log GDP per capita,None,HC1 robust,-0.034674632195577065,0.04371029874373496,-0.7932828919533984,0.4297228306343698,92,0.8312594678636669
+Substitution-only among exposed,sub_only_share_exposed_pp,Log GDP per capita,None,HC1 robust,-0.1085680692260773,0.030570025418503833,-3.551454987026663,6.149628941743637e-4,92,0.2731496995624803
+Augmentation-only among exposed,aug_only_share_exposed_pp,Log GDP per capita,None,HC1 robust,6.154782591224022e-4,0.0300482659333092,0.020482987620264976,0.9837039348297762,92,0.1598855512674123

@@ -1,7 +1,7 @@
 {
-  "benchmark_run": "/Users/prashgarg/Library/CloudStorage/Dropbox-PrashantGarg/Prashant Garg/ai_skills_tasks/ai_task_skill_atlas/outputs/llm_runs/stage4_task_automation_v6b_benchmark_full/20260404_131338_v6b_benchmark5_alltasks_flashlite_low/responses.jsonl",
-  "country_panel": "/Users/prashgarg/Library/CloudStorage/Dropbox-PrashantGarg/Prashant Garg/ai_skills_tasks/ai_task_skill_atlas/outputs/analysis_country_automation_v6b_taskid_country124_20260406/country_task_panel.parquet",
-  "country_weights": "/Users/prashgarg/Library/CloudStorage/Dropbox-PrashantGarg/Prashant Garg/ai_skills_tasks/ai_task_skill_atlas/ops/tier3_country_list_150_20260330.csv",
+  "benchmark_run": "Main context-free benchmark run used to construct the released summary statistics",
+  "country_panel": "Released 124-country task panel summarized in the replication package",
+  "country_weights": "Country weights used for the GDP-, population-, and equal-weighted summaries",
   "contextfree_mean_exposure": 1.6872421191615778,
   "high_income_mean_exposure": 1.7429307321350285,
   "low_income_mean_exposure": 0.8132805193376245,

@@ -10,3 +10,4 @@ ILOSTAT,"Occupation, industry, and sex-specific employment shares",https://ilost
 IMF AI Preparedness Index,Country-level AI readiness validation,https://www.imf.org/external/datamapper/datasets/AIPI
 Eurostat ICT Usage in Enterprises,Firm AI adoption validation,https://ec.europa.eu/eurostat/databrowser/
 Felten-Raj-Seamans AI Occupational Exposure,External occupational AI-exposure comparator,https://github.com/AIOE-Data/AIOE
+OpenAI Signals consumer data,Observed U.S. ChatGPT use by O*NET intermediate work activity,https://openai.com/signals/data-download/

@@ -163,15 +163,3 @@ data_analysis/gender_gap_isco_isic_summary.csv,margin,character,Labour-margin co
 data_analysis/gender_gap_isco_isic_summary.csv,n_countries,numeric,Number of countries contributing to the gender-gap summary.
 data_analysis/gender_gap_isco_isic_summary.csv,median_gap_pp,numeric,Median female-minus-male employment-weighted gap in percentage points.
 data_analysis/gender_gap_isco_isic_summary.csv,female_higher_share,numeric,Share of countries with positive female-minus-male gap.
-data_analysis/gender_fe_regression_table.csv,domain,character,
-data_analysis/gender_fe_regression_table.csv,margin,character,
-data_analysis/gender_fe_regression_table.csv,model,character,
-data_analysis/gender_fe_regression_table.csv,term,character,
-data_analysis/gender_fe_regression_table.csv,coef,numeric,Fixed-effect regression coefficient for a 10 percentage point exposure-margin increase.
-data_analysis/gender_fe_regression_table.csv,se,numeric,Country-clustered standard error.
-data_analysis/gender_fe_regression_table.csv,pvalue,numeric,p-value for the reported coefficient.
-data_analysis/gender_fe_regression_table.csv,n_obs,numeric,Number of country-cell observations.
-data_analysis/gender_fe_regression_table.csv,n_countries,numeric,Number of countries.
-data_analysis/gender_fe_regression_table.csv,n_cells,numeric,Number of occupation or industry cells.
-data_analysis/gender_fe_regression_table.csv,mean_log_gdp,numeric,
-data_analysis/gender_fe_regression_table.csv,column_label,character,

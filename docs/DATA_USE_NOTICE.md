@@ -16,6 +16,7 @@ Current source notes at the time of package preparation:
 - World Bank open data are distributed under World Bank Open Data terms, with many open datasets made available under Creative Commons Attribution-style terms.
 - CEPII BACI states that BACI is distributed under the Etalab Open Licence 2.0 and asks users to mention BACI and CEPII.
 - Barro-Lee asks users to cite Barro and Lee (2013), "A New Data Set of Educational Attainment in the World, 1950-2010."
+- OpenAI Signals data are released under Creative Commons Attribution 4.0 International and require attribution to the suggested source.
 - Other sources should be checked at their original download pages before redistribution or commercial use.
 
 ## Suggested attribution
@@ -25,4 +26,3 @@ If you use this package, cite the paper and the replication package. If you use 
 ## No warranty
 
 The data and code are provided for research transparency and reproducibility. They are provided without warranty. Users are responsible for checking source-specific terms before reuse.
-

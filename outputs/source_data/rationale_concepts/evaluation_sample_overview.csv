@@ -1,2 +1,0 @@
-target_name,sample_n,per_class_actual,excluded_discovery_row_ids,per_class_requested,per_task_cap,eligible_tasks_after_excluding_discovery,tasks_represented_in_sample,task_sampled_rows_min,task_sampled_rows_median,task_sampled_rows_max,masked_n,masked_share,total_mask_hits,mean_hits_per_rationale
-same_task_exposed_vs_non_exposed,4000,2000,20000,2000,1,14479,2000,2,2.0,2,3162,0.7905,3168,0.792

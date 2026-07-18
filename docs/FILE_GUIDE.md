@@ -15,22 +15,33 @@ This note explains the main files in the replication package.
 
 - `data_analysis/country_map_panel.csv`: country-level exposure, margin, GDP, population, and covariate fields used in the opening country figures.
 - `data_analysis/country_channel_ai_panel.csv`: country-level channel and AI-materiality summaries.
-- `data_analysis/country_covariate_rf_mean_abs_shap.csv`: random-forest TreeSHAP predictor summaries.
+- `data_analysis/country_covariate_rf_mean_abs_shap.csv`: current random-forest TreeSHAP predictor summaries. Direction flags use the five-seed ALE ensemble rule: median ALE difference and a four-of-five sign threshold, otherwise `mixed`.
 - `data_analysis/gender_gap_isco_isic_summary.csv`: gender-gap summary statistics for occupation and industry weighting.
-- `data_analysis/gender_fe_regression_table.csv`: fixed-effect regression results for the gender sorting check.
 
 ## Output folders
 
 - `outputs/figures/`: exact figure files used in the manuscript.
 - `outputs/tables/`: exact LaTeX table files used in the manuscript.
 - `outputs/source_data/`: compact source data behind validation checks, country figures, predictors, benchmarks, and ILOSTAT analyses.
-- `outputs/source_data/rationale_concepts/`: fixed concepts, fidelity summaries, place-mask terms, evaluation-sample paired tests, and source files for the same-task rationale-concept analysis.
+- `outputs/source_data/rationale_concepts/`: the current 60 fixed concepts, pooled Figure 6 families, place-mask terms, and source rows for the illustrative heldout rationale pairs.
+- `outputs/source_data/openai_observed_use/`: public OpenAI Signals IWA series and the O*NET task hierarchy used to rebuild the observed-use validation.
+- `outputs/source_data/ilostat_gender/gender_gap_decomposition_*.csv`: country-level and income-group source data for the gender-gap decomposition and its reported component means.
 - `reproduced/`: files created by `Rscript code/make_all.R`.
+
+## Figure registry and builders
+
+- `docs/figure_asset_registry.csv`: one row for each of the 40 active figures, with class, public command, rebuilt file, original producer, released sources, and a precise limit.
+- `code/manuscript_figures/build_fixed_concept_appendix_figures.py`: package-relative adaptation of the original three-target fixed-concept builder.
+- `code/manuscript_figures/build_combined_rf_rationale_main_figure.py`: package-relative adaptation of the original six-panel Figure 6 builder.
+- `code/manuscript_figures/build_current_check_renders.py`: numerical/source-data checks for all other publicly checkable active figures.
+- `code/manuscript_figures/compare_exact_build_renders.py`: 150-dpi rendered-pixel comparison for the five direct builds.
 
 ## Checks
 
 - `reproduced/checks/numeric_claim_audit.csv`: paper-presented numbers checked against source data.
-- `reproduced/checks/figure_reproduction_status.csv`: which figures are rebuilt from source data and which are preserved as final manuscript files.
+- `reproduced/checks/figure_reproduction_status.csv`: active-only validation of the explicit per-figure class, command, sources, rebuilt file, and snapshot/rebuilt hashes.
+- `reproduced/checks/exact_build_render_comparison.csv`: byte-hash and rendered-pixel comparison for the five direct builds.
+- `reproduced/checks/shap_ale_five_seed_direction_check.csv`: row-level recomputation of the four-of-five ALE sign rule.
 - `reproduced/checks/manuscript_figure_artifact_exact_match.csv`: checksum comparison between manuscript figures and package copies.
 - `reproduced/checks/manuscript_table_artifact_exact_match.csv`: checksum comparison between manuscript tables and package copies.
-- `reproduced/checks/rationale_concept_audit.csv`: compact audit of the rationale-concept source bundle.
+- `reproduced/checks/rationale_hypothesaes_audit.csv`: discovery, fidelity, and heldout paired-estimator checks for all three fixed-concept targets, including the final 20/13/12 Bonferroni-significant counts.
