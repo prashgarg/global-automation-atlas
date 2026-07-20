@@ -16,7 +16,7 @@ The explicit registry equals the 40-figure active set parsed from `docs/main_man
 
 The combined Figure 6, three fixed-concept HypotheSAEs appendix figures, and OpenAI observed-use alignment are produced by package-relative adaptations of their original scripts and checked against the active snapshots after 150 dpi rendering. PDF byte hashes can differ because regenerated PDFs contain different metadata or font object encoding.
 
-The HypotheSAEs audit confirms 20 fixed concepts per target, 2,000 heldout same-task pairs per concept, and complete discovery, fidelity, and corrected paired-estimator fields.
+The HypotheSAEs audit confirms 20 fixed concepts per target, 2,000 heldout same-task pairs per concept, and complete discovery, fidelity, and paired-estimator fields.
 
 The TreeSHAP/ALE audit recomputes the five-seed rule for all 27 `main68` feature-outcome rows: a direction is positive or negative only when at least four of five seed-specific ALE signs agree. All 27 released flags pass.
 
