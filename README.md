@@ -1,6 +1,6 @@
 # Global Automation Atlas
 
-Public replication package for **Global Automation Atlas** by Prashant Garg, Tommaso Crosta, and Jasmin Baier.
+Public replication package for Global Automation Atlas by Prashant Garg, Tommaso Crosta, and Jasmin Baier.
 
 <p>
   <a href="https://automationatlas.org/">Atlas website</a> |
