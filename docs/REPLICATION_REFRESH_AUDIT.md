@@ -10,7 +10,7 @@ The explicit registry equals the 40-figure active set parsed from `docs/main_man
 - 35 `numerical_source_data_check_render`
 - 14/14 file-backed active table snapshots match the manuscript assets exactly.
 - 59/59 audited reported statistics match the paper values at the reported precision.
-- The corrected gender fixed-effect check is rebuilt from `outputs/source_data/ilostat_gender/gender_fe_table_current.csv`.
+- Supplementary Table B.8 is re-estimated from the released two-digit employment weights and country-cell exposure panels, then checked against `outputs/source_data/ilostat_gender/gender_fe_table_current.csv`.
 
 ## Direct builds
 
@@ -23,7 +23,7 @@ The TreeSHAP/ALE audit recomputes the five-seed rule for all 27 `main68` feature
 ## Remaining limits
 
 1. The 35 numerical/source-data check renders reproduce released values but do not claim pixel identity where the original composition, cartography, or typography differs.
-2. Raw rationale text, API batches, embeddings, discovery corpora, and restricted third-party microdata are excluded. Released derived inputs are sufficient for the direct paper-figure builds, but not for rerunning the original API labelling or concept-discovery stages from raw text.
+2. The analysis-ready rationale text is released in eight Parquet partitions. Raw API batches, annotation batches, embeddings, exploratory concept sets, and restricted third-party microdata are excluded. The public workflow does not repeat the original paid API labelling or concept-discovery calls.
 3. The compact gender/informality check reproduces country medians, IQRs, and country-level informality coefficients. The omitted cell-FE informality construction input prevents claiming an exact direct build of that panel.
 
 ## Verification command

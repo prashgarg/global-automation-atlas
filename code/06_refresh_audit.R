@@ -62,13 +62,13 @@ table_rows <- tibble(
 
 inline_rows <- tibble(
   asset_type = "inline_table",
-  manuscript_asset = "main.tex (seven active inline tables, including corrected Table B.8)",
+  manuscript_asset = "main.tex (seven active inline tables, including Table B.8)",
   package_asset = "docs/main_manuscript_snapshot.tex; outputs/tables/tabS_ilostat_gender_fe_baseline.tex",
-  replication_command = "Rscript code/01_rebuild_tables.R",
-  reproduction_class = "snapshot_plus_rebuilt_gender_FE_check",
+  replication_command = "Rscript code/08_rebuild_gender_table_B8.R",
+  reproduction_class = "snapshot_plus_direct_gender_FE_reestimation",
   expected_hash = hash_file(snapshot),
-  expected_statistics = "Corrected B.8 coefficients: -0.338, 0.140, -0.227, 0.015",
-  source_data = "outputs/source_data/ilostat_gender/gender_fe_table_current.csv"
+  expected_statistics = "Table B.8 coefficients: -0.338, 0.140, -0.227, 0.015",
+  source_data = "outputs/source_data/ilostat_gender/table_B8_inputs/"
 )
 
 numeric_path <- file.path(pkg_root, "reproduced/checks/numeric_claim_audit.csv")

@@ -4,7 +4,8 @@ This note explains the main files in the replication package.
 
 ## Main measurement files
 
-- `data_intermediate/task_country_labels_analysis.parquet`: retained task-country labels. This is the main measurement file. It has one row per task-country observation and excludes language-model rationales.
+- `data_intermediate/task_country_labels_analysis.parquet`: retained task-country labels. This is the main measurement file, with one row per task-country observation.
+- `data_intermediate/task_country_rationales/`: eight Parquet partitions containing the exact non-empty short rationales accompanying the retained labels. The files join to the label file by `item_id`, or by `task_id` and `iso3`.
 - `data_intermediate/task_metadata.csv`: task statements and task identifiers.
 - `data_intermediate/country_metadata.csv`: country identifiers, regions, income groups, and weighting metadata.
 - `data_intermediate/benchmark_task_labels.parquet`: task labels under benchmark contexts used for context-free and income-group comparisons.
@@ -26,6 +27,7 @@ This note explains the main files in the replication package.
 - `outputs/source_data/rationale_concepts/`: the current 60 fixed concepts, pooled Figure 6 families, place-mask terms, and source rows for the illustrative heldout rationale pairs.
 - `outputs/source_data/openai_observed_use/`: public OpenAI Signals IWA series and the O*NET task hierarchy used to rebuild the observed-use validation.
 - `outputs/source_data/ilostat_gender/gender_gap_decomposition_*.csv`: country-level and income-group source data for the gender-gap decomposition and its reported component means.
+- `outputs/source_data/ilostat_gender/table_B8_inputs/`: sex-specific two-digit employment weights and country-cell exposure panels used to re-estimate Supplementary Table B.8.
 - `reproduced/`: files created by `Rscript code/make_all.R`.
 
 ## Figure registry and builders
@@ -45,3 +47,5 @@ This note explains the main files in the replication package.
 - `reproduced/checks/manuscript_figure_artifact_exact_match.csv`: checksum comparison between manuscript figures and package copies.
 - `reproduced/checks/manuscript_table_artifact_exact_match.csv`: checksum comparison between manuscript tables and package copies.
 - `reproduced/checks/rationale_hypothesaes_audit.csv`: discovery, fidelity, and heldout paired-estimator checks for all three fixed-concept targets, including the final 20/13/12 Bonferroni-significant counts.
+- `reproduced/checks/rationale_corpus_audit.csv`: coverage, uniqueness, and label-key checks for the released rationale corpus.
+- `reproduced/checks/gender_table_B8_reestimation_check.csv`: comparison of the re-estimated fixed-effect results with the released Supplementary Table B.8 values.

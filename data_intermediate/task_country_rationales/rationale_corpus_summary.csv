@@ -1,0 +1,8 @@
+metric,value
+retained_task_country_labels,2330776.0
+nonempty_rationales,2320863.0
+labels_without_nonempty_rationale,9913.0
+rationale_coverage_percent,99.57469100419775
+duplicate_rationale_keys,0.0
+orphan_rationale_rows,0.0
+partition_files,8.0

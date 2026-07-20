@@ -23,5 +23,7 @@ source("code/03_compare_outputs.R")
 source("code/04_numeric_audit.R")
 source("code/05_rationale_concept_audit.R")
 source("code/06_refresh_audit.R")
+source("code/07_rationale_corpus_audit.R")
+source("code/08_rebuild_gender_table_B8.R")
 
 message("Done. Rebuilt outputs are in reproduced/.")

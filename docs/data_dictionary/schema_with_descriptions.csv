@@ -17,6 +17,11 @@ data_intermediate/task_country_labels_analysis.parquet,margin,string,Dominant la
 data_intermediate/task_country_labels_analysis.parquet,has_material_ai_integration,bool,Indicator for whether contemporary AI/ML is material to the automation route.
 data_intermediate/task_country_labels_analysis.parquet,ai_material_share,double,Share/probability mass for AI-material involvement in retained modal aggregation.
 data_intermediate/task_country_labels_analysis.parquet,dominant_ai_function,string,Dominant AI function when AI is material.
+data_intermediate/task_country_rationales/*.parquet,rationale_row_id,int64,Stable row identifier used in the rationale-analysis workflow.
+data_intermediate/task_country_rationales/*.parquet,item_id,string,Task-country identifier matching the retained label file.
+data_intermediate/task_country_rationales/*.parquet,task_id,string,Stable O*NET task identifier used in the paper.
+data_intermediate/task_country_rationales/*.parquet,iso3,string,ISO 3166-1 alpha-3 country code.
+data_intermediate/task_country_rationales/*.parquet,short_rationale,string,Exact non-empty short rationale retained from the language-model output.
 data_intermediate/task_metadata.csv,task_id,numeric,Stable O*NET task identifier used in the paper.
 data_intermediate/task_metadata.csv,canonical_onet_task_code,character,Canonical O*NET task code after standardisation.
 data_intermediate/task_metadata.csv,onet_task_code,character,Original O*NET task code.

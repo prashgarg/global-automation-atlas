@@ -10,9 +10,9 @@ Public replication package for Global Automation Atlas by Prashant Garg, Tommaso
 
 ![Cross-country exposure map from the Global Automation Atlas](docs/readme-exposure-map-v2.png)
 
-This repository contains retained analysis data, source-data extracts, and code for checking the results reported in the paper. It starts from the retained task-country labels and rebuilds downstream numerical checks, tables, and figures. Exact submitted versions are retained as reference snapshots, while the manifest distinguishes direct builds from numerical or source-data check renders.
+This repository contains retained analysis data, source-data extracts, and code for checking the results reported in the paper. It starts from the retained task-country labels and their accompanying non-empty rationales, then rebuilds downstream numerical checks, tables, and figures. Exact submitted versions are retained as reference snapshots, while the manifest distinguishes direct builds from numerical or source-data check renders.
 
-The package does not include exploratory drafts, old figure variants, raw API logs, or the full language-model rationale corpus. For the rationale-concept analysis reported in the paper, it includes compact source-data tables for the fixed concepts, discovery scores, concept-fidelity scores, and heldout paired estimates for exposure, substitution-only, and augmentation-only contrasts.
+The package does not include exploratory drafts, old figure variants, raw API logs, annotation batches, or embeddings. For the rationale-concept analysis reported in the paper, it includes the analysis-ready rationale corpus and compact source-data tables for the fixed concepts, discovery scores, concept-fidelity scores, and heldout paired estimates for exposure, substitution-only, and augmentation-only contrasts.
 
 ## Quick start
 
@@ -37,6 +37,7 @@ The workflow writes rebuilt files to `reproduced/`. It also runs a numeric audit
 - `code/check_replication_package.R` checks the core inventory and prints row counts for the task-country label file.
 - `code/make_all.R` rebuilds summary tables and selected figures from the included data.
 - `code/04_numeric_audit.R` checks headline values reported in the paper, including country exposure ranges, validation correlations, gender-gap summaries, and fixed-effect coefficients.
+- `code/08_rebuild_gender_table_B8.R` re-estimates Supplementary Table B.8 from the released two-digit employment weights and country-cell exposure panels.
 - `code/05_rationale_concept_audit.R` checks the HypotheSAEs discovery, fidelity, and heldout paired-estimator fields for all three paper-facing contrasts.
 - `code/06_refresh_audit.R` writes `manifest.csv`, mapping each active manuscript asset and reported statistic to its public reproduction check, package artifact, source data, and checksum where applicable.
 - `code/manuscript_figures/build_fixed_concept_appendix_figures.py` directly rebuilds the three 20-concept HypotheSAEs appendix figures from the released 60-row discovery/fidelity/heldout table.
@@ -51,6 +52,7 @@ At the time of this package build, the numeric audit checks 59 rounded paper val
 
 - `prompts/` contains the country-conditioned, income-group, and context-free prompt protocols, plus model notes.
 - `data_intermediate/` contains the retained measurement outputs used downstream. The central file is `task_country_labels_analysis.parquet`, with 2,330,776 task-country observations across 124 countries and 18,797 tasks.
+- `data_intermediate/task_country_rationales/` contains the 2,320,863 non-empty short rationales accompanying those labels, stored in eight ordinary Parquet partitions.
 - `data_analysis/` contains smaller panels used directly in the country, channel, predictor, occupation, industry, and gender analyses.
 - `outputs/source_data/` contains source data for paper and supplementary figures and tables where a compact source file is available.
 - `outputs/source_data/rationale_concepts/` contains the current 60-concept discovery, fidelity, and heldout estimates, the 18 pooled families shown in Figure 6, the place-mask vocabulary, and source data for the illustrative examples table.
@@ -70,7 +72,7 @@ The prompt files are:
 - `prompts/context_free_prompt.md`
 - `prompts/model_config.json`
 
-The retained label file excludes the full rationale text. It keeps only the columns needed for the paper analyses: exposure level, labour margin, channel, AI materiality, AI function, country identifiers, and task identifiers. The compact rationale-concept source bundle in `outputs/source_data/rationale_concepts/` documents the subset of rationale-derived results reported in the paper without releasing raw API logs or the full rationale corpus.
+The retained label file keeps the columns needed for the paper analyses: exposure level, labour margin, channel, AI materiality, AI function, country identifiers, and task identifiers. The accompanying rationale text is stored separately in `data_intermediate/task_country_rationales/` to avoid duplicating label and metadata columns. The compact rationale-concept source bundle in `outputs/source_data/rationale_concepts/` documents the rationale-derived results reported in the paper. Raw API logs, annotation batches, and embeddings are not required by the public reproduction workflow and are not included.
 
 ## Data dictionaries
 
@@ -86,7 +88,7 @@ Second, `exact_reproducible_build` figures are generated by package-relative ada
 
 Third, `numerical_source_data_check_render` figures reproduce the values from released source data while allowing expected differences in layout, cartography, typography, or composition.
 
-The same logic applies to tables. Final manuscript table files are in `outputs/tables/`; rebuilt check tables are in `reproduced/tables/`. The corrected common-cell-normalized gender fixed-effect table is rebuilt from `outputs/source_data/ilostat_gender/gender_fe_table_current.csv`. The gender-gap decomposition figure and its reported component means are checked from the two released files in `outputs/source_data/ilostat_gender/`.
+The same logic applies to tables. Final manuscript table files are in `outputs/tables/`; rebuilt check tables are in `reproduced/tables/`. Supplementary Table B.8 is re-estimated from the released inputs in `outputs/source_data/ilostat_gender/table_B8_inputs/` and checked against `gender_fe_table_current.csv`. The gender-gap decomposition figure and its reported component means are checked from the two released decomposition files in `outputs/source_data/ilostat_gender/`.
 
 ## Data sources
 
@@ -94,7 +96,7 @@ The analysis uses public source data from O*NET, the World Bank, Penn World Tabl
 
 ## Requirements
 
-The reproduction scripts use R and Python. R dependencies are `arrow`, `dplyr`, `readr`, `tidyr`, `ggplot2`, and `scales`; Python dependencies are listed in `code/requirements.txt`. Poppler's `pdftoppm` is used for the rendered-pixel comparison. No API keys are needed.
+The reproduction scripts use R and Python. R dependencies are `arrow`, `dplyr`, `readr`, `tidyr`, `ggplot2`, `scales`, `stringr`, and `fixest`; Python dependencies are listed in `code/requirements.txt`. Poppler's `pdftoppm` is used for the rendered-pixel comparison. No API keys are needed.
 
 ### Software checklist details
 
@@ -110,13 +112,15 @@ Tested environment:
 - `tidyr` 1.3.2
 - `ggplot2` 4.0.2
 - `scales` 1.4.0
+- `stringr` 1.6.0
+- `fixest` 0.13.2
 
 No non-standard hardware is required. A normal desktop or laptop is sufficient. No API keys are required for the public reproduction workflow.
 
 To install the required R packages, run:
 
 ```r
-install.packages(c("arrow", "dplyr", "readr", "tidyr", "ggplot2", "scales"))
+install.packages(c("arrow", "dplyr", "readr", "tidyr", "ggplot2", "scales", "stringr", "fixest"))
 ```
 
 ```bash
@@ -143,7 +147,7 @@ Expected output is written to `reproduced/`, including rebuilt tables, selected 
 
 ## Known limits
 
-The package is designed to reproduce the paper results from retained labels, not to repeat the original API labelling run. Raw language-model rationales, API batches, embeddings, and restricted third-party microdata remain outside the package.
+The package is designed to reproduce the paper results from retained labels and analysis-ready rationales, not to repeat the original paid API labelling and annotation calls. Raw API batches, embeddings, exploratory outputs, and restricted third-party microdata remain outside the package.
 
 ## Citation
 
