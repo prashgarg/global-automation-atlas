@@ -43,6 +43,7 @@ The workflow writes rebuilt files to `reproduced/`. It also runs a numeric audit
 - `code/manuscript_figures/build_fixed_concept_appendix_figures.py` directly rebuilds the three 20-concept HypotheSAEs appendix figures from the released 60-row discovery/fidelity/heldout table.
 - `code/manuscript_figures/build_combined_rf_rationale_main_figure.py` directly rebuilds current Figure 6 from the released five-seed TreeSHAP/ALE and pooled-rationale tables.
 - `code/manuscript_figures/build_openai_observed_use_iwa_validation.py` rebuilds the observed-use validation from the public OpenAI Signals files, O*NET task hierarchy, and retained U.S. task labels.
+- `code/manuscript_figures/build_openai_signals_country_validation.py` rebuilds the OpenAI Signals v2.0 country-rank and work-related-message-share comparisons from the public country files and retained Atlas country measures.
 - `code/manuscript_figures/build_current_check_renders.py` writes current numerical/source-data checks, including the five-seed direction audit and gender/informality panels.
 - `docs/figure_asset_registry.csv` is the authoritative 40-active-figure mapping. `reproduced/checks/figure_reproduction_status.csv` validates it against the manuscript snapshot.
 

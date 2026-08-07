@@ -265,22 +265,22 @@ def load_signals(path: Path, prefix: str) -> pd.DataFrame:
     signals = signals.loc[signals["iwa_cleaned"] != "Other IWA"].copy()
     signals["month"] = pd.to_datetime(signals["month"])
 
-    q1 = (
-        signals.loc[(signals["month"] >= "2026-01-01") & (signals["month"] <= "2026-03-01")]
+    q2 = (
+        signals.loc[(signals["month"] >= "2026-04-01") & (signals["month"] <= "2026-06-01")]
         .groupby("iwa_cleaned", as_index=False)["share_of_messages"]
         .mean()
-        .rename(columns={"share_of_messages": f"{prefix}_q1_2026"})
+        .rename(columns={"share_of_messages": f"{prefix}_q2_2026"})
     )
     latest_month = signals["month"].max()
     latest = signals.loc[signals["month"] == latest_month, ["iwa_cleaned", "share_of_messages"]].rename(
-        columns={"share_of_messages": f"{prefix}_mar_2026"}
+        columns={"share_of_messages": f"{prefix}_jun_2026"}
     )
     full = (
         signals.groupby("iwa_cleaned", as_index=False)["share_of_messages"]
         .mean()
-        .rename(columns={"share_of_messages": f"{prefix}_mean_202407_202603"})
+        .rename(columns={"share_of_messages": f"{prefix}_mean_202407_202606"})
     )
-    return q1.merge(latest, on="iwa_cleaned").merge(full, on="iwa_cleaned")
+    return q2.merge(latest, on="iwa_cleaned").merge(full, on="iwa_cleaned")
 
 
 def build_iwa_panel(labels: pd.DataFrame, hierarchy: pd.DataFrame, work: pd.DataFrame, all_messages: pd.DataFrame) -> pd.DataFrame:
@@ -310,25 +310,25 @@ def build_iwa_panel(labels: pd.DataFrame, hierarchy: pd.DataFrame, work: pd.Data
     panel = work.merge(all_messages, on="iwa_cleaned", how="inner").merge(
         iwa, left_on="iwa_cleaned", right_on="iwa_id", how="inner"
     )
-    panel["work_q1_2026_per_task_edge"] = panel["work_q1_2026"] / panel["n_task_edges"]
+    panel["work_q2_2026_per_task_edge"] = panel["work_q2_2026"] / panel["n_task_edges"]
 
     eps = 1e-8
-    panel["log_work_q1_2026"] = np.log(panel["work_q1_2026"] + eps)
+    panel["log_work_q2_2026"] = np.log(panel["work_q2_2026"] + eps)
     panel["log_n_task_edges"] = np.log(panel["n_task_edges"])
     x = np.vstack([np.ones(len(panel)), panel["log_n_task_edges"].to_numpy()]).T
-    beta = np.linalg.lstsq(x, panel["log_work_q1_2026"].to_numpy(), rcond=None)[0]
-    panel["work_q1_2026_resid_log_task_edges"] = panel["log_work_q1_2026"] - x.dot(beta)
+    beta = np.linalg.lstsq(x, panel["log_work_q2_2026"].to_numpy(), rcond=None)[0]
+    panel["work_q2_2026_resid_log_task_edges"] = panel["log_work_q2_2026"] - x.dot(beta)
     return panel
 
 
 def spearman_table(panel: pd.DataFrame) -> pd.DataFrame:
     outcomes = {
-        "work_q1_2026": "Work Q1",
-        "work_mar_2026": "Work Mar.",
-        "work_mean_202407_202603": "Work full",
-        "work_q1_2026_per_task_edge": "Per edge",
-        "work_q1_2026_resid_log_task_edges": "Residual",
-        "all_q1_2026": "All Q1",
+        "work_q2_2026": "Work Q2",
+        "work_jun_2026": "Work June",
+        "work_mean_202407_202606": "Work full",
+        "work_q2_2026_per_task_edge": "Per edge",
+        "work_q2_2026_resid_log_task_edges": "Residual",
+        "all_q2_2026": "All Q2",
     }
     rows = []
     for metric in TABLE_METRIC_ORDER:
@@ -353,7 +353,7 @@ def write_latex_table(corr: pd.DataFrame, path: Path) -> None:
     table = corr.pivot(index=["atlas_measure", "atlas_measure_label"], columns="outcome_label", values="spearman_rho")
     table = table.reset_index().set_index("atlas_measure")
     table = table.loc[TABLE_METRIC_ORDER]
-    cols = ["Work Q1", "Work Mar.", "Work full", "Per edge", "Residual", "All Q1"]
+    cols = ["Work Q2", "Work June", "Work full", "Per edge", "Residual", "All Q2"]
 
     lines = [
         r"\begin{table}[!htbp]",
@@ -363,7 +363,7 @@ def write_latex_table(corr: pd.DataFrame, path: Path) -> None:
         r"\label{tab:appendix_openai_observed_use_iwa_robustness}",
         r"\begin{tabular}{lrrrrrr}",
         r"\toprule",
-        r"Atlas measure & Work Q1 & Work Mar. & Work full & Per edge & Residual & All Q1 \\",
+        r"Atlas measure & Work Q2 & Work June & Work full & Per edge & Residual & All Q2 \\",
         r"\midrule",
     ]
     for metric in TABLE_METRIC_ORDER:
@@ -374,7 +374,7 @@ def write_latex_table(corr: pd.DataFrame, path: Path) -> None:
         [
             r"\bottomrule",
             r"\end{tabular}",
-            r"\caption*{\scriptsize Notes: Entries are Spearman rank correlations across 164 named O*NET intermediate work activities. The primary outcome is the OpenAI public work-related U.S. message share averaged over January--March 2026. The March 2026 column uses the latest public month. The full-period column averages July 2024--March 2026. The per-task-edge column divides the 2026 Q1 work-related message share by the number of Atlas task edges in the IWA. The residual column uses residual log message share after projecting log work-related message share on log task-edge count. The all-message column uses the OpenAI public all-message IWA series rather than the work-related series. Atlas measures are built from U.S.-conditioned task labels. Channel rows are exposed task shares whose dominant channel is the named channel. AI-function rows are exposed task shares whose dominant AI function is the named function. Broad economic exposure and AI-material exposed share are aggregate measures rather than channels or AI functions.}",
+            r"\caption*{\scriptsize Notes: Entries are Spearman rank correlations across 164 named O*NET intermediate work activities. The primary outcome is the OpenAI public work-related U.S. message share averaged over April--June 2026. The June 2026 column uses the latest public month. The full-period column averages July 2024--June 2026. The per-task-edge column divides the 2026 Q2 work-related message share by the number of Atlas task edges in the IWA. The residual column uses residual log message share after projecting log work-related message share on log task-edge count. The all-message column uses the OpenAI public all-message IWA series rather than the work-related series. Atlas measures are built from U.S.-conditioned task labels. Channel rows are exposed task shares whose dominant channel is the named channel. AI-function rows are exposed task shares whose dominant AI function is the named function. Broad economic exposure and AI-material exposed share are aggregate measures rather than channels or AI functions.}",
             r"\end{table}",
             "",
         ]
@@ -396,7 +396,7 @@ def plot_figure(panel: pd.DataFrame, corr: pd.DataFrame, out_base: Path) -> None
     ax_c = fig.add_subplot(gs[1, 0])
     ax_d = fig.add_subplot(gs[1, 1])
 
-    work_corr = corr.loc[corr["outcome"] == "work_q1_2026"].set_index("atlas_measure")
+    work_corr = corr.loc[corr["outcome"] == "work_q2_2026"].set_index("atlas_measure")
 
     def label_offset(value: float) -> tuple[float, str]:
         if value < 0:
@@ -456,7 +456,7 @@ def plot_figure(panel: pd.DataFrame, corr: pd.DataFrame, out_base: Path) -> None
     scatter = panel.copy()
     ax_c.scatter(
         scatter["info_exposed"],
-        100 * scatter["work_q1_2026"],
+        100 * scatter["work_q2_2026"],
         s=np.clip(scatter["n_task_edges"], 10, 180) * 0.20,
         color=PALETTE["blue_soft"],
         edgecolor="white",
@@ -480,7 +480,7 @@ def plot_figure(panel: pd.DataFrame, corr: pd.DataFrame, out_base: Path) -> None
         label, (text_x, text_y), ha = anchor_labels[row["iwa_id"]]
         ax_c.annotate(
             label,
-            xy=(row["info_exposed"], 100 * row["work_q1_2026"]),
+            xy=(row["info_exposed"], 100 * row["work_q2_2026"]),
             xytext=(text_x, text_y),
             textcoords="data",
             fontsize=5.6,
@@ -492,7 +492,7 @@ def plot_figure(panel: pd.DataFrame, corr: pd.DataFrame, out_base: Path) -> None
     ax_c.set_title("c. High-use activities concentrate in information work", loc="left", fontsize=7.6, pad=5)
 
     comp = (
-        corr.loc[corr["outcome"].isin(["work_q1_2026", "all_q1_2026"])]
+        corr.loc[corr["outcome"].isin(["work_q2_2026", "all_q2_2026"])]
         .pivot(index="atlas_measure", columns="outcome", values="spearman_rho")
         .loc[SUMMARY_ORDER]
     )
@@ -500,14 +500,14 @@ def plot_figure(panel: pd.DataFrame, corr: pd.DataFrame, out_base: Path) -> None
     ax_d.axvline(0, color=PALETTE["neutral_mid"], lw=0.8, zorder=1)
     for yi, metric in zip(y2, SUMMARY_ORDER):
         ax_d.plot(
-            [comp.loc[metric, "all_q1_2026"], comp.loc[metric, "work_q1_2026"]],
+            [comp.loc[metric, "all_q2_2026"], comp.loc[metric, "work_q2_2026"]],
             [yi, yi],
             color=PALETTE["neutral_light"],
             lw=1.0,
             zorder=2,
         )
-    ax_d.scatter(comp["all_q1_2026"], y2, s=28, color=PALETTE["neutral_mid"], label="All messages", zorder=3)
-    ax_d.scatter(comp["work_q1_2026"], y2, s=32, color=PALETTE["blue"], label="Work-related messages", zorder=3)
+    ax_d.scatter(comp["all_q2_2026"], y2, s=28, color=PALETTE["neutral_mid"], label="All messages", zorder=3)
+    ax_d.scatter(comp["work_q2_2026"], y2, s=32, color=PALETTE["blue"], label="Work-related messages", zorder=3)
     ax_d.set_yticks(y2)
     ax_d.set_yticklabels([SUMMARY_PANEL_LABELS[metric] for metric in SUMMARY_ORDER], fontsize=6.5)
     ax_d.invert_yaxis()
@@ -550,7 +550,7 @@ Evidence hierarchy:
   controls/robustness: Panel d and the companion robustness table.
 
 Statistics needed:
-Spearman rank correlations across 164 named O*NET IWA categories.
+Spearman rank correlations across 164 named O*NET IWA categories using OpenAI Signals v2.0 through June 2026.
 
 Source data needed:
 OpenAI public U.S. IWA message-share files, Atlas U.S.-conditioned task labels, and O*NET task-to-IWA hierarchy.
@@ -581,9 +581,9 @@ def main() -> None:
     plot_figure(panel, corr, dirs["figures"] / "fig_openai_observed_use_iwa_alignment")
     write_contract(dirs["notes"] / "fig_openai_observed_use_iwa_contract.md")
 
-    matched_share = panel["work_q1_2026"].sum()
+    matched_share = panel["work_q2_2026"].sum()
     print(f"Matched named IWAs: {len(panel)}")
-    print(f"Matched Q1 2026 work-related message share: {matched_share:.4f}")
+    print(f"Matched Q2 2026 work-related message share: {matched_share:.4f}")
     print(f"Wrote outputs under: {args.out_dir}")
 
 
